@@ -13,8 +13,9 @@ import {
   DropdownItem,
   NavbarText
 } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Example = (props) => {
+const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -22,17 +23,26 @@ const Example = (props) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">reactstrap</NavbarBrand>
+        <NavbarBrand href="/">M1dunfee</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
-            <NavItem>
-              <NavLink href="/components/">Components</NavLink>
+          <Nav className="ml-auto" navbar>
+          <NavItem>
+              <NavLink href="/Home">Home</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+              <NavLink href="/Services">Services</NavLink>
             </NavItem>
-            <UncontrolledDropdown nav inNavbar>
+            <NavItem>
+              <NavLink href="/Resume">Resume</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/Projects">Projects</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/Contact">Contact</NavLink>
+            </NavItem>
+            {/* <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 Options
               </DropdownToggle>
@@ -48,13 +58,12 @@ const Example = (props) => {
                   Reset
                 </DropdownItem>
               </DropdownMenu>
-            </UncontrolledDropdown>
+            </UncontrolledDropdown> */}
           </Nav>
-          <NavbarText>Simple Text</NavbarText>
         </Collapse>
       </Navbar>
     </div>
   );
 }
 
-export default Example;
+export default Header;
