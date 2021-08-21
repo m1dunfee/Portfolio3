@@ -4,7 +4,7 @@ import { Progress } from 'reactstrap';
 class Services extends Component {
   render() {
     return (
-      <div>
+      <div id='Services'>
         <div className="text-center">3%</div>
         <Progress value="3" />
         <div className="text-center">25%</div>

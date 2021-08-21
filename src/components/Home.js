@@ -10,11 +10,11 @@ const imgStyle = {
 class Home extends Component {
   render() {
     return (
-      <div className='row pt-3'>
+      <div id='Home' className='row'>
         <div className='my-auto col-6'>
 
           <div className='row'>
-            <h1><Badge color='primary' className='py-2'> Media heading </Badge></h1>
+            <h1><Badge color='primary' className='py-2'> Certifidate Fullstack Dev. </Badge></h1>
           </div>
 
           <div className='row py-2'>

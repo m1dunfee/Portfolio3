@@ -21,26 +21,25 @@ const Header = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
-      <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">M1dunfee</NavbarBrand>
+      <Navbar color="light" light expand="md" className='fixed-top custom-nav' position='sticky'>
+        <NavbarBrand href="/"><h3 className='my-auto' >Portfolio</h3></NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
           <NavItem>
-              <NavLink href="/Home">Home</NavLink>
+              <NavLink href="#Home">Home</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/Services">Services</NavLink>
+              <NavLink href="#Services">Services</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/Resume">Resume</NavLink>
+              <NavLink href="#Resume">Resume</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/Portfilio">Portfilio</NavLink>
+              <NavLink href="#Works">Works</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/Contact">Contact</NavLink>
+              <NavLink href="#Contact">Contact</NavLink>
             </NavItem>
             {/* <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
@@ -62,7 +61,6 @@ const Header = (props) => {
           </Nav>
         </Collapse>
       </Navbar>
-    </div>
   );
 }
 
