@@ -6,24 +6,25 @@ import Resume from './components/Resume';
 import Projects from './components/Works';
 import Contact from './components/Contact';
 import Services from './components/Services';
-
-import './App.css';
+import Feedback from './components/Feedback';
 
 class App extends Component {
   render(){
     return (
-      <div className="App pt-5">
+      <div className='container-fluid'>
         <Header/>
-        <div className='container pt-5'>
+        <div className="container-xl">
           <Home/>
-          <hr/>
-          <Services/>
           <hr/>
           {/* <Resume/>
           <hr/> */}
           <Projects/>
           <hr/>
+          <Services/>
+          <hr/>
           <Contact/>
+          <hr/>
+          <Feedback/>
         </div>
         <Footer/>
       </div>

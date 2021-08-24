@@ -14,13 +14,12 @@ class Home extends Component {
         <div className='my-auto col-6'>
 
           <div className='row'>
-            <h1><Badge color='primary' className='py-2'> Certifidate Fullstack Dev. </Badge></h1>
+            <h1><Badge color='primary' className='py-2'> Fullstack Software Engineer </Badge></h1>
           </div>
 
           <div className='row py-2'>
-            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+          As a Frontend Developer, I’ve helped teach and taught classes myself on topics from HTML, CSS, JavaScript to React and Redux. As a Backend Engineer, I’ve untangled spaghetti code and converted stored procedures with archaic hydration methods into testable decoupled servers and their respective databases. Delivering high quality code is part of my passion.
           </div>
-
           <div className='row py-2'>
             <Button outline color="primary">Hire Me</Button> 
             <Button outline color="primary">Download CV (font-awesome)</Button>

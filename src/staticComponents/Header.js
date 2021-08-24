@@ -21,7 +21,7 @@ const Header = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-      <Navbar color="light" light expand="md" className='fixed-top custom-nav' position='sticky'>
+      <Navbar id="Header" color="light" light expand="md" className='fixed-top custom-nav' position='sticky'>
         <NavbarBrand href="/"><h3 className='my-auto' >Portfolio</h3></NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
@@ -37,6 +37,9 @@ const Header = (props) => {
             </NavItem>
             <NavItem>
               <NavLink href="#Works">Works</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="#Feedback">Feedback</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="#Contact">Contact</NavLink>

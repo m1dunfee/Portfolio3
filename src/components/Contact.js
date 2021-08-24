@@ -28,7 +28,7 @@ class Contact extends Component {
             <FontAwesomeIcon icon={faMapMarkerAlt} className='fa-2x'/>
             <h4> Location </h4>
             <hr />
-            <a href="https://www.google.com/maps/place/Belle+Plaine,+MN/@44.6212492,-93.8008079,13z/data=!3m1!4b1!4m5!3m4!1s0x87f5dfb93721879d:0x24b9fe962f7ae1fb!8m2!3d44.6230409!4d-93.7684042" target='_blank' className='text-center'>Belle Plaine, MN</a>
+            <a href="https://www.google.com/maps/place/Burnsville,+MN+55306/@44.7318007,-93.306137,14z/data=!3m1!4b1!4m5!3m4!1s0x87f63a262759969d:0xde94acb813416fe!8m2!3d44.7329713!4d-93.2935778" target='_blank' className='text-center'>Burnsville, MN</a>
           </div>
 
         </div>
