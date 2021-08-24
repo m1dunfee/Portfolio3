@@ -21,6 +21,7 @@ class Works extends Component {
           
           {this.state.map((x)=>(
             <div className='col-md-4'>
+
             <Card>
               <CardImg top width="100%" src={x.img} alt="Card image cap" />
               <CardBody>
@@ -30,6 +31,7 @@ class Works extends Component {
                 <Button href={x.url} target='_blank'>Button</Button>
               </CardBody>
             </Card>
+            
           </div>
           ))}
 

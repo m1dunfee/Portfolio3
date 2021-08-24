@@ -7,7 +7,7 @@ class Contact extends Component {
     return (
       <div id='Contact' className='text-center pb-4'>
         <h2>Contact Me</h2>
-        <p className='py-3'>Obviously I'm a Web Designer. Experienced with all stages of the development cycle for dynamic web projects.</p>
+        <p className='py-3'>Fullstack Engineering isn't just the developing solutions for the client and server.</p>
         <div className='row'>
 
           <div className='col-4'>

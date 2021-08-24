@@ -21,8 +21,8 @@ class Home extends Component {
           As a Frontend Developer, I’ve helped teach and taught classes myself on topics from HTML, CSS, JavaScript to React and Redux. As a Backend Engineer, I’ve untangled spaghetti code and converted stored procedures with archaic hydration methods into testable decoupled servers and their respective databases. Delivering high quality code is part of my passion.
           </div>
           <div className='row py-2'>
-            <Button outline color="primary">Hire Me</Button> 
-            <Button outline color="primary">Download CV (font-awesome)</Button>
+            <Button outline color="primary">Triditional Resume</Button> 
+            <Button outline color="primary">libraries and frameworks</Button>
           </div>
 
         </div>
