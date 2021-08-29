@@ -36,8 +36,6 @@ class Feedback extends Component {
               </div>
 
             </div>
-
-
           </Jumbotron>
 
         </div>
