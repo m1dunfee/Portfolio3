@@ -14,7 +14,7 @@ class Contact extends Component {
             <FontAwesomeIcon icon={faPhoneSquareAlt} className='fa-2x'/>
             <h4> Phone </h4>
             <hr />
-            <a href="tel:612-433-9726" className='text-center'>(612)-433-9726</a>
+            <a href="tel:763-393-7899" className='text-center'>(763)-393-7899</a>
           </div>
 
           <div className='col-4'>
@@ -28,7 +28,7 @@ class Contact extends Component {
             <FontAwesomeIcon icon={faMapMarkerAlt} className='fa-2x'/>
             <h4> Location </h4>
             <hr />
-            <a href="https://www.google.com/maps/place/Burnsville,+MN+55306/@44.7318007,-93.306137,14z/data=!3m1!4b1!4m5!3m4!1s0x87f63a262759969d:0xde94acb813416fe!8m2!3d44.7329713!4d-93.2935778" target='_blank' className='text-center'>Burnsville, MN</a>
+            <a href="https://www.google.com/maps/place/Burnsville,+MN+55306/@44.7318007,-93.306137,14z/data=!3m1!4b1!4m5!3m4!1s0x87f63a262759969d:0xde94acb813416fe!8m2!3d44.7329713!4d-93.2935778" target='_blank' rel="noopener noreferrer" className='text-center'>Burnsville, MN</a>
           </div>
 
         </div>
