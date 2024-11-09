@@ -116,6 +116,42 @@ a {
   }
 }
 
+/* Add this CSS to your stylesheet or in a style block */
+.custom-slider {
+  position: relative;
+  text-align: center;
+}
+
+.custom-slider img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.slider-button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.slider-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+
 // Header Styling
 #Header {
   background-color: $color-background !important;
