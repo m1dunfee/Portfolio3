@@ -23,6 +23,31 @@ body, .App {
   font-family: 'Roboto', sans-serif;
 }
 
+// Global Scroll and Header Settings
+html {
+  scroll-behavior: smooth;
+  padding-top: 75px;
+  scroll-padding-top: 75px;
+}
+
+// Header Element Colors
+h1, h2, h3, h4, h5, h6 {
+  color: $color-text !important;
+  font-family: 'Roboto', sans-serif;
+}
+// Global Link Styling
+
+// Global Link Styling with !important
+a {
+  color: $color-accent !important; // Set link color to red
+  text-decoration: none !important; // Remove underline (optional)
+
+  &:hover {
+    color: darken($color-accent, 10%) !important; // Darker red on hover
+    text-decoration: underline !important; // Underline on hover (optional)
+  }
+}
+
 // Primary Color Styling for Bootstrap Components
 .text-primary,
 .bg-primary,
@@ -66,15 +91,11 @@ body, .App {
   }
 }
 
-// Header Styling
-#Header {
-  background-color: $color-background !important;
-  color: $color-text !important;
-  padding: 0; // Remove extra padding
-}
-
-#Header .profile-text {
-  color: $color-text !important;
+// Card Styling
+.card-primary {
+  color: $primary !important; // Red text
+  border-color: $primary !important; // Red border
+  background-color: $color-background !important; // Transparent by default
 }
 
 // Quote Styling
@@ -95,6 +116,17 @@ body, .App {
   }
 }
 
+// Header Styling
+#Header {
+  background-color: $color-background !important;
+  color: $color-text !important;
+  padding: 0; // Remove extra padding
+}
+
+#Header .profile-text {
+  color: $color-text !important;
+}
+
 // Specific Button Styling
 #jumbotronButton {
   margin: auto !important;
@@ -109,29 +141,4 @@ body, .App {
   color: $color-text !important;
   padding: 20px;
   text-align: center;
-}
-
-// Global Scroll and Header Settings
-html {
-  scroll-behavior: smooth;
-  padding-top: 75px;
-  scroll-padding-top: 75px;
-}
-
-// Header Element Colors
-h1, h2, h3, h4, h5, h6 {
-  color: $color-text !important;
-  font-family: 'Roboto', sans-serif;
-}
-// Global Link Styling
-
-// Global Link Styling with !important
-a {
-  color: $color-accent !important; // Set link color to red
-  text-decoration: none !important; // Remove underline (optional)
-
-  &:hover {
-    color: darken($color-accent, 10%) !important; // Darker red on hover
-    text-decoration: underline !important; // Underline on hover (optional)
-  }
 }
