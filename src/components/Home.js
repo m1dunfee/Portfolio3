@@ -13,8 +13,12 @@ class Home extends Component {
       <div id='Home' className='row'>
         <div className='my-auto col-6'>
 
-          <div className='row'>
+          {/* <div className='row'>
             <h1><Badge color='primary' className='py-2'> Fullstack Software Engineer </Badge></h1>
+          </div> */}
+
+          <div className="quote">
+            Never trust the man who claims to know everything; he’s either deceiving himself or you.
           </div>
 
           <div className='row py-2'>
