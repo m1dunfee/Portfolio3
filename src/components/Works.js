@@ -46,13 +46,13 @@ class Works extends Component {
           {this.state.map((x)=>(
             <div className='col-md-4'>
 
-            <Card>
+            <Card className='card-primary'>
               <CardImg top width="100%" src={x.img} alt="Card image cap" />
               <CardBody>
                 <CardTitle tag="h5">{x.title}</CardTitle>
                 <CardSubtitle tag="h6" className="mb-2 text-muted">{x.catagory}</CardSubtitle>
                 <CardText>{x.details}</CardText>
-                <Button href={x.url} target='_blank'>Button</Button>
+                <Button outline color="primary" href={x.url} target='_blank' >Button</Button>
               </CardBody>
             </Card>
             
