@@ -1,0 +1,137 @@
+// Import Google Fonts
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@700&family=Merriweather:wght@700&display=swap");
+
+// Theme Variables
+$color-background: #000000 !default; // Black
+$color-text: #ffffff !default; // White
+$color-accent: #e53935 !default; // Bold Red
+$color-muted-background: #333333 !default; // Dark Gray for Nav
+
+// Override Bootstrap Defaults
+$primary: $color-accent !default;
+$body-bg: $color-background !default;
+$body-color: $color-text !default;
+
+// Import Bootstrap after setting custom variables
+@import "~bootstrap/scss/bootstrap";
+
+// Global Background and Font Settings
+body, .App {
+  background-color: $color-background !important;
+  color: $color-text !important;
+  font-family: 'Roboto', sans-serif;
+}
+
+// Primary Color Styling for Bootstrap Components
+.text-primary,
+.bg-primary,
+.border-primary,
+.btn-primary,
+.btn-outline-primary,
+.progress-bar {
+  color: $primary !important;
+  background-color: $primary !important;
+  border-color: $primary !important;
+}
+
+// Outline Button Styling for Aesthetic
+.btn-outline-primary {
+  color: $primary !important; // Red text
+  border-color: $primary !important; // Red border
+  background-color: transparent !important; // Transparent by default
+
+  &:hover {
+    background-color: $primary !important; // Red background on hover
+    color: $color-text !important; // White text on hover
+  }
+}
+
+// Navbar Styling
+.custom-nav, .navbar, .navbar-light, .navbar-collapse, .navbar-nav {
+  background-color: $color-background !important; // Black background
+  color: $color-text !important; // White text
+
+  .navbar-nav .nav-link {
+    color: $color-text !important;
+
+    &:hover {
+      color: $color-accent !important;
+    }
+  }
+
+  .navbar-toggler {
+    color: $color-text !important;
+    border-color: $color-text !important;
+  }
+}
+
+// Header Styling
+#Header {
+  background-color: $color-background !important;
+  color: $color-text !important;
+  padding: 0; // Remove extra padding
+}
+
+#Header .profile-text {
+  color: $color-text !important;
+}
+
+// Quote Styling
+.quote {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: $color-text !important;
+  text-align: center;
+  margin: 20px 0 !important;
+
+  &::before,
+  &::after {
+    content: '“';
+    font-size: 2rem;
+    color: $color-text !important;
+    vertical-align: top;
+  }
+}
+
+// Specific Button Styling
+#jumbotronButton {
+  margin: auto !important;
+  background-color: $color-accent !important;
+  color: $color-text !important;
+  border: none !important;
+}
+
+// Footer Styling
+#Footer, .footer, .footer-dark {
+  background-color: $color-background !important;
+  color: $color-text !important;
+  padding: 20px;
+  text-align: center;
+}
+
+// Global Scroll and Header Settings
+html {
+  scroll-behavior: smooth;
+  padding-top: 75px;
+  scroll-padding-top: 75px;
+}
+
+// Header Element Colors
+h1, h2, h3, h4, h5, h6 {
+  color: $color-text !important;
+  font-family: 'Roboto', sans-serif;
+}
+// Global Link Styling
+
+// Global Link Styling with !important
+a {
+  color: $color-accent !important; // Set link color to red
+  text-decoration: none !important; // Remove underline (optional)
+
+  &:hover {
+    color: darken($color-accent, 10%) !important; // Darker red on hover
+    text-decoration: underline !important; // Underline on hover (optional)
+  }
+}

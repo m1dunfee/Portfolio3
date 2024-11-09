@@ -11,7 +11,7 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  NavbarText
+  Container
 } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -21,12 +21,15 @@ const Header = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-      <Navbar id="Header" color="light" light expand="md" className='fixed-top custom-nav' position='sticky'>
-        <NavbarBrand href="/"><h3 className='my-auto' >Portfolio</h3></NavbarBrand>
+    <Navbar id="Header" expand="md" className="fixed-top custom-nav">
+      <Container>
+        <NavbarBrand href="/">
+          <h3 className="my-0">Portfolio</h3>
+        </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="ml-auto" navbar>
-          <NavItem>
+          <Nav className="ms-auto" navbar>
+            <NavItem>
               <NavLink href="#Home">Home</NavLink>
             </NavItem>
             <NavItem>
@@ -44,27 +47,24 @@ const Header = (props) => {
             <NavItem>
               <NavLink href="#Contact">Contact</NavLink>
             </NavItem>
-            {/* <UncontrolledDropdown nav inNavbar>
+            {/* Uncomment for dropdown options
+            <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 Options
               </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>
-                  Option 1
-                </DropdownItem>
-                <DropdownItem>
-                  Option 2
-                </DropdownItem>
+              <DropdownMenu end>
+                <DropdownItem>Option 1</DropdownItem>
+                <DropdownItem>Option 2</DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem>
-                  Reset
-                </DropdownItem>
+                <DropdownItem>Reset</DropdownItem>
               </DropdownMenu>
-            </UncontrolledDropdown> */}
+            </UncontrolledDropdown>
+            */}
           </Nav>
         </Collapse>
-      </Navbar>
+      </Container>
+    </Navbar>
   );
-}
+};
 
 export default Header;
