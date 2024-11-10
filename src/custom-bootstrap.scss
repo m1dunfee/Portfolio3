@@ -151,6 +151,15 @@ a {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+/* In your CSS file */
+.background-section {
+  background-image: url('./img/wallpaper.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  color: white; /* Optional: style text for better visibility */
+}
 
 // Header Styling
 #Header {
