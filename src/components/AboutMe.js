@@ -4,8 +4,11 @@ import ProPic from '../img/Profile_Pic.jpg';
 
 
 const imgStyle = {
-  maxHeight: 'auto',
-  maxWidth: 500
+  width: '100%',           // Makes the image responsive to the container's width
+  maxWidth: 500,           // Sets a maximum width so it doesn't stretch too large
+  display: 'block',        // Ensures the image behaves as a block element
+  margin: '0 auto',        // Centers the image horizontally within its container
+  height: 'auto',          // Maintains the image's aspect ratio
 };
 
 
@@ -20,17 +23,17 @@ class AboutMe extends Component {
 
         <div className='row'>
 
-          <div className='col-6'>
+          <div className='col-lg-6'>
             <Media left href="#">
-              <Media object src={ProPic} style={imgStyle} alt="Generic test image" />
+              <Media object src={ProPic} style={imgStyle} alt="Profile" />
             </Media>
           </div>
           
-          <div className="col-6">
+          <div className="col-lg-6">
             <div className='container'>
 
               <div className="row">
-                <h4 className='text-center' >I brief over view:</h4>
+                <h4 className='text-center' >A brief over view:</h4>
                 <p className='text-center'>
                    Nearly complete with a B.S. in Computer Science. Certifacated fullstack software engineering. Two years as a software engineer for a finaical company. A year of testing in game development. A year of Java development. A year intructing at software bootcamps.        
                 </p>
