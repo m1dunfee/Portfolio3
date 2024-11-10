@@ -30,22 +30,16 @@ const Header = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ms-auto" navbar>
             <NavItem>
-              <NavLink href="#Home">Home</NavLink>
+              <NavLink href="#AboutMe">Bio</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="#Services">Services</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#Resume">Resume</NavLink>
+              <NavLink href="#Projects">Projects</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#Works">Works</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="#Feedback">Feedback</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="#Contact">Contact</NavLink>
+              <NavLink href="#Footer">Contact</NavLink>
             </NavItem>
             {/* Uncomment for dropdown options
             <UncontrolledDropdown nav inNavbar>

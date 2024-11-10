@@ -15,7 +15,7 @@ const imgStyle = {
 class AboutMe extends Component {
   render() {
     return (
-      <div className='flex-wrap'>
+      <div id='AboutMe' className='flex-wrap'>
         
         <h4 className='quote '> Never trust the man who claims to know everything; he’s either deceiving himself or you. </h4>
         

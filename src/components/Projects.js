@@ -40,7 +40,7 @@ class Projects extends Component {
     const { activeIndexes } = this.state;
 
     return (
-      <div id="Works" className='cards-container '>
+      <div id="Projects" className='cards-container '>
         <div className="row pb-3">
           {projectData.map((project, index) => (
             <div className="col-md-4 p-2 text-center d-flex justify-content-center" key={index}>
@@ -67,7 +67,7 @@ class Projects extends Component {
                     {project.category}
                   </CardSubtitle>
                   <CardText>{project.details}</CardText>
-                  <Button outline color="primary" href={project.url} target="_blank">
+                  <Button outline color="primary" href={project.url} target='_blank' rel="noopener noreferrer">
                     Visit Project
                   </Button>
                 </CardBody>
