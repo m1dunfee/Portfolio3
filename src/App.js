@@ -1,32 +1,23 @@
 import React, { Component } from 'react';
-import Header from './staticComponents/Header';
-import Footer from './staticComponents/Footer';
-import Home from './components/Home';
-import Resume from './components/Resume';
-import Projects from './components/Works';
-import Contact from './components/Contact';
-import Services from './components/Services';
-import Feedback from './components/Feedback';
+import Header from './components/Header';
+import Projects from './components/Projects';
+import Footer from './components/Footer';
+import AboutMe from './components/AboutMe';
 
 class App extends Component {
   render(){
     return (
-      <div className='container-fluid'>
+      <div className='cd-flex'>
         <Header/>
-        <div className="container-xl">
-          <Home/>
+        <div className=" container">
           <hr/>
-          {/* <Resume/>
-          <hr/> */}
+          <AboutMe/>
+          <hr/>
           <Projects/>
           <hr/>
-          <Services/>
+          <Footer/>
           <hr/>
-          <Contact/>
-          <hr/>
-          <Feedback/>
         </div>
-        <Footer/>
       </div>
     );
   }
