@@ -1,15 +1,24 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faPhoneSquareAlt, faMapMarkerAlt} from '@fortawesome/free-solid-svg-icons'
+import { Button } from 'reactstrap';
 
-class Contact extends Component {
+class Footer extends Component {
   render() {
     return (
-      <div id='Contact' className='text-center pb-4'>
-        <h2>Contact Me</h2>
-        <p className='py-3'>Fullstack Engineering isn't just the developing solutions for the client and server.</p>
-        <div className='row'>
+      <div id='Footer' className=' text-center'>
+        <div className='row'>  
+          <h2>Resume?</h2>
+        </div>  
 
+        <div className='row p-3'>  
+          <Button outline color="primary">Triditional Resume</Button> 
+          {/* <Button outline color="primary">libraries and frameworks</Button> */}
+        </div>
+
+        <hr/>
+
+        <div className='row p-3'>
           <div className='col-4'>
             <FontAwesomeIcon icon={faPhoneSquareAlt} className='fa-2x'/>
             <h4> Phone </h4>
@@ -37,4 +46,4 @@ class Contact extends Component {
   }
 }
 
-export default Contact;
+export default Footer;

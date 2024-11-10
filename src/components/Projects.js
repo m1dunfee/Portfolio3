@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap';
 import projectData from './projectData';
 
-class Works extends Component {
+class Projects extends Component {
   state = {
     activeIndexes: {}, // Keeps track of the active image index for each project
   };
@@ -79,4 +79,4 @@ class Works extends Component {
   }
 }
 
-export default Works;
+export default Projects;
