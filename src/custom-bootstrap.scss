@@ -27,9 +27,11 @@ body, .App {
 // Global Scroll and Header Settings
 html {
   scroll-behavior: smooth;
-  padding-top: 75px;
+  // padding-top: 35px;
   scroll-padding-top: 75px;
 }
+
+
 
 // Header Element Colors
 h1, h2, h3, h4, h5, h6 {
@@ -112,13 +114,14 @@ a {
 /* Card styling */
 .card {
   width: 100%;
-  max-width: 300px;
+  margin: 0 auto;
   height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: none; /* Remove the max-width */
 }
 
 /* Image container styling */
@@ -192,15 +195,16 @@ a {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* In your CSS file */
 .background-section {
   background-image: url('./img/wallpaper.png');
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  width: 100%;
-  color: white; /* Optional: style text for better visibility */
+  background-size: auto; /* Allows natural tiling */
+  background-position: top left; /* Ensures it starts from the top left */
+  background-repeat: repeat; /* Repeats on both x and y axes */
+  min-height: 100vh; /* Ensures it covers the full viewport height */
+  width: 100%; /* Ensures it spans the full width */
 }
+
+
 
 // Header Styling
 #Header {

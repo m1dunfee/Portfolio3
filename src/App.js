@@ -7,16 +7,12 @@ import AboutMe from './components/AboutMe';
 class App extends Component {
   render(){
     return (
-      <div className='cd-flex style={backgroundStyle} ' >
+      <div className='cd-flex background-section' >
         <Header/>
-        <div className=" container">
-          <hr/>
+        <div className=" container mt-3 pt-5 pb-4">
           <AboutMe/>
-          <hr/>
           <Projects/>
-          <hr/>
           <Footer/>
-          <hr/>
         </div>
       </div>
     );
