@@ -40,16 +40,17 @@ class Projects extends Component {
     const { activeIndexes } = this.state;
 
     return (
-      <div id="Works" className='cards-container'>
+      <div id="Works" className='cards-container '>
         <div className="row pb-3">
           {projectData.map((project, index) => (
-            <div className="col-md-4" key={index}>
-              <Card className="card-primary">
-                <div className="custom-slider">
+            <div className="col-md-4 p-2 text-center d-flex justify-content-center" key={index}>
+              <Card className="card card-primary">
+                <div className="custom-slider card-img-container">
                   <img
                     src={project.img[activeIndexes[index] || 0]}
                     alt={`Slide ${activeIndexes[index] || 0}`}
                     style={{ width: '100%' }}
+                    className='card-img'
                   />
                   <div className="slider-controls">
                     <button className="slider-button" onClick={() => this.previousImage(index)}>

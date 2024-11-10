@@ -15,21 +15,21 @@ const imgStyle = {
 class AboutMe extends Component {
   render() {
     return (
-      <div className='container flex-wrap'>
+      <div className='flex-wrap'>
         
-        <h4 className='quote p-5'> Never trust the man who claims to know everything; he’s either deceiving himself or you. </h4>
+        <h4 className='quote '> Never trust the man who claims to know everything; he’s either deceiving himself or you. </h4>
         
         <hr/>
 
         <div className='row'>
 
-          <div className='col-lg-6'>
+          <div className='col-lg-6 p-2'>
             <Media left href="#">
               <Media object src={ProPic} style={imgStyle} alt="Profile" />
             </Media>
           </div>
           
-          <div className="col-lg-6">
+          <div className="col-lg-6 p-2">
             <div className='container'>
 
               <div className="row">

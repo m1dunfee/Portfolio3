@@ -16,6 +16,7 @@ $body-color: $color-text !default;
 // Import Bootstrap after setting custom variables
 @import "~bootstrap/scss/bootstrap";
 
+
 // Global Background and Font Settings
 body, .App {
   background-color: $color-background !important;
@@ -46,6 +47,16 @@ a {
     color: darken($color-accent, 10%) !important; // Darker red on hover
     text-decoration: underline !important; // Underline on hover (optional)
   }
+}
+
+/* Container styling */
+.project-cards-container {
+  display: flex;
+  justify-content: center;   /* Centers the cards horizontally */
+  align-items: center;       /* Centers the cards vertically */
+  flex-wrap: wrap;           /* Allows the cards to wrap onto a new row if needed */
+  gap: 16px;                 /* Adds space between each card */
+  padding: 20px;             /* Optional padding around the container */
 }
 
 // Primary Color Styling for Bootstrap Components
@@ -97,6 +108,36 @@ a {
   border-color: $primary !important; // Red border
   background-color: $color-background !important; // Transparent by default
 }
+
+/* Card styling */
+.card {
+  width: 100%;
+  max-width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Image container styling */
+.card-img-container {
+  width: 100%;
+  height: 200px;          /* Fixed height for image container */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Image styling */
+.card-img {
+  max-width: 100%;        /* Scales the image to fit the width of the container */
+  max-height: 100%;       /* Scales the image to fit the height of the container */
+  object-fit: contain;    /* Shrinks larger images without cropping */
+}
+
 
 // Quote Styling
 .quote {

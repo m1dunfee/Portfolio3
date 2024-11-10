@@ -7,7 +7,7 @@ import AboutMe from './components/AboutMe';
 class App extends Component {
   render(){
     return (
-      <div className='cd-flex style={backgroundStyle}' >
+      <div className='cd-flex style={backgroundStyle} ' >
         <Header/>
         <div className=" container">
           <hr/>
