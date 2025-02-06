@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Header from './components/Header';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
+import Overview from './components/Overview';
+import Ai from './components/Ai';
 import AboutMe from './components/AboutMe';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
@@ -21,12 +23,16 @@ class App extends Component {
         <Router>
           <Routes >
             {/* FIXME add more pages here */}
-            <Route path="/" element={<><AboutMe/> <Projects/> <Footer/></>} />
-            {/* <Route path="/about" element={<Projects />} /> */}
+            <Route path="/" element={<><Overview/> <Projects/> </>} />
+            <Route path="/ai" element={<> <Ai/> </>} />
+            <Route path="/aboutme" element={<AboutMe />} />
           </Routes>
+          
         </Router>
-      </div>
 
+        <Footer/>
+      </div>
+      
     );
   }
 }
