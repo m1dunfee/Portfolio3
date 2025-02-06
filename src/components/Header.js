@@ -21,7 +21,8 @@ const Header = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <Navbar id="Header" expand="md" className="fixed-top custom-nav">
+    // add the card.primary effect to the nav
+    <Navbar id="Header" expand="md" className="fixed-top custom-nav"> 
       <Container>
         <NavbarBrand href="/">
           <h3 className="my-0">Portfolio</h3>
