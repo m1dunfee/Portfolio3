@@ -30,7 +30,8 @@ const Header = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ms-auto" navbar>
             <NavItem>
-              <NavLink href="#AboutMe">Bio</NavLink>
+              {/* replace this logic for whiching pages */}
+              <NavLink href="#">Bio</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="#Services">Services</NavLink>

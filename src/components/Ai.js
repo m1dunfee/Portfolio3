@@ -3,7 +3,7 @@ import { Progress, Media, Card, CardBody, CardTitle, CardSubtitle, CardText, But
 
 
 
-class AboutMe extends Component {
+class Ai extends Component {
     render() {
         return (
             <div className='card-container'>
@@ -20,4 +20,4 @@ class AboutMe extends Component {
     }
 }
 
-export default AboutMe;
+export default Ai;
