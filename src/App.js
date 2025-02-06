@@ -19,8 +19,6 @@ class App extends Component {
           </nav> */}
 
         <Router>
-
-
           <Routes >
             {/* FIXME add more pages here */}
             <Route path="/" element={<><AboutMe/> <Projects/> <Footer/></>} />
