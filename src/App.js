@@ -4,7 +4,7 @@ import Projects from './components/Projects';
 import Footer from './components/Footer';
 import Overview from './components/Overview';
 import Ai from './components/Ai';
-import AboutMe from './components/AboutMe';
+import Bio from './components/Bio';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 class App extends Component {
@@ -12,7 +12,7 @@ class App extends Component {
     return (
       //FIXME padding under the header isn't right
       <div className='cd-flex background-section p-4 pt-5' >
-        <Header/>
+        <Header style = {{background: 'blue'}} />
 
         {/*FIXME add these links to the header or create a secondary header */}
           {/* <nav>
@@ -20,12 +20,13 @@ class App extends Component {
             <Link to="/about">About</Link>
           </nav> */}
 
-        <Router>
+        <Router >
           <Routes >
             {/* FIXME add more pages here */}
-            <Route path="/" element={<><Overview/> <Projects/> </>} />
-            <Route path="/ai" element={<> <Ai/> </>} />
-            <Route path="/aboutme" element={<AboutMe />} />
+            <Route path="/" element={<Overview/>} />
+            <Route path="/ai" element={<Ai/>} />
+            <Route path="/bio" element={<Bio/>} />
+            <Route path="/projects" element={<Projects/>} />
           </Routes>
           
         </Router>
