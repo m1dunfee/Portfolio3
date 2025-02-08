@@ -10,25 +10,16 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 class App extends Component {
   render(){
     return (
-      //FIXME padding under the header isn't right
       <div className='cd-flex background-section p-4 pt-5' >
-        <Header style = {{background: 'blue'}} />
-
-        {/*FIXME add these links to the header or create a secondary header */}
-          {/* <nav>
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-          </nav> */}
-
+        <Header/>
+        
         <Router >
           <Routes >
-            {/* FIXME add more pages here */}
             <Route path="/" element={<Overview/>} />
             <Route path="/ai" element={<Ai/>} />
             <Route path="/bio" element={<Bio/>} />
             <Route path="/projects" element={<Projects/>} />
           </Routes>
-          
         </Router>
 
         <Footer/>
