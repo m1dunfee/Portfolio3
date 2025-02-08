@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Progress, Media, Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap';
+import { Progress, Media, Card } from 'reactstrap';
 
 import ProPic from '../img/Profile_Pic.jpg';
 
