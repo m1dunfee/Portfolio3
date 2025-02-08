@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import Overview from './components/Overview';
 import Ai from './components/Ai';
 import Bio from './components/Bio';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 class App extends Component {
   render(){

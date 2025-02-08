@@ -7,10 +7,6 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
   Container
 } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
