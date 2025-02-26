@@ -13,11 +13,11 @@ const imgStyle = {
 };
 
 
-class Overview extends Component {
+class Landing extends Component {
   render() {
     return (
       <div className='card-container'>
-        <Card id='AboutMe' className='flex-wrap card card-primary'>
+        <Card id='Landing' className='flex-wrap card card-primary'>
           
           <h4 className='quote '> Never trust the man who claims to know everything; he’s either deceiving himself or you. </h4>
           
@@ -35,32 +35,20 @@ class Overview extends Component {
               <div className='container'>
 
                 <div className="row">
-                  <h4 className='text-center' >A brief over view:</h4>
+                  <h4 className='text-center' >Summary:</h4>
                   <p className='text-center'>
                     Nearly complete with a B.S. in Computer Science. Certifacated fullstack software engineering. Two years as a software engineer for a finaical company. A year of testing in game development. A year of Java development. A year intructing at software bootcamps.        
                   </p>
                 </div>
 
-                <div className='row'>  
-                  <div id='Services'>
-                    <div className="text-center"> Javascript</div>
-                    <Progress value="75" />
-                    <div className="text-center"> C/C++</div>
-                    <Progress value="65" />
-                    <div className="text-center"> Python</div>
-                    <Progress value="70" />
-                    <div className="text-center"> Java</div>
-                    <Progress value="50" />
-                  </div>
-                </div>
-
               </div>
             </div>
           </div>
+          <hr/>
         </Card>
       </div>
     )
   }
 }
 
-export default Overview;
+export default Landing;

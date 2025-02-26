@@ -3,18 +3,17 @@ import { Card} from 'reactstrap';
 
 
 
-class Ai extends Component {
+class Bioinfomatics extends Component {
     render() {
         return (
             <div className='card-container'>
             <Card className='flex-wrap card card-primary text-center'>
               
-              <h4 className=''>Artificial Intelligence</h4>
-              <h3 className='quote'>We stand of the shoulders of giants. - Isaac Newton</h3>
+              <h4 className=''>Bioinfomatics</h4>
+              <h4 className='quote'>To understand life, we must first understnad the code that writes it. - Richard Feynman</h4>
               <hr/>
               <p>
-                  llms linguistic relativity
-                  machine learning = abstraction of data
+                  
               </p>
               <hr/>
 
@@ -24,4 +23,4 @@ class Ai extends Component {
     }
 }
 
-export default Ai;
+export default Bioinfomatics;

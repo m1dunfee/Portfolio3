@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import Header from './components/Header';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
-import Overview from './components/Overview';
+import Landing from './components/Laning';
 import Ai from './components/Ai';
-import Bio from './components/Bio';
+import Bioinfomatics from './components/Bioinfomatics';
+import Cybersecurity from './components/Cybersecurity';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 class App extends Component {
@@ -15,9 +16,10 @@ class App extends Component {
         
         <Router >
           <Routes >
-            <Route path="/" element={<Overview/>} />
+            <Route path="/" element={<Landing/>} />
             <Route path="/ai" element={<Ai/>} />
-            <Route path="/bio" element={<Bio/>} />
+            <Route path="/bioinfomatics" element={<Bioinfomatics/>} />
+            <Route path="/cybersecurity" element={<Cybersecurity/>} />
             <Route path="/projects" element={<Projects/>} />
           </Routes>
         </Router>
