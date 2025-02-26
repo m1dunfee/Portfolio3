@@ -7,7 +7,11 @@ import {
   Nav,
   NavItem,
   NavLink,
-  Container
+  Container,
+  DropdownToggle,
+  DropdownItem,
+  DropdownMenu,
+  UncontrolledDropdown
 } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -29,27 +33,31 @@ const Header = (props) => {
               <NavLink href="/">Home</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/bio">Bio</NavLink>
+              <NavLink href="/Projects">Projects</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/Projects">Projects</NavLink>
+              <UncontrolledDropdown nav inNavbar>
+                <DropdownToggle nav caret>
+                  More
+                </DropdownToggle>
+                <DropdownMenu end>
+                  <DropdownItem>
+                    <NavLink href="/Ai">Artificial Intelligence</NavLink>
+                  </DropdownItem>
+                  <DropdownItem>
+                    <NavLink href="/Cybersecurity">Cybersecurity</NavLink>
+                  </DropdownItem>
+                  <DropdownItem>
+                    <NavLink href="/bioinfomatics">Bioinfomatics</NavLink>
+                  </DropdownItem>
+                  {/* <DropdownItem divider />
+                  <DropdownItem>Reset</DropdownItem> */}
+                </DropdownMenu>
+              </UncontrolledDropdown>
             </NavItem>
             <NavItem>
               <NavLink href="#Footer">Contact</NavLink>
             </NavItem>
-            {/* Uncomment for dropdown options
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                Options
-              </DropdownToggle>
-              <DropdownMenu end>
-                <DropdownItem>Option 1</DropdownItem>
-                <DropdownItem>Option 2</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>Reset</DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-            */}
           </Nav>
         </Collapse>
       </Container>
