@@ -9,7 +9,7 @@ class Cybersecurity extends Component {
             <div className='card-container'>
             <Card className='flex-wrap card card-primary text-center'>
               
-              <h4 className=''>Cybersecurity</h4>
+              <h1 className=''>Cybersecurity</h1>
               <h4 className='quote'> Who watchs the watchmen? - Juvenal</h4>
               <hr/>
               <p>
