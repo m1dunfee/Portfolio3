@@ -3,13 +3,13 @@ import { Card} from 'reactstrap';
 
 
 
-class Ai extends Component {
+class Gamedev extends Component {
     render() {
         return (
             <div className='card-container'>
             <Card className='flex-wrap card card-primary text-center'>
               
-              <h1 className=''>Artificial Intelligence</h1>
+              <h1 className=''>Game Development</h1>
               <h3 className='quote'>We stand of the shoulders of giants. - Isaac Newton</h3>
               <hr/>
               <p>
@@ -24,4 +24,4 @@ class Ai extends Component {
     }
 }
 
-export default Ai;
+export default Gamedev;

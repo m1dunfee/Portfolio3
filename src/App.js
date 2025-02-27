@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import Header from './components/Header';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
-import Landing from './components/Laning';
+import Landing from './components/Landing';
 import Ai from './components/Ai';
 import Bioinfomatics from './components/Bioinfomatics';
 import Cybersecurity from './components/Cybersecurity';
+import Gamedev from './components/Gamedev';
+import OOP from './components/OOP';
+import SDLC from './components/SDLC';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 class App extends Component {
@@ -20,6 +23,9 @@ class App extends Component {
             <Route path="/ai" element={<Ai/>} />
             <Route path="/bioinfomatics" element={<Bioinfomatics/>} />
             <Route path="/cybersecurity" element={<Cybersecurity/>} />
+            <Route path="/gamedev" element={<Gamedev/>} />
+            <Route path="/oop" element={<OOP/>} />
+            <Route path="/SDLC" element={<SDLC/>} />
             <Route path="/projects" element={<Projects/>} />
           </Routes>
         </Router>

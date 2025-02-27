@@ -11,7 +11,9 @@ import {
   DropdownToggle,
   DropdownItem,
   DropdownMenu,
-  UncontrolledDropdown
+  UncontrolledDropdown,
+  Row,
+  Col,  
 } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -29,35 +31,66 @@ const Header = (props) => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ms-auto" navbar>
+
             <NavItem>
               <NavLink href="/">Home</NavLink>
             </NavItem>
+
             <NavItem>
               <NavLink href="/Projects">Projects</NavLink>
             </NavItem>
+
             <NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
-                  More
+                  Prospects
                 </DropdownToggle>
-                <DropdownMenu end>
+                <DropdownMenu end >
+
                   <DropdownItem>
                     <NavLink href="/Ai">Artificial Intelligence</NavLink>
                   </DropdownItem>
+
                   <DropdownItem>
                     <NavLink href="/Cybersecurity">Cybersecurity</NavLink>
                   </DropdownItem>
+
                   <DropdownItem>
                     <NavLink href="/bioinfomatics">Bioinfomatics</NavLink>
                   </DropdownItem>
-                  {/* <DropdownItem divider />
-                  <DropdownItem>Reset</DropdownItem> */}
+
+                  <DropdownItem>
+                    <NavLink href="/gamedev">Game Development</NavLink>
+                  </DropdownItem>
+
                 </DropdownMenu>
               </UncontrolledDropdown>
             </NavItem>
+
+            <NavItem>
+              <UncontrolledDropdown nav inNavbar>
+                <DropdownToggle nav caret>
+                  CS Topics
+                </DropdownToggle>
+                <DropdownMenu end >
+
+                  {/* <DropdownItem divider /> */}
+                  <DropdownItem>
+                    <NavLink href="/sdlc">SDLC</NavLink>
+                  </DropdownItem>
+
+                  <DropdownItem>
+                    <NavLink href="/oop">OOP</NavLink>
+                  </DropdownItem>
+
+                </DropdownMenu>
+              </UncontrolledDropdown>
+            </NavItem>
+
             <NavItem>
               <NavLink href="#Footer">Contact</NavLink>
             </NavItem>
+
           </Nav>
         </Collapse>
       </Container>
