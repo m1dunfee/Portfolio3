@@ -12,10 +12,7 @@ class Gamedev extends Component {
               <h1 className=''>Game Development</h1>
               <h3 className='quote'>We stand of the shoulders of giants. - Isaac Newton</h3>
               <hr/>
-              <p>
-                  llms linguistic relativity
-                  machine learning = abstraction of data
-              </p>
+              
               <hr/>
 
             </Card>
