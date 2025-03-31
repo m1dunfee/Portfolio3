@@ -16,7 +16,7 @@ const imgStyle = {
 class Landing extends Component {
   render() {
     return (
-      <div className='card-container'>
+      <div className='card-container pt-3'>
         <Card id='Landing' className='flex-wrap card card-primary'>
           
           <h4 className='quote '> Never trust the man who claims to know everything; he’s either deceiving himself or you. </h4>

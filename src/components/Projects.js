@@ -43,7 +43,7 @@ class Projects extends Component {
       <div id="Projects" className='cards-container '>
         <div className="row">
           {projectData.map((project, index) => (
-            <div className="col-md-4 pt-4 text-center d-flex justify-content-center" key={index}>
+            <div className="col-md-4 py-3 text-center d-flex justify-content-center" key={index}>
               <Card className="card card-primary">
                 <div className="custom-slider card-img-container">
                   <img
