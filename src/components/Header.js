@@ -55,14 +55,6 @@ const Header = (props) => {
                     <NavLink href="/Cybersecurity">Cybersecurity</NavLink>
                   </DropdownItem>
 
-                  <DropdownItem>
-                    <NavLink href="/bioinfomatics">Bioinfomatics</NavLink>
-                  </DropdownItem>
-
-                  <DropdownItem>
-                    <NavLink href="/gamedev">Game Development</NavLink>
-                  </DropdownItem>
-
                 </DropdownMenu>
               </UncontrolledDropdown>
             </NavItem>
