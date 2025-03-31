@@ -43,16 +43,16 @@ const Header = (props) => {
             <NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
-                  Prospects
+                  Computer Science
                 </DropdownToggle>
                 <DropdownMenu end >
 
                   <DropdownItem>
-                    <NavLink href="/Ai">Artificial Intelligence</NavLink>
+                    <NavLink href="/prospects">Prospects</NavLink>
                   </DropdownItem>
 
                   <DropdownItem>
-                    <NavLink href="/Cybersecurity">Cybersecurity</NavLink>
+                    <NavLink href="/topics">Topics</NavLink>
                   </DropdownItem>
 
                 </DropdownMenu>
