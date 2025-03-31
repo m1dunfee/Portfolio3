@@ -68,26 +68,6 @@ const Header = (props) => {
             </NavItem>
 
             <NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  CS Topics
-                </DropdownToggle>
-                <DropdownMenu end >
-
-                  {/* <DropdownItem divider /> */}
-                  <DropdownItem>
-                    <NavLink href="/sdlc">SDLC</NavLink>
-                  </DropdownItem>
-
-                  <DropdownItem>
-                    <NavLink href="/oop">OOP</NavLink>
-                  </DropdownItem>
-
-                </DropdownMenu>
-              </UncontrolledDropdown>
-            </NavItem>
-
-            <NavItem>
               <NavLink href="#Footer">Contact</NavLink>
             </NavItem>
 
