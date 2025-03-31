@@ -3,7 +3,7 @@ import { Card} from 'reactstrap';
 
 
 
-class Ai extends Component {
+class Prospects extends Component {
     render() {
         return (
             <div className='card-container'>
@@ -39,4 +39,4 @@ class Ai extends Component {
     }
 }
 
-export default Ai;
+export default Prospects;

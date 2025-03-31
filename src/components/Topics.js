@@ -3,13 +3,13 @@ import { Card} from 'reactstrap';
 
 
 
-class Bioinfomatics extends Component {
+class Topics extends Component {
     render() {
         return (
             <div className='card-container'>
             <Card className='flex-wrap card card-primary text-center'>
               
-              <h1 className=''>Bioinfomatics</h1>
+              <h1 className=''>Topics of interest</h1>
               <h4 className='quote'>To understand life, we must first understnad the code that writes it. - Richard Feynman</h4>
               <hr/>
               <p>
@@ -23,4 +23,4 @@ class Bioinfomatics extends Component {
     }
 }
 
-export default Bioinfomatics;
+export default Topics;
