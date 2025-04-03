@@ -1,9 +1,8 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import React, { Component} from 'react';
 import { Container, Row, Col, Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap';
-import prospects from './prospectData'
 
-class ProspectsDynamicTest extends Component {
+class Prospects extends Component {
   state = {
     activeIndexes: {}, // Keeps track of the active image index for each project
   };
@@ -11,13 +10,13 @@ class ProspectsDynamicTest extends Component {
 
 
   render() {
-    const { activeIndexes } = this.state;
+    const { propsObjectList } = this.props;
 
     return (
         <>
             {/* // i might need to take "cards-container" out */}
             <Container fluid className='px-0 cards-container' id="ProspectsDynamicTest">  
-                {prospects.map((prospect, index) => (
+                {propsObjectList.map((prospect, index) => (
                     <Row key={index} className="d-flex align-items-stretch py-3">
                         {index % 2 === 0 ? (
                         <>
@@ -101,4 +100,4 @@ class ProspectsDynamicTest extends Component {
   }
 }
 
-export default ProspectsDynamicTest;
+export default Prospects;

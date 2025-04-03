@@ -37,12 +37,13 @@ class Projects extends Component {
   };
 
   render() {
+    const { projectList } = this.props;
     const { activeIndexes } = this.state;
 
     return (
       <div id="Projects" className='cards-container '>
         <div className="row">
-          {projectData.map((project, index) => (
+          {projectList.map((project, index) => (
             <div className="col-md-4 py-3 text-center d-flex justify-content-center" key={index}>
               <Card className="card card-primary">
                 <div className="custom-slider card-img-container">
