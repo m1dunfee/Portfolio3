@@ -22,6 +22,7 @@ class App extends Component {
           <Routes >
             <Route path="/" element={<Landing/>} />
             <Route path="/projects" element={<Projects projectList = {projectData}/>} />
+            {/* Prospect and topics both use the rant component, but with different data files. */}
             <Route path="/prospects" element={<Rant propsObjectList = {prospectData}/>} />
             <Route path="/topics" element={<Rant propsObjectList = {topicData}/>} />
           </Routes>
