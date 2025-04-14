@@ -23,19 +23,13 @@ const projectData = [
 },   
 {
   img: JavaLogo,
-  title: 'Artificial Intelligence',
+  title: 'Software Development Life Cycle (SDLC)',
   paragraph: [
-  'The classical philosopher Plato was skeptical of overspecialization in education. He feared students’ wisdom would suffer as the education system failed to span the elucidation space of knowledge. If you spend all your time in one area, how can you navigate and correlate that information across different disciplines?',
+    "\'So what’s the plan?\' Whenever someone asks that, you know something serious is about to happen. In software development, that same urgency applies. Projects are high-stakes, complex, and resource-intensive—and that’s where the SDLC comes in. It serves as a playbook to reduce uncertainty and bring order to an inherently unpredictable process.",
 
-  'This is a valid point—omniscience impossible for any human. Knowledge is too vast and time too finite. However, we do not need to know every curve of King Hieron II crown to find out how much gold is in it. We could spend our entire lives trying to rebuild the ‘wheels’ that turn society just to understand our current position.',
-
-  'Abstraction is the key to navigating complex systems. Today we face an ever-accelerating pace of life—from societal obligations to rapid technological advancements, and even the eventual heat death of the universe. We don’t have the luxury time to reinvent the wheel.',
-
-  'Sir Isaac Newton was right when he said, “we stand on the shoulders of giants.” By abstracting the work of those who came before us, we can scale our productivity to overcome the distortions of time’s entropy and adapt to changing circumstances.',
-
-  'On that note, LLMs and ML are important tools in the school of abstraction. They use mathematical principles to uncover relationships in data and detect common patterns. A trait often deemed utterly human ‘pattern seeking behavior’ so it’s only natural that we use AI to replicate and extend our own capabilities.',
-
-  'sub topic of interest: - LLMs linguistic relativity'
+    "This might sound like an impossible task—but the key isn’t perfection. It’s the principle of building things “just barely good enough.” That mindset helps teams work efficiently and adaptively, especially when resources are limited or stakeholder needs shift.",
+    
+    "This is why rigid, linear models like Waterfall often struggle at scale. Their strength—structure—can also be their downfall when requirements evolve. In contrast, modular or iterative approaches like Agile can self-correct mid-course, sacrificing a small piece to save the bigger picture. The SDLC gives teams a framework to choose the right model and strike a balance between structure and flexibility."
 ]
 },
 {
