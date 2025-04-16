@@ -1,10 +1,14 @@
-import JavaLogo from '../img/javaLogo.webp';
+import DesignPatterns from '../img/designPatterns.jpg';
+import OOP from '../img/oop.webp';
+import SDLC from '../img/SDLC.png';
+import LinearAlgebra from '../img/linearAlgebra.webp';
+
 
 //1. Problem → 2. Concept → 3. Application
 
-const projectData = [
+const TopicData = [
   {
-    img: JavaLogo,
+    img: DesignPatterns,
     title: 'Design Patterns',
     paragraph: [
       "Have you ever heard someone say programming is like building with Legos? It’s a fun comparison—but in truth, programming goes far beyond snapping blocks together. You can’t use Legos to analyze genetic data or record real-time environmental changes. Yet, on a syntactic level, programming has recurring structures—common building blocks—that guide the flow of logic. These structures scale into design patterns: reusable solutions to frequent problems that occur across different software domains.",
@@ -13,7 +17,7 @@ const projectData = [
     ]
   },
   {
-  img: JavaLogo,
+  img: OOP,
   title: 'Object-Oriented Programming (OOP)',
   paragraph: [
     "What’s a chair? It’s a deceptively simple question—one I first encountered in an introductory psychology class. The purpose wasn’t to define furniture, but to provoke a deeper insight: the idea of a schema—a mental model that helps us categorize and understand the world.",
@@ -24,7 +28,7 @@ const projectData = [
   ]
 },   
 {
-  img: JavaLogo,
+  img: SDLC,
   title: 'Software Development Life Cycle (SDLC)',
   paragraph: [
     "\'So what’s the plan?\' Whenever someone asks that, you know something serious is about to happen. In software development, that same urgency applies. Projects are high-stakes, complex, and resource-intensive—and that’s where the SDLC comes in. It serves as a playbook to reduce uncertainty and bring order to an inherently unpredictable process.",
@@ -35,7 +39,7 @@ const projectData = [
 ]
 },
 {
-  img: JavaLogo,
+  img: LinearAlgebra,
   title: 'Linear Algebra',
   paragraph: [
     "Welcome to the matrix—a space where everything is connected, whether through atomic bonds or abstract equations. Humans naturally seek patterns in reality, and Linear Algebra is the mathematical lens we use to find them. It gives us the tools to describe systems of relationships—between vectors, equations, or transformations—and then manipulate those systems to expose their deeper structure.",
@@ -45,6 +49,6 @@ const projectData = [
 }
 ];
 
-export default projectData;
+export default TopicData;
 
 
