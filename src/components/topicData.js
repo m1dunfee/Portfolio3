@@ -1,5 +1,7 @@
 import JavaLogo from '../img/javaLogo.webp';
 
+//1. Problem → 2. Concept → 3. Application
+
 const projectData = [
   {
     img: JavaLogo,
