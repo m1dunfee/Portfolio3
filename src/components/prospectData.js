@@ -1,20 +1,25 @@
-import JavaLogo from '../img/javaLogo.webp';
+import AI from '../img/ai.png';
+import Bioinfomatics from '../img/bioinformatics.jpg'
+import CyberSecurity from '../img/cybersecurity.webp'
+import GameDev from '../img/gameDev.webp'
 
 //1. Spark → 2. Vision → 3. Connection
 
 
 const prospectData = [
   {
-    img: JavaLogo,
+    img: AI,
     title: 'Artificial Intelligence',
     paragraph: [
       "I love Star Trek. Its premise reflects my deepest hopes for humanity—growth through exploration, cooperation, and technology. One of my favorite characters is Commander Data. His journey to understand reality and what it means to be human resonates deeply with me. As a scientist, I take comfort in facts and logic, and I see beauty in systems that model the world through reason.",
 
-      "I believe artificial intelligence has the potential to assist humanity in profound ways—especially when grounded in objectivity and statistical insight. I believe in building AI that supports human goals with increasing autonomy and insight, guided by ethical principles and practical design."
+      "I believe artificial intelligence has the potential to assist humanity in profound ways—especially when grounded in objectivity and statistical insight. I’m passionate about building AI that supports human goals with increasing autonomy and clarity, guided by ethical principles and practical design. What excites me most is not just the functionality of these systems, but the mathematics that define their behavior—the logic behind neural networks, decision trees, and optimization. They say math is the language of the universe, and I believe it. Even with our biological limits, the numbers don’t lie. They speak to something deeper, something stable.",
+      
+      "To me, building AI isn’t just about automation—it’s about learning to see the world more clearly through an objective lens, and using that insight to create systems that reflect our best potential."
     ]
   },
   {
-  img: JavaLogo,
+  img: Bioinfomatics,
   title: 'Bioinfomatics',
   paragraph: [
     "Biology was my first love in science. As a Boy Scout, I was introduced to ecology and the responsibility we have to preserve and protect life. That early fascination with ecosystems evolved into a deeper interest in genetics as I got older. Superheroes always seemed too far-fetched—but the idea of rewriting the building blocks of life to solve real problems felt within reach. At the same time, I began noticing how unequally biology plays out—how some people are born into disease, disorder, or disadvantage they never chose.",
@@ -25,7 +30,7 @@ const prospectData = [
   ]
 },   
 {
-  img: JavaLogo,
+  img: CyberSecurity,
   title: 'Cyber Security',
   paragraph: [
     "Cybersecurity doesn’t call to me in quite the same way as other areas of computer science—but I’ve come to realize I have a natural knack for it. Concepts like SQL injections, least privilege, and secure communication protocols tend to stick with me without effort. I don’t go out of my way to memorize them—they just stay top of mind.",
@@ -36,7 +41,7 @@ const prospectData = [
 ]
 },
 {
-  img: JavaLogo,
+  img: GameDev,
   title: 'Game Dev',
   paragraph: [
     "I’ve loved games ever since I first picked up Morrowind—I must’ve been around eight. Over the years, gaming became more than a pastime; it became a way of seeing systems, logic, and interaction unfold in real time. As I began learning web development, I started craving something deeper: full system design, dynamic interactions, and object behaviors that go beyond static interfaces.",
