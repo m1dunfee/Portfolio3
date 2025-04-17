@@ -104,6 +104,9 @@ a {
     border-color: $color-text !important;
   }
 }
+.navbar {
+  border-bottom: 1px solid $color-accent; // Optional design cue
+}
 
 // Card Styling
 .card-primary {
@@ -237,7 +240,7 @@ img.responsive-img {
   color: $color-text !important;
   width: 100%;
   padding: 20px 0;
-  border-top: 2px solid $color-accent; // Optional design cue
+  border-top: 1px solid $color-accent; // Optional design cue
   text-align: center;
 }
 
