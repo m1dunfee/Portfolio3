@@ -1,14 +1,9 @@
-import AI from '../img/ai.png';
-import Bioinfomatics from '../img/bioinformatics.jpg'
-import CyberSecurity from '../img/cybersecurity.webp'
-import GameDev from '../img/gameDev.webp'
-
 //1. Spark → 2. Vision → 3. Connection
 
 
 const prospectData = [
   {
-    img: AI,
+    img: '/ai.png',
     title: 'Artificial Intelligence',
     paragraph: [
       "I love Star Trek. Its premise reflects my deepest hopes for humanity—growth through exploration, cooperation, and technology. One of my favorite characters is Commander Data. His journey to understand reality and what it means to be human resonates deeply with me. As a scientist, I take comfort in facts and logic, and I see beauty in systems that model the world through reason.",
@@ -19,7 +14,7 @@ const prospectData = [
     ]
   },
   {
-  img: Bioinfomatics,
+  img: '/bioinformatics.jpg',
   title: 'Bioinfomatics',
   paragraph: [
     "Biology was my first love in science. As a Boy Scout, I was introduced to ecology and the responsibility we have to preserve and protect life. That early fascination with ecosystems evolved into a deeper interest in genetics as I got older. Superheroes always seemed too far-fetched—but the idea of rewriting the building blocks of life to solve real problems felt within reach. At the same time, I began noticing how unequally biology plays out—how some people are born into disease, disorder, or disadvantage they never chose.",
@@ -30,7 +25,7 @@ const prospectData = [
   ]
 },   
 {
-  img: CyberSecurity,
+  img: 'cybersecurity.webp',
   title: 'Cyber Security',
   paragraph: [
     "Cybersecurity doesn’t call to me in quite the same way as other areas of computer science—but I’ve come to realize I have a natural knack for it. Concepts like SQL injections, least privilege, and secure communication protocols tend to stick with me without effort. I don’t go out of my way to memorize them—they just stay top of mind.",
@@ -41,7 +36,7 @@ const prospectData = [
 ]
 },
 {
-  img: GameDev,
+  img: '/gameDev.webp',
   title: 'Game Dev',
   paragraph: [
     "I’ve loved games ever since I first picked up Morrowind—I must’ve been around eight. Over the years, gaming became more than a pastime; it became a way of seeing systems, logic, and interaction unfold in real time. As I began learning web development, I started craving something deeper: full system design, dynamic interactions, and object behaviors that go beyond static interfaces.",
