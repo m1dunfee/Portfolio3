@@ -15,10 +15,11 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 class App extends Component {
   render(){
     return (
-      <div className='cd-flex background-section p-4 pt-5' >
+      <div className='cd-flex background-section' >
         <Header/>
 
-        <Router >
+        <div className=" p-4 pt-5">
+        <Router>
           <Routes >
             <Route path="/" element={<Landing/>} />
             <Route path="/projects" element={<Projects projectList = {projectData}/>} />
@@ -27,7 +28,7 @@ class App extends Component {
             <Route path="/topics" element={<Rant propsObjectList = {topicData}/>} />
           </Routes>
         </Router>
-
+        </div>
         <Footer/>
       </div>
       
