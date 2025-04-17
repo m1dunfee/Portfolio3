@@ -22,6 +22,7 @@ body, .App {
   background-color: $color-background !important;
   color: $color-text !important;
   font-family: 'Roboto', sans-serif;
+  
 }
 
 // Global Scroll and Header Settings
@@ -234,6 +235,9 @@ img.responsive-img {
 #Footer, .footer, .footer-dark {
   background-color: $color-background !important;
   color: $color-text !important;
-  padding: 20px;
+  width: 100%;
+  padding: 20px 0;
+  border-top: 2px solid $color-accent; // Optional design cue
   text-align: center;
 }
+
