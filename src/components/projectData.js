@@ -29,7 +29,7 @@ const projectData = [
     url: 'https://github.com/m1dunfee/RSA-Encryption',
   },
   {
-    img: [PythonLogo, Nucamp],
+    img: [PythonLogo],
     title: 'Prismatica',
     category: 'Python',
     details: 'LLM / IoT project.',
