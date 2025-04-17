@@ -13,7 +13,7 @@ class Footer extends Component {
           </div>  
 
           <div className='row p-3'>  
-            <Button outline color="primary">Triditional Resume</Button> 
+            <Button outline color="primary"   href="/Resume.pdf" target="_blank" rel="noopener noreferrer">Download PDF Resume</Button> 
           </div>
 
 
