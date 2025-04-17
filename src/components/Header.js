@@ -12,8 +12,7 @@ import {
   DropdownItem,
   DropdownMenu,
   UncontrolledDropdown,
-  Row,
-  Col,  
+
 } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -60,7 +59,9 @@ const Header = (props) => {
             </NavItem>
 
             <NavItem>
-              <NavLink href="#Footer">Contact</NavLink>
+              <NavLink href="#Footer" onClick={() => props.onFooterClick?.()}>
+                Contact / Resume
+              </NavLink>
             </NavItem>
 
           </Nav>

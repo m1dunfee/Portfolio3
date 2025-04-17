@@ -7,10 +7,10 @@ class Footer extends Component {
   render() {
     return (
       <Container fluid id="Footer" className="px-0 mx-0">
-        <Card className="card card-primary text-center w-100 px-0 mx-0 border-0 rounded-0">
+<Card className={`card card-primary text-center w-100 px-0 mx-0 border-0 rounded-0 ${this.props.pulse ? 'pulse-fade' : ''}`}>
       
           <Row className="w-100 m-0 py-2">
-            <Col>
+            <Col sm>
               <FontAwesomeIcon icon={faFilePdf} className='fa-2x'/>
               <h4>Resume?</h4>
               <hr />
@@ -18,19 +18,19 @@ class Footer extends Component {
                 Download PDF Resume
               </Button>
             </Col>
-            <Col>
+            <Col sm>
               <FontAwesomeIcon icon={faPhoneSquareAlt} className='fa-2x'/>
               <h4>Phone</h4>
               <hr />
               <a href="tel:763-393-7899">(763)-393-7899</a>
             </Col>
-            <Col>
+            <Col sm>
               <FontAwesomeIcon icon={faEnvelope} className='fa-2x'/>
               <h4>Email</h4>
               <hr />
               <a href="mailto:Matthew.dunfee42@gmail.com">matthew.dunfee42@gmail.com</a>
             </Col>
-            <Col>
+            <Col sm>
               <FontAwesomeIcon icon={faMapMarkerAlt} className='fa-2x'/>
               <h4>Location</h4>
               <hr />

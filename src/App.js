@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import Header from './components/Header';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
@@ -13,25 +13,40 @@ import topicData from './components/topicData';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 class App extends Component {
-  render(){
-    return (
-      <div className='cd-flex background-section' >
-        <Header/>
+  constructor(props) {
+    super(props);
+    this.state = {
+      pulseFooter: false
+    };
+  }
 
-        <div className=" p-4 pt-5">
-        <Router>
-          <Routes >
-            <Route path="/" element={<Landing/>} />
-            <Route path="/projects" element={<Projects projectList = {projectData}/>} />
-            {/* Prospect and topics both use the rant component, but with different data files. */}
-            <Route path="/prospects" element={<Rant propsObjectList = {prospectData}/>} />
-            <Route path="/topics" element={<Rant propsObjectList = {topicData}/>} />
-          </Routes>
-        </Router>
+  triggerPulse = () => {
+    this.setState({ pulseFooter: true });
+
+    setTimeout(() => {
+      this.setState({ pulseFooter: false });
+    }, 600); // 600ms or whatever matches your animation
+  };
+
+
+  render() {
+    return (
+      <div className='cd-flex background-section'>
+        <Header onFooterClick={this.triggerPulse} />
+
+        <div className='p-4 pt-5'>
+          <Router>
+            <Routes>
+              <Route path="/" element={<Landing />} />
+              <Route path="/projects" element={<Projects projectList={projectData} />} />
+              <Route path="/prospects" element={<Rant propsObjectList={prospectData} />} />
+              <Route path="/topics" element={<Rant propsObjectList={topicData} />} />
+            </Routes>
+          </Router>
         </div>
-        <Footer/>
+
+        <Footer pulse={this.state.pulseFooter} />
       </div>
-      
     );
   }
 }
