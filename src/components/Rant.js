@@ -2,7 +2,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import React, { Component} from 'react';
 import { Container, Row, Col, Card } from 'reactstrap';
 
-class Prospects extends Component {
+class Rant extends Component {
 
   render() {
     const { propsObjectList } = this.props;
@@ -32,7 +32,7 @@ class Prospects extends Component {
                         src={props.img}
                         alt={`subject flavor image`}
                         style={{ width: '100%' }}
-                        className='card-img'
+                        className='card-img responsive-img'
                     />
                 </Card>
             </Col>
@@ -64,4 +64,4 @@ class Prospects extends Component {
   }
 }
 
-export default Prospects;
+export default Rant;
