@@ -26,8 +26,20 @@ class Landing extends Component {
               <div className='container'>
                 <div className="row">
                   <h4 className='text-center' >Summary:</h4>
-                  <p className='text-center'>
-                    Nearly complete with a B.S. in Computer Science. Certifacated fullstack software engineering. Two years as a software engineer for a finaical company. A year of testing in game development. A year of Java development. A year intructing at software bootcamps.        
+                  <p>
+                    I'm Matthew Dunfee — a computer scientist with a foundation built through hands-on industry experience and a vision aimed toward AI, systems design, and problem-solving at scale.
+                  </p>
+                  <p>
+                    In the past, I’ve worn a lot of hats: game tester, Java developer, MERN consultant, full-stack bootcamp instructor. Each role sharpened a different edge — from catching bugs at Activision to supporting Enterprise software, to mentoring students as they launched their first solo projects. I’ve worked across the stack and across environments — Oracle, Node, React, Pick Basic, Spring Boot — always focused on learning the systems beneath the syntax.
+                  </p>
+                  <p>
+                    Today, I’m nearing completion of my B.S. in Computer Science with a 3.7 GPA, while continuing to grow as a developer. I value clean architecture, strategic debugging, and the ability to move between abstraction and implementation. I see programming as both an art and a craft — one that requires discipline, curiosity, and clarity of thought.
+                  </p>
+                  <p>
+                    Looking ahead, I’m working toward building adaptive systems that combine IoT and AI — tools that aren’t just responsive, but anticipatory. I’m especially interested in the ethical and structural design of software: how we build systems that respect autonomy, privacy, and purpose. My current projects reflect that ambition.
+                  </p>
+                  <p>
+                    This site is a window into that journey — part portfolio, part lab notebook, and part blueprint for what’s next.        
                   </p>
                 </div>
               </div>
