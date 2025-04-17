@@ -1,25 +1,32 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import React, { Component } from 'react';
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button, Fade } from 'reactstrap';
+import {
+  Card,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+  CardText,
+  Button,
+  Fade,
+  Container,
+  Row,
+  Col
+} from 'reactstrap';
 import projectData from './projectData';
 
 class Projects extends Component {
   state = {
-    activeIndexes: {},
-    fadeStates: {}, // This will track `in` state for each card/image
+    activeIndexes: {},   // Tracks which image is active for each card
+    fadeStates: {},      // Controls whether the image is fading in/out
   };
-  
 
-  // Method to go to the next image for a specific project
+  // Handles cycling to the next image in a project's image array
   nextImage = (index) => {
     this.setState((prevState) => {
       const currentIndex = prevState.activeIndexes[index] || 0;
       const imgCount = projectData[index].img.length;
       const nextIndex = (currentIndex + 1) % imgCount;
-  
-      // Flip the fade state (true -> false -> true)
-      const currentFade = prevState.fadeStates[index] ?? true;
-  
+
       return {
         activeIndexes: {
           ...prevState.activeIndexes,
@@ -27,45 +34,40 @@ class Projects extends Component {
         },
         fadeStates: {
           ...prevState.fadeStates,
-          [index]: false, // temporarily disable fade
+          [index]: false, // Start fade-out
         },
       };
     }, () => {
-      // Turn fade back on after a short delay to retrigger animation
+      // Trigger a brief reset so fade-in can re-apply
       setTimeout(() => {
         this.setState((prevState) => ({
           fadeStates: {
             ...prevState.fadeStates,
-            [index]: true,
+            [index]: true, // Fade back in
           },
         }));
-      }, 20); // delay can be short — just enough for React to notice the state change
+      }, 20); // Just enough delay for React to detect the state flip
     });
   };
-  
 
-  // Method to go to the previous image for a specific project
+  // Handles cycling to the previous image
   previousImage = (index) => {
     this.setState((prevState) => {
       const currentIndex = prevState.activeIndexes[index] || 0;
       const imgCount = projectData[index].img.length;
-      const nextIndex = (currentIndex - 1 + imgCount) % imgCount; // only difference in nextImage and previousImage
-  
-      // Flip the fade state (true -> false -> true)
-      const currentFade = prevState.fadeStates[index] ?? true;
-  
+      const prevIndex = (currentIndex - 1 + imgCount) % imgCount;
+
       return {
         activeIndexes: {
           ...prevState.activeIndexes,
-          [index]: nextIndex,
+          [index]: prevIndex,
         },
         fadeStates: {
           ...prevState.fadeStates,
-          [index]: false, // temporarily disable fade
+          [index]: false,
         },
       };
     }, () => {
-      // Turn fade back on after a short delay to retrigger animation
       setTimeout(() => {
         this.setState((prevState) => ({
           fadeStates: {
@@ -73,7 +75,7 @@ class Projects extends Component {
             [index]: true,
           },
         }));
-      }, 20); // delay can be short — just enough for React to notice the state change
+      }, 20);
     });
   };
 
@@ -82,44 +84,64 @@ class Projects extends Component {
     const { activeIndexes, fadeStates } = this.state;
 
     return (
-      <div id="Projects" className='cards-container '>
-        <div className="row">
+      <Container fluid id="Projects" className="cards-container">
+        <Row>
           {projectList.map((project, index) => (
-            <div className="col-md-4 py-3 text-center d-flex justify-content-center" key={index}>
-              <Card className="card card-primary">
+            <Col md="4" className="py-3 d-flex justify-content-center" key={index}>
+              <Card className="card-primary w-100">
+                
+                {/* Image Slider with Fade Transition */}
                 <div className="custom-slider card-img-container">
                   <Fade in={fadeStates[index] ?? true}>
                     <img
                       src={project.img[activeIndexes[index] || 0]}
                       alt={`Slide ${activeIndexes[index] || 0}`}
                       style={{ width: '100%', maxHeight: '200px', objectFit: 'contain' }}
-                      className='img-fluid'
+                      className="img-fluid"
                     />
                   </Fade>
+
+                  {/* Navigation Buttons */}
                   <div className="slider-controls">
-                    <button className="slider-button" onClick={() => this.previousImage(index)}>
+                    <Button
+                      color="link"
+                      className="slider-button p-0"
+                      onClick={() => this.previousImage(index)}
+                    >
                       <i className="fas fa-chevron-left"></i>
-                    </button>
-                    <button className="slider-button" onClick={() => this.nextImage(index)}>
+                    </Button>
+                    <Button
+                      color="link"
+                      className="slider-button p-0"
+                      onClick={() => this.nextImage(index)}
+                    >
                       <i className="fas fa-chevron-right"></i>
-                    </button>
+                    </Button>
                   </div>
                 </div>
+
+                {/* Text Content */}
                 <CardBody>
                   <CardTitle tag="h5">{project.title}</CardTitle>
                   <CardSubtitle tag="h6" className="mb-2 text-muted">
                     {project.category}
                   </CardSubtitle>
                   <CardText>{project.details}</CardText>
-                  <Button outline color="primary" href={project.url} target='_blank' rel="noopener noreferrer">
+                  <Button
+                    outline
+                    color="primary"
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Visit Project
                   </Button>
                 </CardBody>
               </Card>
-            </div>
+            </Col>
           ))}
-        </div>
-      </div>
+        </Row>
+      </Container>
     );
   }
 }
