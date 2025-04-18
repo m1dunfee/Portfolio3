@@ -13,10 +13,6 @@ $primary: $color-accent !default;
 $body-bg: $color-background !default;
 $body-color: $color-text !default;
 
-// Import Bootstrap after setting custom variables
-@import "~bootstrap/scss/bootstrap";
-
-
 // Global Background and Font Settings
 body, .App {
   background-color: $color-background !important;
@@ -31,8 +27,6 @@ html {
   // padding-top: 35px;
   scroll-padding-top: 75px;
 }
-
-
 
 // Header Element Colors
 h1, h2, h3, h4, h5, h6 {
@@ -254,3 +248,6 @@ img.responsive-img {
 .pulse-fade {
   animation: pulseFade 0.6s ease-in-out;
 }
+
+// Import Bootstrap after setting custom variables
+@import "~bootstrap/scss/bootstrap";

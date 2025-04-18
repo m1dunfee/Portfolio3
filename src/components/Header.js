@@ -14,7 +14,6 @@ import {
   UncontrolledDropdown,
 
 } from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
