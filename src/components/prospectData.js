@@ -14,7 +14,7 @@ const prospectData = [
     ]
   },
   {
-  img: '/bioinformatics.jpg',
+  img: '/bioinfomatics.jpg',
   title: 'Bioinfomatics',
   paragraph: [
     "Biology was my first love in science. As a Boy Scout, I was introduced to ecology and the responsibility we have to preserve and protect life. That early fascination with ecosystems evolved into a deeper interest in genetics as I got older. Superheroes always seemed too far-fetched—but the idea of rewriting the building blocks of life to solve real problems felt within reach. At the same time, I began noticing how unequally biology plays out—how some people are born into disease, disorder, or disadvantage they never chose.",
@@ -25,7 +25,7 @@ const prospectData = [
   ]
 },   
 {
-  img: 'cybersecurity.webp',
+  img: 'cybersecurity.avif',
   title: 'Cyber Security',
   paragraph: [
     "Cybersecurity doesn’t call to me in quite the same way as other areas of computer science—but I’ve come to realize I have a natural knack for it. Concepts like SQL injections, least privilege, and secure communication protocols tend to stick with me without effort. I don’t go out of my way to memorize them—they just stay top of mind.",
