@@ -36,7 +36,7 @@ const prospectData = [
 ]
 },
 {
-  img: '/gameDev.webp',
+  img: '/gameDev.jpg',
   title: 'Game Dev',
   paragraph: [
     "I’ve loved games ever since I first picked up Morrowind—I must’ve been around eight. Over the years, gaming became more than a pastime; it became a way of seeing systems, logic, and interaction unfold in real time. As I began learning web development, I started craving something deeper: full system design, dynamic interactions, and object behaviors that go beyond static interfaces.",

@@ -2,7 +2,7 @@
 
 const TopicData = [
   {
-    img: '/designPatterns.jpeg',
+    img: '/designPatterns.avif',
     title: 'Design Patterns',
     paragraph: [
       "Have you ever heard someone say programming is like building with Legos? It’s a fun comparison—but in truth, programming goes far beyond snapping blocks together. You can’t use Legos to analyze genetic data or record real-time environmental changes. Yet, on a syntactic level, programming has recurring structures—common building blocks—that guide the flow of logic. These structures scale into design patterns: reusable solutions to frequent problems that occur across different software domains.",
