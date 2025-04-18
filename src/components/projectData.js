@@ -1,10 +1,10 @@
-import ReactLogo from '../img/reactLogo.png';
-import Nucamp from '../img/Nucamp.png';
-import JavaLogo from '../img/javaLogo.webp';
-import Owasp from '../img/OWASP.png';
-import CppLogo from '../img/cpp_logo.png';
-import CisaLogo from '../img/CISA_Logo.png';
-import PythonLogo from '../img/pythonLogo.png'
+const ReactLogo = '/reactLogo.png';
+const Nucamp = '/Nucamp.png';
+const JavaLogo = '/javaLogo.webp';
+const Owasp = '/OWASP.png';
+const CppLogo = '/cpp_logo.png';
+const CisaLogo = '/CISA_Logo.png';
+const PythonLogo = '/pythonLogo.png'
 
 const projectData = [
   {
@@ -29,7 +29,7 @@ const projectData = [
     url: 'https://github.com/m1dunfee/RSA-Encryption',
   },
   {
-    img: [PythonLogo, Nucamp],
+    img: [PythonLogo],
     title: 'Prismatica',
     category: 'Python',
     details: 'LLM / IoT project.',

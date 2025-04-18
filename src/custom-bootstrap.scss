@@ -22,6 +22,7 @@ body, .App {
   background-color: $color-background !important;
   color: $color-text !important;
   font-family: 'Roboto', sans-serif;
+  
 }
 
 // Global Scroll and Header Settings
@@ -104,9 +105,13 @@ a {
   }
 }
 
+.navbar {
+  border-bottom: 1px solid $color-accent; // Optional design cue
+}
+
 // Card Styling
 .card-primary {
-  color: $primary !important; // Red text
+  // color: $primary !important; // Red text
   border-color: $primary !important; // Red border
   background-color: $color-background !important; // Transparent by default
 }
@@ -141,6 +146,12 @@ a {
   object-fit: contain;    /* Shrinks larger images without cropping */
 }
 
+img.responsive-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 
 // Quote Styling
 .quote {
@@ -196,7 +207,7 @@ a {
 }
 
 .background-section {
-  background-image: url('./img/wallpaper.png');
+  background-image: url('./assets/wallpaper.png');
   background-size: auto; /* Allows natural tiling */
   background-position: top left; /* Ensures it starts from the top left */
   background-repeat: repeat; /* Repeats on both x and y axes */
@@ -204,13 +215,12 @@ a {
   width: 100%; /* Ensures it spans the full width */
 }
 
-
-
 // Header Styling
 #Header {
   background-color: $color-background !important;
   color: $color-text !important;
   padding: 0; // Remove extra padding
+  
 }
 
 #Header .profile-text {
@@ -229,6 +239,18 @@ a {
 #Footer, .footer, .footer-dark {
   background-color: $color-background !important;
   color: $color-text !important;
-  padding: 20px;
+  width: 100%;
+  padding: 20px 0;
+  border-top: 1px solid $color-accent; // Optional design cue
   text-align: center;
+}
+
+@keyframes pulseFade {
+  0% { box-shadow: 0 0 0 rgba(229, 57, 53, 0); }
+  50% { box-shadow: 0 0 20px 10px rgba(229, 57, 53, 0.3); }
+  100% { box-shadow: 0 0 0 rgba(229, 57, 53, 0); }
+}
+
+.pulse-fade {
+  animation: pulseFade 0.6s ease-in-out;
 }

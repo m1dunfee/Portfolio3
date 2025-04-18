@@ -7,11 +7,12 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
+  Container,
   DropdownToggle,
-  DropdownMenu,
   DropdownItem,
-  Container
+  DropdownMenu,
+  UncontrolledDropdown,
+
 } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -30,31 +31,40 @@ const Header = (props) => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ms-auto" navbar>
+
             <NavItem>
-              <NavLink href="#AboutMe">Bio</NavLink>
+              <NavLink href="/">Home</NavLink>
             </NavItem>
+
             <NavItem>
-              <NavLink href="#Services">Services</NavLink>
+              <NavLink href="/Projects">Projects</NavLink>
             </NavItem>
+
             <NavItem>
-              <NavLink href="#Projects">Projects</NavLink>
+              <UncontrolledDropdown nav inNavbar>
+                <DropdownToggle nav caret>
+                  Computer Science
+                </DropdownToggle>
+                <DropdownMenu end >
+
+                  <DropdownItem>
+                    <NavLink href="/prospects">Prospects</NavLink>
+                  </DropdownItem>
+
+                  <DropdownItem>
+                    <NavLink href="/topics">Topics</NavLink>
+                  </DropdownItem>
+
+                </DropdownMenu>
+              </UncontrolledDropdown>
             </NavItem>
+
             <NavItem>
-              <NavLink href="#Footer">Contact</NavLink>
+              <NavLink href="#Footer" onClick={() => props.onFooterClick?.()}>
+                Contact / Resume
+              </NavLink>
             </NavItem>
-            {/* Uncomment for dropdown options
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                Options
-              </DropdownToggle>
-              <DropdownMenu end>
-                <DropdownItem>Option 1</DropdownItem>
-                <DropdownItem>Option 2</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>Reset</DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-            */}
+
           </Nav>
         </Collapse>
       </Container>
