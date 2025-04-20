@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Progress, Media, Card } from 'reactstrap';
+import { Media, Card } from 'reactstrap';
 
 const imgStyle = {
   width: '100%',           // Makes the image responsive to the container's width
