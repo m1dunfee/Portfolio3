@@ -34,7 +34,7 @@ class App extends Component {
       <div className='cd-flex background-section'>
         <Header onFooterClick={this.triggerPulse} />
 
-        <div className='p-4 pt-5'>
+        <div className='App-content p-3 pt-2'>
           <Router>
             <Routes>
               <Route path="/" element={<Landing />} />
