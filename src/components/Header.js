@@ -22,7 +22,7 @@ const Header = (props) => {
 
   return (
     // add the card.primary effect to the nav
-    <Navbar id="Header" expand="md" className="fixed-top custom-nav"> 
+    <Navbar id="Header" expand="md" className="custom-nav">
       <Container>
         <NavbarBrand href="/">
           <h3 className="my-0">Portfolio</h3>

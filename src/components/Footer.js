@@ -6,7 +6,7 @@ import { Button, Col, Container, Row} from 'reactstrap';
 class Footer extends Component {
   render() {
     return (
-      <Container fluid id="Footer" className="px-0 mx-0">
+      <Container fluid id="Footer" className="footer px-0 mx-0">
         <Row className={`w-100 m-0 py-2 text-center w-100 px-0 mx-0 border-0 rounded-0 ${this.props.pulse ? 'pulse-fade' : ''}`}>
           <Col sm>
             <FontAwesomeIcon icon={faFilePdf} className='fa-2x'/>

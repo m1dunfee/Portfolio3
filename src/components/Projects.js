@@ -84,7 +84,7 @@ class Projects extends Component {
     const { activeIndexes, fadeStates } = this.state;
 
     return (
-      <Container fluid id="Projects" className="cards-container">
+      <Container fluid id="Projects" className="cards-img-container">
         <Row>
           {projectList.map((project, index) => (
             <Col md="4" className="py-3 d-flex justify-content-center" key={index}>

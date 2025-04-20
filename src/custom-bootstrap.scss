@@ -3,28 +3,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@700&family=Merriweather:wght@700&display=swap");
 
 // Theme Variables
-$color-background: #000000 !default; // Black
-$color-text: #ffffff !default; // White
-$color-accent: #e53935 !default; // Bold Red
-$color-muted-background: #333333 !default; // Dark Gray for Nav
+$color-background: #F5F5F5 !default;
+$color-text:       #000000 !default;
+$color-accent:     #000000 !default;
+$color-hover:      #E2E2E2 !default;
+$bg-image:         url('./assets/wallpaper.jpg') !default;
 
 // Override Bootstrap Defaults
-$primary: $color-accent !default;
-$body-bg: $color-background !default;
-$body-color: $color-text !default;
+$primary:    $color-accent !default;
+$body-bg:    $color-background !default;
+$body-color: $color-text       !default;
 
 // Global Background and Font Settings
 body, .App {
+  // Static, full-viewport wallpaper
+  background:       $bg-image center center / cover no-repeat fixed;
   background-color: $color-background !important;
-  color: $color-text !important;
-  font-family: 'Roboto', sans-serif;
-  
+  color:            $color-text       !important;
+  font-family:      'Roboto', sans-serif;
 }
 
-// Global Scroll and Header Settings
+// Global Scroll Settings
 html {
   scroll-behavior: smooth;
-  // padding-top: 35px;
   scroll-padding-top: 75px;
 }
 
@@ -33,27 +34,26 @@ h1, h2, h3, h4, h5, h6 {
   color: $color-text !important;
   font-family: 'Roboto', sans-serif;
 }
-// Global Link Styling
 
-// Global Link Styling with !important
+// Global Link Styling
 a {
-  color: $color-accent !important; // Set link color to red
-  text-decoration: none !important; // Remove underline (optional)
+  color: $color-accent !important;
+  text-decoration: none !important;
 
   &:hover {
-    color: darken($color-accent, 10%) !important; // Darker red on hover
-    text-decoration: underline !important; // Underline on hover (optional)
+    color: darken($color-hover, 10%) !important;
+    text-decoration: underline !important;
   }
 }
 
 /* Container styling */
 .project-cards-container {
   display: flex;
-  justify-content: center;   /* Centers the cards horizontally */
-  align-items: center;       /* Centers the cards vertically */
-  flex-wrap: wrap;           /* Allows the cards to wrap onto a new row if needed */
-  gap: 16px;                 /* Adds space between each card */
-  padding: 20px;             /* Optional padding around the container */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 20px;
 }
 
 // Primary Color Styling for Bootstrap Components
@@ -63,54 +63,57 @@ a {
 .btn-primary,
 .btn-outline-primary,
 .progress-bar {
-  color: $primary !important;
+  color:            $primary !important;
   background-color: $primary !important;
-  border-color: $primary !important;
+  border-color:     $primary !important;
 }
 
-// Outline Button Styling for Aesthetic
+// Outline Button Styling
 .btn-outline-primary {
-  color: $primary !important; // Red text
-  border-color: $primary !important; // Red border
-  background-color: transparent !important; // Transparent by default
+  color:      $primary      !important;
+  border:     1px solid $primary !important;
+  background: transparent          !important;
 
   &:hover {
-    background-color: $primary !important; // Red background on hover
-    color: $color-text !important; // White text on hover
+    background-color: $color-hover !important;
+    color:            $color-text  !important;
   }
 }
 
 // Navbar Styling
-.custom-nav, .navbar, .navbar-light, .navbar-collapse, .navbar-nav {
-  background-color: $color-background !important; // Black background
-  color: $color-text !important; // White text
+.custom-nav,
+.navbar,
+.navbar-light,
+.navbar-collapse,
+.navbar-nav {
+  background-color: $color-background !important;
+  color:            $color-text       !important;
 
-  .navbar-nav .nav-link {
+  .nav-link {
     color: $color-text !important;
 
     &:hover {
-      color: $color-accent !important;
+      background-color: $color-hover !important;
+      color:            $color-text  !important;
     }
   }
 
   .navbar-toggler {
-    color: $color-text !important;
-    border-color: $color-text !important;
+    color:       $color-text !important;
+    border-color:$color-text !important;
   }
 }
 
 .navbar {
-  border-bottom: 1px solid $color-accent; // Optional design cue
+  border-bottom: 1px solid $color-accent;
 }
 
 // Card Styling
 .card-primary {
-  // color: $primary !important; // Red text
-  border-color: $primary !important; // Red border
-  background-color: $color-background !important; // Transparent by default
+  border-color:     $primary          !important;
+  background-color: $color-background !important;
 }
 
-/* Card styling */
 .card {
   width: 100%;
   margin: 0 auto;
@@ -119,25 +122,24 @@ a {
   flex-direction: column;
   justify-content: space-between;
   padding: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  max-width: none; /* Remove the max-width */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* Image container styling */
+// Image container styling
 .card-img-container {
   width: 100%;
-  height: 200px;          /* Fixed height for image container */
+  height: 200px;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Image styling */
+// Image styling
 .card-img {
-  max-width: 100%;        /* Scales the image to fit the width of the container */
-  max-height: 100%;       /* Scales the image to fit the height of the container */
-  object-fit: contain;    /* Shrinks larger images without cropping */
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 img.responsive-img {
@@ -165,15 +167,10 @@ img.responsive-img {
   }
 }
 
-/* Add this CSS to your stylesheet or in a style block */
+// Slider Controls
 .custom-slider {
   position: relative;
   text-align: center;
-}
-
-.custom-slider img {
-  width: 100%;
-  border-radius: 5px;
 }
 
 .slider-controls {
@@ -186,7 +183,7 @@ img.responsive-img {
 }
 
 .slider-button {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0,0,0,0.5);
   color: white;
   border: none;
   padding: 10px;
@@ -197,57 +194,33 @@ img.responsive-img {
 }
 
 .slider-button:hover {
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-.background-section {
-  background-image: url('./assets/wallpaper.png');
-  background-size: auto; /* Allows natural tiling */
-  background-position: top left; /* Ensures it starts from the top left */
-  background-repeat: repeat; /* Repeats on both x and y axes */
-  min-height: 100vh; /* Ensures it covers the full viewport height */
-  width: 100%; /* Ensures it spans the full width */
-}
-
-// Header Styling
-#Header {
-  background-color: $color-background !important;
-  color: $color-text !important;
-  padding: 0; // Remove extra padding
-  
-}
-
-#Header .profile-text {
-  color: $color-text !important;
-}
-
-// Specific Button Styling
-#jumbotronButton {
-  margin: auto !important;
-  background-color: $color-accent !important;
-  color: $color-text !important;
-  border: none !important;
+  background-color: rgba(0,0,0,0.7);
 }
 
 // Footer Styling
-#Footer, .footer, .footer-dark {
+#Footer,
+.footer,
+.footer-dark {
   background-color: $color-background !important;
-  color: $color-text !important;
-  width: 100%;
-  padding: 20px 0;
-  border-top: 1px solid $color-accent; // Optional design cue
-  text-align: center;
+  color:            $color-text       !important;
+  width:            100%;
+  padding:          20px 0;
+  border-top:       1px solid $color-accent;
+  text-align:       center;
 }
 
 @keyframes pulseFade {
-  0% { box-shadow: 0 0 0 rgba(229, 57, 53, 0); }
-  50% { box-shadow: 0 0 20px 10px rgba(229, 57, 53, 0.3); }
-  100% { box-shadow: 0 0 0 rgba(229, 57, 53, 0); }
+  0% { box-shadow: 0 0 0 rgba(229,57,53,0); }
+  50% { box-shadow: 0 0 20px 10px rgba(229,57,53,0.3); }
+  100% { box-shadow: 0 0 0 rgba(229,57,53,0); }
 }
 
 .pulse-fade {
   animation: pulseFade 0.6s ease-in-out;
 }
 
-// Import Bootstrap after setting custom variables
+// Remove tiled background-section rule
+// .background-section { display: none !important; }
+
+// Import Bootstrap after custom variables
 @import "~bootstrap/scss/bootstrap";
