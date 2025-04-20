@@ -40,7 +40,7 @@ const projectData = [
     title: 'Nucamp',
     category: 'React',
     details: 'Demo site used for teaching React.',
-    url: 'https://nucamp-react-demo-site.herokuapp.com/',
+    url: 'https://github.com/m1dunfee/Nucamp-react-demo-site',
   },
   {
     img: [ReactLogo],
