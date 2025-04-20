@@ -36,10 +36,7 @@ class Landing extends Component {
                     Today, I’m nearing completion of my B.S. in Computer Science with a 3.7 GPA, while continuing to grow as a developer. I value clean architecture, strategic debugging, and the ability to move between abstraction and implementation. I see programming as both an art and a craft — one that requires discipline, curiosity, and clarity of thought.
                   </p>
                   <p>
-                    Looking ahead, I’m working toward building adaptive systems that combine IoT and AI — tools that aren’t just responsive, but anticipatory. I’m especially interested in the ethical and structural design of software: how we build systems that respect autonomy, privacy, and purpose. My current projects reflect that ambition.
-                  </p>
-                  <p>
-                    This site is a window into that journey — part portfolio, part lab notebook, and part blueprint for what’s next.        
+                    Looking ahead, I’m working toward building systems that combine IoT and AI — tools that aren’t just responsive, but adaptive. I’m especially interested in the ethical and structural design of software: how we build systems that respect autonomy, privacy, and purpose. My current projects reflect that ambition.
                   </p>
                 </div>
               </div>
