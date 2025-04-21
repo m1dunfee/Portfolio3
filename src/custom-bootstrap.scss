@@ -224,3 +224,11 @@ img.responsive-img {
 
 // Import Bootstrap after custom variables
 @import "~bootstrap/scss/bootstrap";
+
+// Override default active-background for nav links and dropdown items\ n.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:active,
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: transparent !important;
+  color:             $color-accent   !important;
+}

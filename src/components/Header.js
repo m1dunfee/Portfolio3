@@ -1,65 +1,78 @@
 import React, { useState } from 'react';
+import { NavLink as RRNavLink } from 'react-router-dom';
+
 import {
-  Collapse,
   Navbar,
-  NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
   NavLink,
-  Container,
-  DropdownToggle,
-  DropdownItem,
-  DropdownMenu,
   UncontrolledDropdown,
-
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  Container,
+  Collapse,
+  NavbarToggler,
+  NavbarBrand
 } from 'reactstrap';
 
-const Header = (props) => {
+const Header = props => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => setIsOpen(!isOpen);
-
   return (
-    // add the card.primary effect to the nav
-    <Navbar id="Header" expand="md" className="custom-nav">
+    <Navbar light color="light" expand="md" className="custom-nav">
       <Container>
-        <NavbarBrand href="/">
+        <NavbarBrand tag={RRNavLink} to="/">
           <h3 className="my-0">Portfolio</h3>
         </NavbarBrand>
-        <NavbarToggler onClick={toggle} />
+        <NavbarToggler onClick={() => setIsOpen(!isOpen)} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ms-auto" navbar>
 
             <NavItem>
-              <NavLink href="/">Home</NavLink>
+              <NavLink
+                tag={RRNavLink}
+                to="/"
+                end
+              >
+                Home
+              </NavLink>
             </NavItem>
 
             <NavItem>
-              <NavLink href="/Projects">Projects</NavLink>
+              <NavLink
+                tag={RRNavLink}
+                to="/projects"
+              >
+                Projects
+              </NavLink>
             </NavItem>
 
             <NavItem>
               <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
+                <DropdownToggle nav caret color="link">
                   Computer Science
                 </DropdownToggle>
-                <DropdownMenu end >
-
-                  <DropdownItem>
-                    <NavLink href="/prospects">Prospects</NavLink>
+                <DropdownMenu end>
+                  <DropdownItem tag={RRNavLink} to="/prospects" className="dropdown-item">
+                    Prospects
                   </DropdownItem>
-
-                  <DropdownItem>
-                    <NavLink href="/topics">Topics</NavLink>
+                  <DropdownItem tag={RRNavLink} to="/topics" className="dropdown-item">
+                    Topics
                   </DropdownItem>
-
                 </DropdownMenu>
               </UncontrolledDropdown>
             </NavItem>
 
             <NavItem>
-              <NavLink href="#Footer" onClick={() => props.onFooterClick?.()}>
+              {/*  */}
+              <NavLink
+                href="#Footer"
+                onClick={() => {
+                  document.querySelector('#Footer')?.scrollIntoView({ behavior: 'smooth' });
+                  props.onFooterClick?.();
+                }}
+                className="nav-link"
+              >
                 Contact / Resume
               </NavLink>
             </NavItem>
@@ -70,5 +83,6 @@ const Header = (props) => {
     </Navbar>
   );
 };
+
 
 export default Header;
