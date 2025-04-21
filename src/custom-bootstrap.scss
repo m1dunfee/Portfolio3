@@ -8,6 +8,7 @@ $color-text:       #000000 !default;
 $color-accent:     #000000 !default;
 $color-hover:      #E2E2E2 !default;
 $bg-image:         url('./assets/wallpaper.jpg') !default;
+$header-height: 70px !default;
 
 // Override Bootstrap Defaults
 $primary:    $color-accent !default;
@@ -23,10 +24,15 @@ body, .App {
   font-family:      'Roboto', sans-serif;
 }
 
+.App-content.p-4 {
+  padding-top: $header-height !important;
+}
+
 // Global Scroll Settings
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 75px;
+  scroll-padding-top: $header-height;
 }
 
 // Header Element Colors
@@ -107,7 +113,13 @@ a {
 .navbar {
   border-bottom: 1px solid $color-accent;
 }
-
+.navbar.fixed-top {
+  position: fixed;
+  top:      0;
+  right:    0;
+  left:     0;
+  z-index:  1030;
+}
 // Card Styling
 .card-primary {
   border-color:     $primary          !important;
@@ -219,12 +231,6 @@ img.responsive-img {
   animation: pulseFade 0.6s ease-in-out;
 }
 
-// Remove tiled background-section rule
-// .background-section { display: none !important; }
-
-// Import Bootstrap after custom variables
-@import "~bootstrap/scss/bootstrap";
-
 // Override default active-background for nav links and dropdown items\ n.navbar-nav .nav-link.active,
 .navbar-nav .nav-link:active,
 .dropdown-item.active,
@@ -232,3 +238,8 @@ img.responsive-img {
   background-color: transparent !important;
   color:             $color-accent   !important;
 }
+
+// Import Bootstrap after custom variables
+@import "~bootstrap/scss/bootstrap";
+
+
