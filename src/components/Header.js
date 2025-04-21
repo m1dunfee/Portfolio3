@@ -19,8 +19,8 @@ import {
 const Header = props => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <Navbar light fixed="top" color="light" expand="md" className="custom-nav">
-      <Container>
+    <Navbar light fixed="top" expand="md" className="custom-nav">
+      <Container >
         <NavbarBrand tag={RRNavLink} to="/">
           <h3 className="my-0">Portfolio</h3>
         </NavbarBrand>
