@@ -35,14 +35,12 @@ class App extends Component {
         <Header onFooterClick={this.triggerPulse} />
 
         <div className='App-content p-3 pt-2'>
-          <Router>
             <Routes>
               <Route path="/" element={<Landing />} />
               <Route path="/projects" element={<Projects projectList={projectData} />} />
               <Route path="/prospects" element={<Rant propsObjectList={prospectData} />} />
               <Route path="/topics" element={<Rant propsObjectList={topicData} />} />
             </Routes>
-          </Router>
         </div>
 
         <Footer pulse={this.state.pulseFooter} />
