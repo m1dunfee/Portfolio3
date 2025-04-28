@@ -5,7 +5,7 @@ const Owasp = '/OWASP.png';
 const CppLogo = '/cpp_logo.png';
 const CisaLogo = '/CISA_Logo.png';
 const PythonLogo = '/pythonLogo.png'
-const MatLab = '/matlab.png'
+const MatLab = '/matLab.png'
 
 const projectData = [
   {
