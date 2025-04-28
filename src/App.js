@@ -1,4 +1,6 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
+import { Routes, Route } from 'react-router-dom';
+
 import Header from './components/Header';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
@@ -9,8 +11,6 @@ import Rant from './components/Rant';
 import projectData from './components/projectData';
 import prospectData from './components/prospectData'
 import topicData from './components/topicData';
-
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 class App extends Component {
   constructor(props) {
