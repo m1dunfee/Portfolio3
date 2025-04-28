@@ -19,7 +19,7 @@ const projectData = [
     img: [CppLogo],
     title: 'Big\'O',
     category: 'C++',
-    details: 'This is the final project with reflections. Preliminary projects on my github labeled \"cs300\" + \'dataStructure\'',
+    details: 'This is the final project with reflections. Preliminary projects on my github labeled "cs300" + "dataStructure"',
     url: 'https://github.com/m1dunfee/cs300Final',
   },  
   {
