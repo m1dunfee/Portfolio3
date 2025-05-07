@@ -3,7 +3,7 @@ import { Media, Card } from 'reactstrap';
 
 const imgStyle = {
   width: '100%',           // Makes the image responsive to the container's width
-  maxWidth: 500,           // Sets a maximum width so it doesn't stretch too large
+  maxWidth: 300,           // Sets a maximum width so it doesn't stretch too large
   display: 'block',        // Ensures the image behaves as a block element
   margin: '0 auto',        // Centers the image horizontally within its container
   height: 'auto',          // Maintains the image's aspect ratio
