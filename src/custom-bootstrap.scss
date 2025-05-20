@@ -1,8 +1,8 @@
-// Import Google Fonts
+/// Import Google Fonts
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@700&family=Merriweather:wght@700&display=swap");
 
-// Theme Variables
+/// Theme Variables
 // $color-background: #000000 !default;
 // $color-text:       #ffffff !default;
 // $color-accent:     #ffffff !default;
@@ -12,40 +12,51 @@ $color-text:       #000000 !default;
 $color-accent:     #000000 !default;
 $color-hover:      #E2E2E2 !default;
 $bg-image:         url('./assets/wallpaper.jpg') !default;
-$header-height: 70px !default;
+$header-height:    70px !default;
 
-// Override Bootstrap Defaults
+/// Override Bootstrap Defaults
 $primary:    $color-accent !default;
 $body-bg:    $color-background !default;
 $body-color: $color-text       !default;
 
-// Global Background and Font Settings
-body, .App {
-  // Static, full-viewport wallpaper
-  background:       $bg-image center center / cover no-repeat fixed;
+/// Global Background and Font Settings
+body,
+.App {
+  background: none !important;
   background-color: $color-background !important;
   color:            $color-text       !important;
   font-family:      'Roboto', sans-serif;
 }
 
-.App-content.p-4 {
-  padding-top: $header-height !important;
+body {
+  position: relative;
+  overscroll-behavior: contain;
 }
 
-// Global Scroll Settings
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:    $bg-image;
+  background-repeat:   no-repeat;
+  background-position: center center;
+  background-size:     auto 100%; // full height, maintain aspect
+}
+
+/// Global Scroll Settings
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 75px;
   scroll-padding-top: $header-height;
 }
 
-// Header Element Colors
+/// Header Element Colors
 h1, h2, h3, h4, h5, h6 {
   color: $color-text !important;
   font-family: 'Roboto', sans-serif;
 }
 
-// Global Link Styling
+/// Global Link Styling
 a {
   color: $color-accent !important;
   text-decoration: none !important;
@@ -56,7 +67,7 @@ a {
   }
 }
 
-/* Container styling */
+/// Container styling
 .project-cards-container {
   display: flex;
   justify-content: center;
@@ -66,19 +77,19 @@ a {
   padding: 20px;
 }
 
-// Primary Color Styling for Bootstrap Components
+/// Primary Color Styling for Bootstrap Components
 .text-primary,
 .bg-primary,
 .border-primary,
 .btn-primary,
 .btn-outline-primary,
 .progress-bar {
-  color:            $primary !important;
-  background-color: $primary !important;
-  border-color:     $primary !important;
+  color:            $primary !default;
+  background-color: $primary !default;
+  border-color:     $primary !default;
 }
 
-// Outline Button Styling
+/// Outline Button Styling
 .btn-outline-primary {
   color:      $primary      !important;
   border:     1px solid $primary !important;
@@ -90,7 +101,7 @@ a {
   }
 }
 
-// Navbar Styling
+/// Navbar Styling
 .custom-nav,
 .navbar,
 .navbar-light,
@@ -109,8 +120,8 @@ a {
   }
 
   .navbar-toggler {
-    color:       $color-text !important;
-    border-color:$color-text !important;
+    color:        $color-text !important;
+    border-color: $color-text !important;
   }
 }
 
@@ -124,12 +135,12 @@ a {
   left:     0;
   z-index:  1030;
 }
-// Card Styling
+
+/// Card Styling
 .card-primary {
   border-color:     $primary          !important;
   background-color: $color-background !important;
 }
-
 .card {
   width: 100%;
   margin: 0 auto;
@@ -141,7 +152,7 @@ a {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-// Image container styling
+/// Image container styling
 .card-img-container {
   width: 100%;
   height: 200px;
@@ -151,13 +162,8 @@ a {
   align-items: center;
 }
 
-// Image styling
-.card-img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
+/// Image styling
+.card-img,
 img.responsive-img {
   width: 100%;
   height: 100%;
@@ -165,7 +171,7 @@ img.responsive-img {
   object-position: center;
 }
 
-// Quote Styling
+/// Quote Styling
 .quote {
   font-family: 'Merriweather', serif;
   font-weight: 700;
@@ -178,17 +184,15 @@ img.responsive-img {
   &::after {
     content: '"';
     font-size: 2rem;
-    color: $color-text !important;
     vertical-align: top;
   }
 }
 
-// Slider Controls
+/// Slider Controls
 .custom-slider {
   position: relative;
   text-align: center;
 }
-
 .slider-controls {
   position: absolute;
   top: 50%;
@@ -197,7 +201,6 @@ img.responsive-img {
   justify-content: space-between;
   transform: translateY(-50%);
 }
-
 .slider-button {
   background-color: rgba(0,0,0,0.5);
   color: white;
@@ -207,13 +210,13 @@ img.responsive-img {
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(0,0,0,0.7);
+  }
 }
 
-.slider-button:hover {
-  background-color: rgba(0,0,0,0.7);
-}
-
-// Footer Styling
+/// Footer Styling
 #Footer,
 .footer,
 .footer-dark {
@@ -231,11 +234,8 @@ img.responsive-img {
   100% { box-shadow: 0 0 0 rgba(229,57,53,0); }
 }
 
-.pulse-fade {
-  animation: pulseFade 0.6s ease-in-out;
-}
-
-// Override default active-background for nav links and dropdown items\ n.navbar-nav .nav-link.active,
+/// Override default active-background for nav links and dropdown items
+.navbar-nav .nav-link.active,
 .navbar-nav .nav-link:active,
 .dropdown-item.active,
 .dropdown-item:active {
@@ -243,7 +243,5 @@ img.responsive-img {
   color:             $color-accent   !important;
 }
 
-// Import Bootstrap after custom variables
+/// Import Bootstrap
 @import "~bootstrap/scss/bootstrap";
-
-
