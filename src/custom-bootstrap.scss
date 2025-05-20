@@ -28,23 +28,23 @@ body {
   position: relative;
   min-height: 100%;
   overscroll-behavior: contain;
-  background: none !important;
-  background-color: $color-background !important;
-  color:            $color-text       !important;
-  font-family:      'Roboto', sans-serif;
+  color:       $color-text       !important;
+  font-family: 'Roboto', sans-serif;
 }
 
+/// Fixed Background Pseudo-Element
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: -1;
-  background-image: $bg-image;
-  background-repeat: no-repeat;
+  z-index: 0;                // above body background, behind content
+  background-image:    $bg-image;
+  background-repeat:   no-repeat;
   background-position: center center;
-  background-size: cover;  // fill both dimensions while preserving aspect
+  background-size:     cover; // fill both width and height
 }
 
+/// Scroll Behavior
 html {
   scroll-behavior:    smooth;
   scroll-padding-top: $header-height;
@@ -71,10 +71,13 @@ a {
 }
 
 /// Class Selectors
+// App Wrapper
 .App {
-  background: none !important;
-  color:      $color-text !important;
-  font-family: inherit;
+  position:      relative;        // create stacking context
+  z-index:       1;               // above background pseudo
+  background:    $color-background !important;
+  color:         $color-text       !important;
+  font-family:   inherit;
 }
 
 .App-content.p-4 {
@@ -219,6 +222,13 @@ img.responsive-img {
   &:hover {
     background-color: rgba(0,0,0,0.7);
   }
+}
+
+/// Pulse Animation Fix
+.pulse-fade {
+  position: relative;  // ensure stacking context above background
+  z-index: 2;
+  animation: pulseFade 0.6s ease-in-out;
 }
 
 /// ID Selectors
