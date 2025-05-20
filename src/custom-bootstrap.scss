@@ -22,10 +22,21 @@ $body-color: $color-text       !default;
 // Global Background and Font Settings
 body, .App {
   // Static, full-viewport wallpaper
-  background:       $bg-image center center / cover no-repeat fixed;
+  overscroll-behavior-y: none;   // completely kills the rubber-band bounce
+  background:       $bg-image center center / cover no-repeat;  /* background-attachment now defaults to scroll, so no more jump on mobile */
   background-color: $color-background !important;
   color:            $color-text       !important;
   font-family:      'Roboto', sans-serif;
+}
+
+@media (min-width: 768px) {
+  body, .App {
+    background-attachment: fixed;
+  }
+}
+
+body {
+  overscroll-behavior: contain;  /* or 'none' to fully disable */
 }
 
 .App-content.p-4 {
