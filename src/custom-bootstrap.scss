@@ -39,10 +39,10 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background-image:    $bg-image;
-  background-repeat:   no-repeat;
-  background-position: center;
-  background-size:     auto 100%; // full height, maintain aspect
+  background-image: $bg-image;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;  // fill both dimensions while preserving aspect
 }
 
 html {
