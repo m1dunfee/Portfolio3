@@ -37,7 +37,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: 0;                // above body background, behind content
+  z-index: -1;                // behind all content
   background-image:    $bg-image;
   background-repeat:   no-repeat;
   background-position: center center;
@@ -73,8 +73,7 @@ a {
 /// Class Selectors
 // App Wrapper
 .App {
-  position:      relative;        // create stacking context
-  z-index:       1;               // above background pseudo
+  position:      relative;        // anchor children but no z-index
   background:    $color-background !important;
   color:         $color-text       !important;
   font-family:   inherit;
@@ -226,8 +225,8 @@ img.responsive-img {
 
 /// Pulse Animation Fix
 .pulse-fade {
-  position: relative;  // ensure stacking context above background
-  z-index: 2;
+  position: relative;  // ensure above background
+  z-index: 1;
   animation: pulseFade 0.6s ease-in-out;
 }
 
