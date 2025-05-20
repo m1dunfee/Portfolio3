@@ -73,8 +73,7 @@ a {
 /// Class Selectors
 // App Wrapper
 .App {
-  position:      relative;        // anchor children but no z-index
-  background:    $color-background !important;
+  position:      relative;        // anchor children but transparent background
   color:         $color-text       !important;
   font-family:   inherit;
 }
