@@ -16,7 +16,9 @@ $body-bg:    $color-background !default;
 $body-color: $color-text       !default;
 
 /// Element Selectors
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
   margin: 0;
   overflow-x: hidden;
@@ -26,9 +28,9 @@ body {
   position: relative;
   min-height: 100%;
   overscroll-behavior-y: none;
-  color: $color-text !important;
   background-color: $color-background !important;
-  font-family: 'Roboto', sans-serif;
+  color:            $color-text       !important;
+  font-family:      'Roboto', sans-serif;
 }
 
 body::before {
@@ -36,37 +38,42 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background-image: $bg-image;
-  background-repeat: no-repeat;
+  background-image:    $bg-image;
+  background-repeat:   no-repeat;
   background-position: center center;
-  background-size: contain; // adjust or use percent auto for zoom
+  background-size:     contain; // adjust or use percent auto for zoom
 }
 
 /// Global Scroll Behavior
 html {
-  scroll-behavior: smooth;
+  scroll-behavior:    smooth;
   scroll-padding-top: $header-height;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: $color-text !important;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color:       $color-text !important;
   font-family: 'Roboto', sans-serif;
 }
 
 a {
-  color: $color-accent !important;
-  text-decoration: none !important;
+  color:           $color-accent !important;
+  text-decoration: none           !important;
 
   &:hover {
-    color: darken($color-hover, 10%) !important;
-    text-decoration: underline !important;
+    color:           darken($color-hover, 10%) !important;
+    text-decoration: underline      !important;
   }
 }
 
 /// Class Selectors
 .App {
-  background: none !important;
-  color: $color-text !important;
+  background: none           !important;
+  color:      $color-text    !important;
   font-family: inherit;
 }
 
@@ -75,12 +82,12 @@ a {
 }
 
 .project-cards-container {
-  display: flex;
+  display:        flex;
   justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
-  padding: 20px;
+  align-items:     center;
+  flex-wrap:       wrap;
+  gap:            16px;
+  padding:        20px;
 }
 
 .text-primary,
@@ -94,9 +101,9 @@ a {
 }
 
 .btn-outline-primary {
-  color:      $primary      !important;
+  color:      $primary !important;
   border:     1px solid $primary !important;
-  background: transparent          !important;
+  background: transparent       !important;
 
   &:hover {
     background-color: $color-hover !important;
@@ -145,41 +152,40 @@ a {
 }
 
 .card {
-  width:      100%;
-  max-width:  400px;
-  margin:     0 auto;
-  display:    flex;
+  width:          100%;
+  max-width:      400px;
+  margin:         0 auto;
+  display:        flex;
   flex-direction: column;
   justify-content: space-between;
-  padding:    16px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  height:     auto;
+  padding:        16px;
+  box-shadow:     0 4px 8px rgba(0,0,0,0.2);
 }
 
 .card-img-container {
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-  display: flex;
+  width:           100%;
+  height:          200px;
+  overflow:        hidden;
+  display:         flex;
   justify-content: center;
-  align-items: center;
+  align-items:     center;
 }
 
 .card-img,
 img.responsive-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width:           100%;
+  height:          100%;
+  object-fit:      cover;
   object-position: center;
 }
 
 .quote {
   font-family: 'Merriweather', serif;
   font-weight: 700;
-  font-size: 1.8rem;
-  color: $color-text !important;
-  text-align: center;
-  margin: 20px 0 !important;
+  font-size:   1.8rem;
+  color:       $color-text !important;
+  text-align:  center;
+  margin:      20px 0 !important;
 
   &::before,
   &::after {
@@ -190,46 +196,57 @@ img.responsive-img {
 }
 
 .custom-slider {
-  position: relative;
-  text-align: center;
+  position:    relative;
+  text-align:  center;
 }
 
 .slider-controls {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
+  position:         absolute;
+  top:              50%;
+  width:            100%;
+  display:          flex;
+  justify-content:  space-between;
+  transform:        translateY(-50%);
 }
 
 .slider-button {
   background-color: rgba(0,0,0,0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
+  color:            white;
+  border:           none;
+  padding:          10px;
+  border-radius:    50%;
+  cursor:           pointer;
+  font-size:        16px;
+  transition:       background-color 0.3s ease;
 
   &:hover {
     background-color: rgba(0,0,0,0.7);
   }
 }
 
-@keyframes pulseFade {
-  0% { box-shadow: 0 0 0 rgba(229,57,53,0); }
-  50% { box-shadow: 0 0 20px 10px rgba(229,57,53,0.3); }
-  100% { box-shadow: 0 0 0 rgba(229,57,53,0); }
-}
-
 .pulse-fade {
   animation: pulseFade 0.6s ease-in-out;
 }
 
+/// Active Nav Link Overrides (Class Selectors)
+.navbar-nav .nav-link:active,
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: transparent !important;
+  color:             $color-accent   !important;
+}
+
 /// ID Selectors
-#Footer,
+#Footer {
+  background-color: $color-background !important;
+  color:            $color-text       !important;
+  width:            100%;
+  padding:          20px 0;
+  border-top:       1px solid $color-accent;
+  text-align:       center;
+}
+
+/// Footer Classes
 .footer,
 .footer-dark {
   background-color: $color-background !important;
@@ -240,12 +257,11 @@ img.responsive-img {
   text-align:       center;
 }
 
-/// Active Nav Link Overrides
-.navbar-nav .nav-link:active,
-.dropdown-item.active,
-.dropdown-item:active {
-  background-color: transparent !important;
-  color:             $color-accent   !important;
+/// Keyframes
+@keyframes pulseFade {
+  0%   { box-shadow: 0 0 0 rgba(229,57,53,0); }
+  50%  { box-shadow: 0 0 20px 10px rgba(229,57,53,0.3); }
+  100% { box-shadow: 0 0 0 rgba(229,57,53,0); }
 }
 
 /// Bootstrap Import
