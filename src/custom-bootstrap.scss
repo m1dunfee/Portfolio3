@@ -41,7 +41,7 @@ body::before {
   background-image:    $bg-image;
   background-repeat:   no-repeat;
   background-position: center center;
-  background-size:     contain; // adjust or use percent auto for zoom
+  background-size:     auto 100%; // fill full height, maintain aspect ratio
 }
 
 /// Global Scroll Behavior
