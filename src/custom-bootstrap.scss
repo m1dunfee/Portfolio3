@@ -1,88 +1,109 @@
-// Import Google Fonts
+/// Import Google Fonts
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@700&family=Merriweather:wght@700&display=swap");
 
-// Theme Variables
-// $color-background: #000000 !default;
-// $color-text:       #ffffff !default;
-// $color-accent:     #ffffff !default;
-// $color-hover:      #d91a1a !default;
+/// Theme Variables
 $color-background: #F5F5F5 !default;
 $color-text:       #000000 !default;
 $color-accent:     #000000 !default;
 $color-hover:      #E2E2E2 !default;
 $bg-image:         url('./assets/wallpaper.jpg') !default;
-$header-height: 70px !default;
+$header-height:    70px !default;
 
-// Override Bootstrap Defaults
+/// Bootstrap Variable Overrides
 $primary:    $color-accent !default;
 $body-bg:    $color-background !default;
 $body-color: $color-text       !default;
 
-// Global Background and Font Settings
-body, .App {
-  // Static, full-viewport wallpaper
-  background:       $bg-image center center / cover no-repeat fixed;
+/// Element Selectors
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+  overscroll-behavior-y: none;
   background-color: $color-background !important;
   color:            $color-text       !important;
   font-family:      'Roboto', sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:    $bg-image;
+  background-repeat:   no-repeat;
+  background-position: center center;
+  background-size:     auto 100%; // fill full height, maintain aspect ratio
+}
+
+/// Global Scroll Behavior
+html {
+  scroll-behavior:    smooth;
+  scroll-padding-top: $header-height;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color:       $color-text !important;
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  color:           $color-accent !important;
+  text-decoration: none           !important;
+
+  &:hover {
+    color:           darken($color-hover, 10%) !important;
+    text-decoration: underline      !important;
+  }
+}
+
+/// Class Selectors
+.App {
+  background: none           !important;
+  color:      $color-text    !important;
+  font-family: inherit;
 }
 
 .App-content.p-4 {
   padding-top: $header-height !important;
 }
 
-// Global Scroll Settings
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 75px;
-  scroll-padding-top: $header-height;
-}
-
-// Header Element Colors
-h1, h2, h3, h4, h5, h6 {
-  color: $color-text !important;
-  font-family: 'Roboto', sans-serif;
-}
-
-// Global Link Styling
-a {
-  color: $color-accent !important;
-  text-decoration: none !important;
-
-  &:hover {
-    color: darken($color-hover, 10%) !important;
-    text-decoration: underline !important;
-  }
-}
-
-/* Container styling */
 .project-cards-container {
-  display: flex;
+  display:        flex;
   justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
-  padding: 20px;
+  align-items:     center;
+  flex-wrap:       wrap;
+  gap:            16px;
+  padding:        20px;
 }
 
-// Primary Color Styling for Bootstrap Components
 .text-primary,
 .bg-primary,
 .border-primary,
 .btn-primary,
-.btn-outline-primary,
 .progress-bar {
   color:            $primary !important;
   background-color: $primary !important;
   border-color:     $primary !important;
 }
 
-// Outline Button Styling
 .btn-outline-primary {
-  color:      $primary      !important;
+  color:      $primary !important;
   border:     1px solid $primary !important;
-  background: transparent          !important;
+  background: transparent       !important;
 
   &:hover {
     background-color: $color-hover !important;
@@ -90,7 +111,6 @@ a {
   }
 }
 
-// Navbar Styling
 .custom-nav,
 .navbar,
 .navbar-light,
@@ -109,112 +129,124 @@ a {
   }
 
   .navbar-toggler {
-    color:       $color-text !important;
-    border-color:$color-text !important;
+    color:        $color-text !important;
+    border-color: $color-text !important;
   }
 }
 
 .navbar {
   border-bottom: 1px solid $color-accent;
 }
+
 .navbar.fixed-top {
   position: fixed;
   top:      0;
-  right:    0;
   left:     0;
+  right:    0;
   z-index:  1030;
 }
-// Card Styling
+
 .card-primary {
   border-color:     $primary          !important;
   background-color: $color-background !important;
 }
 
 .card {
-  width: 100%;
-  margin: 0 auto;
-  height: 400px;
-  display: flex;
+  width:          100%;
+  max-width:      400px;
+  margin:         0 auto;
+  display:        flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 16px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  padding:        16px;
+  box-shadow:     0 4px 8px rgba(0,0,0,0.2);
 }
 
-// Image container styling
 .card-img-container {
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-  display: flex;
+  width:           100%;
+  height:          200px;
+  overflow:        hidden;
+  display:         flex;
   justify-content: center;
-  align-items: center;
+  align-items:     center;
 }
 
-// Image styling
-.card-img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
+.card-img,
 img.responsive-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width:           100%;
+  height:          100%;
+  object-fit:      cover;
   object-position: center;
 }
 
-// Quote Styling
 .quote {
   font-family: 'Merriweather', serif;
   font-weight: 700;
-  font-size: 1.8rem;
-  color: $color-text !important;
-  text-align: center;
-  margin: 20px 0 !important;
+  font-size:   1.8rem;
+  color:       $color-text !important;
+  text-align:  center;
+  margin:      20px 0 !important;
 
   &::before,
   &::after {
     content: '"';
     font-size: 2rem;
-    color: $color-text !important;
     vertical-align: top;
   }
 }
 
-// Slider Controls
 .custom-slider {
-  position: relative;
-  text-align: center;
+  position:    relative;
+  text-align:  center;
 }
 
 .slider-controls {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
+  position:         absolute;
+  top:              50%;
+  width:            100%;
+  display:          flex;
+  justify-content:  space-between;
+  transform:        translateY(-50%);
 }
 
 .slider-button {
   background-color: rgba(0,0,0,0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
+  color:            white;
+  border:           none;
+  padding:          10px;
+  border-radius:    50%;
+  cursor:           pointer;
+  font-size:        16px;
+  transition:       background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(0,0,0,0.7);
+  }
 }
 
-.slider-button:hover {
-  background-color: rgba(0,0,0,0.7);
+.pulse-fade {
+  animation: pulseFade 0.6s ease-in-out;
 }
 
-// Footer Styling
-#Footer,
+/// Active Nav Link Overrides (Class Selectors)
+.navbar-nav .nav-link:active,
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: transparent !important;
+  color:             $color-accent   !important;
+}
+
+/// ID Selectors
+#Footer {
+  background-color: $color-background !important;
+  color:            $color-text       !important;
+  width:            100%;
+  padding:          20px 0;
+  border-top:       1px solid $color-accent;
+  text-align:       center;
+}
+
+/// Footer Classes
 .footer,
 .footer-dark {
   background-color: $color-background !important;
@@ -225,25 +257,12 @@ img.responsive-img {
   text-align:       center;
 }
 
+/// Keyframes
 @keyframes pulseFade {
-  0% { box-shadow: 0 0 0 rgba(229,57,53,0); }
-  50% { box-shadow: 0 0 20px 10px rgba(229,57,53,0.3); }
+  0%   { box-shadow: 0 0 0 rgba(229,57,53,0); }
+  50%  { box-shadow: 0 0 20px 10px rgba(229,57,53,0.3); }
   100% { box-shadow: 0 0 0 rgba(229,57,53,0); }
 }
 
-.pulse-fade {
-  animation: pulseFade 0.6s ease-in-out;
-}
-
-// Override default active-background for nav links and dropdown items\ n.navbar-nav .nav-link.active,
-.navbar-nav .nav-link:active,
-.dropdown-item.active,
-.dropdown-item:active {
-  background-color: transparent !important;
-  color:             $color-accent   !important;
-}
-
-// Import Bootstrap after custom variables
+/// Bootstrap Import
 @import "~bootstrap/scss/bootstrap";
-
-
