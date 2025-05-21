@@ -29,6 +29,9 @@ body {
   position: relative;
   color:       $color-text !important;
   font-family: 'Roboto', sans-serif;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; /* For iOS smoothness */
+
 }
 
 /// Fixed Background Pseudo-Element
@@ -48,6 +51,8 @@ body::before {
 html {
   scroll-behavior:    smooth;
   scroll-padding-top: $header-height;
+  overflow: hidden;
+
 }
 
 /// Typography
