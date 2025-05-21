@@ -11,37 +11,42 @@ $bg-image:         url('./assets/wallpaper.jpg') !default;
 $header-height:    70px !default;
 
 /// Bootstrap Variable Overrides
-$primary:       $color-accent !default;
-$body-bg:       $color-background !default;
-$body-color:    $color-text       !default;
+$primary:    $color-accent !default;
+$body-bg:    $color-background !default;
+$body-color: $color-text       !default;
 
-/// Global & Root Selectors
+/// Element Selectors
+/// Element Selectors
 html,
 body,
 #root {
-  height: 100%;
+  height: auto;
+  min-height: 110%;
   margin: 0;
 }
 
-/// Native Fixed Background on <html>
-html {
+body {
+  position: relative;
+  color:       $color-text !important;
+  font-family: 'Roboto', sans-serif;
+}
+
+/// Fixed Background Pseudo-Element
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
   background-image:    $bg-image;
   background-repeat:   no-repeat;
   background-position: center center;
   background-size:     cover;
-  background-attachment: fixed;
-
-  /* Smooth scrolling & offset for fixed header */
-  scroll-behavior:    smooth;
-  scroll-padding-top: $header-height;
 }
 
-/// Body remains transparent to let html background show
-body {
-  background-color: transparent !important;
-  position:        relative;
-  color:           $color-text  !important;
-  font-family:     'Roboto', sans-serif;
+/// Scroll Behavior
+html {
+  scroll-behavior:    smooth;
+  scroll-padding-top: $header-height;
 }
 
 /// Typography
@@ -57,7 +62,7 @@ h6 {
 
 a {
   color:           $color-accent !important;
-  text-decoration: none           !important;
+  text-decoration: none !important;
 
   &:hover {
     color:           darken($color-hover, 10%) !important;
@@ -68,7 +73,7 @@ a {
 /// Class Selectors
 .App {
   position: relative;
-  z-index:  0;
+  z-index: 0;
 }
 
 .App-content.p-4 {
@@ -76,12 +81,12 @@ a {
 }
 
 .project-cards-container {
-  display:        flex;
+  display: flex;
   justify-content: center;
-  align-items:    center;
-  flex-wrap:      wrap;
-  gap:            16px;
-  padding:        20px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 20px;
 }
 
 .text-primary,
@@ -97,7 +102,7 @@ a {
 .btn-outline-primary {
   color:      $primary !important;
   border:     1px solid $primary !important;
-  background: transparent      !important;
+  background: transparent !important;
 
   &:hover {
     background-color: $color-hover !important;
@@ -218,7 +223,7 @@ img.responsive-img {
   }
 }
 
-/// Pulse Animation (if still used elsewhere)
+/// Pulse Animation
 .pulse-fade {
   position: relative;
   z-index: 1;
@@ -255,3 +260,8 @@ img.responsive-img {
 
 /// Import Bootstrap
 @import "~bootstrap/scss/bootstrap";
+
+// Force body transparent so wallpaper always shows in all color modes
+body {
+  background-color: transparent !important;
+}
