@@ -15,57 +15,57 @@ $primary:    $color-accent !default;
 $body-bg:    $color-background !default;
 $body-color: $color-text       !default;
 
-/// Element Selectors
-/// Element Selectors
-html,
-body,
-#root {
-  height: 100dvh;
+/// Global Layout Reset
+html, body, #root {
+  height: 100%;
+  min-height: 100vh; // Ensure full height on older browsers
   margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
-body {
-  position: relative;
-  color:       $color-text !important;
-  font-family: 'Roboto', sans-serif;
-}
-
-/// Fixed Background Pseudo-Element
+/// Fixed Full-Viewport Background Overlay (no background-attachment: fixed)
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -1;
-  background-image:    $bg-image;
-  background-repeat:   no-repeat;
+  background-image: $bg-image;
+  background-repeat: no-repeat;
   background-position: center center;
-  background-size:     cover;
+  background-size: cover;
+  min-height: 100vh;    // Always cover at least the largest possible viewport
+  height: 100dvh;       // In browsers that support dvh, follow dynamic viewport
+  width: 100vw;
+  pointer-events: none; // Background doesn't block interaction
+}
+
+body {
+  background-color: transparent !important;
+  position: relative;
+  color: $color-text !important;
+  font-family: 'Roboto', sans-serif;
 }
 
 /// Scroll Behavior
 html {
-  scroll-behavior:    smooth;
+  scroll-behavior: smooth;
   scroll-padding-top: $header-height;
 }
 
 /// Typography
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color:       $color-text !important;
+h1, h2, h3, h4, h5, h6 {
+  color: $color-text !important;
   font-family: 'Roboto', sans-serif;
 }
 
 a {
-  color:           $color-accent !important;
+  color: $color-accent !important;
   text-decoration: none !important;
 
   &:hover {
-    color:           darken($color-hover, 10%) !important;
-    text-decoration: underline      !important;
+    color: darken($color-hover, 10%) !important;
+    text-decoration: underline !important;
   }
 }
 
@@ -93,19 +93,19 @@ a {
 .border-primary,
 .btn-primary,
 .progress-bar {
-  color:            $primary !important;
+  color: $primary !important;
   background-color: $primary !important;
-  border-color:     $primary !important;
+  border-color: $primary !important;
 }
 
 .btn-outline-primary {
-  color:      $primary !important;
-  border:     1px solid $primary !important;
+  color: $primary !important;
+  border: 1px solid $primary !important;
   background: transparent !important;
 
   &:hover {
     background-color: $color-hover !important;
-    color:            $color-text  !important;
+    color: $color-text !important;
   }
 }
 
@@ -115,19 +115,19 @@ a {
 .navbar-collapse,
 .navbar-nav {
   background-color: $color-background !important;
-  color:            $color-text       !important;
+  color: $color-text !important;
 
   .nav-link {
     color: $color-text !important;
 
     &:hover {
       background-color: $color-hover !important;
-      color:            $color-text  !important;
+      color: $color-text !important;
     }
   }
 
   .navbar-toggler {
-    color:        $color-text !important;
+    color: $color-text !important;
     border-color: $color-text !important;
   }
 }
@@ -138,52 +138,52 @@ a {
 
 .navbar.fixed-top {
   position: fixed;
-  top:      0;
-  left:     0;
-  right:    0;
-  z-index:  1030;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
 }
 
 .card-primary {
-  border-color:     $primary          !important;
+  border-color: $primary !important;
   background-color: $color-background !important;
 }
 
 .card {
-  width:           100%;
-  margin:          0 auto;
-  height:          400px;
-  display:         flex;
-  flex-direction:  column;
+  width: 100%;
+  margin: 0 auto;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  padding:         16px;
-  box-shadow:      0 4px 8px rgba(0,0,0,0.2);
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .card-img-container {
-  width:           100%;
-  height:          200px;
-  overflow:        hidden;
-  display:         flex;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  display: flex;
   justify-content: center;
-  align-items:     center;
+  align-items: center;
 }
 
 .card-img,
 img.responsive-img {
-  width:           100%;
-  height:          100%;
-  object-fit:      cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   object-position: center;
 }
 
 .quote {
   font-family: 'Merriweather', serif;
   font-weight: 700;
-  font-size:   1.8rem;
-  color:       $color-text !important;
-  text-align:  center;
-  margin:      20px 0 !important;
+  font-size: 1.8rem;
+  color: $color-text !important;
+  text-align: center;
+  margin: 20px 0 !important;
 
   &::before,
   &::after {
@@ -194,28 +194,28 @@ img.responsive-img {
 }
 
 .custom-slider {
-  position:    relative;
-  text-align:  center;
+  position: relative;
+  text-align: center;
 }
 
 .slider-controls {
-  position:         absolute;
-  top:              50%;
-  width:            100%;
-  display:          flex;
-  justify-content:  space-between;
-  transform:        translateY(-50%);
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
 }
 
 .slider-button {
   background-color: rgba(0,0,0,0.5);
-  color:            white;
-  border:           none;
-  padding:          10px;
-  border-radius:    50%;
-  cursor:           pointer;
-  font-size:        16px;
-  transition:       background-color 0.3s ease;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 
   &:hover {
     background-color: rgba(0,0,0,0.7);
@@ -234,11 +234,11 @@ img.responsive-img {
 .footer,
 .footer-dark {
   background-color: $color-background !important;
-  color:            $color-text       !important;
-  width:            100%;
-  padding:          20px 0;
-  border-top:       1px solid $color-accent;
-  text-align:       center;
+  color: $color-text !important;
+  width: 100%;
+  padding: 20px 0;
+  border-top: 1px solid $color-accent;
+  text-align: center;
 }
 
 /// Override Default Active Nav Link
@@ -247,7 +247,7 @@ img.responsive-img {
 .dropdown-item.active,
 .dropdown-item:active {
   background-color: transparent !important;
-  color:             $color-accent   !important;
+  color: $color-accent !important;
 }
 
 /// Keyframes
@@ -259,8 +259,3 @@ img.responsive-img {
 
 /// Import Bootstrap
 @import "~bootstrap/scss/bootstrap";
-
-// Force body transparent so wallpaper always shows in all color modes
-body {
-  background-color: transparent !important;
-}
