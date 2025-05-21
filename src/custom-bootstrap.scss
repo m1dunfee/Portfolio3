@@ -39,8 +39,9 @@ body::before {
   z-index: -1;
   background-image:    $bg-image;
   background-repeat:   no-repeat;
-  background-position: center center;
+  background-position: center;
   background-size:     cover;
+  background-attachment: fixed;
 }
 
 /// Scroll Behavior
