@@ -2,12 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@700&family=Merriweather:wght@700&display=swap");
 
-/// Viewport Height Fix for Mobile Address Bar
-// Defines a custom --vh unit to account for dynamic URL bar height on mobile
-:root {
-  --vh: 1vh;
-}
-
 /// Theme Variables
 $color-background: #F5F5F5 !default;
 $color-text:       #000000 !default;
@@ -25,8 +19,7 @@ $body-color:    $color-text       !default;
 html,
 body,
 #root {
-  /* Use calc(var(--vh) * 100) to lock height at load and avoid URL bar pop */
-  height: calc(var(--vh, 1vh) * 100);
+  height: 100%;
   margin: 0;
 }
 
@@ -225,12 +218,14 @@ img.responsive-img {
   }
 }
 
+/// Pulse Animation (if still used elsewhere)
 .pulse-fade {
   position: relative;
   z-index: 1;
   animation: pulseFade 0.6s ease-in-out;
 }
 
+/// ID Selectors
 #Footer,
 .footer,
 .footer-dark {
@@ -242,6 +237,7 @@ img.responsive-img {
   text-align:       center;
 }
 
+/// Override Default Active Nav Link
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link:active,
 .dropdown-item.active,
@@ -250,6 +246,7 @@ img.responsive-img {
   color:             $color-accent   !important;
 }
 
+/// Keyframes
 @keyframes pulseFade {
   0% { box-shadow: 0 0 0 rgba(229,57,53,0); }
   50% { box-shadow: 0 0 20px 10px rgba(229,57,53,0.3); }
@@ -258,13 +255,3 @@ img.responsive-img {
 
 /// Import Bootstrap
 @import "~bootstrap/scss/bootstrap";
-
-/*
-  To dynamically update --vh on mobile, add this JS in your app's entry point:
-  
-  function setVh() {
-    document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
-  }
-  window.addEventListener('resize', setVh);
-  setVh();
-*/
