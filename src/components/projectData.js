@@ -14,7 +14,14 @@ const projectData = [
     category: 'JavaScript',
     details: 'You\'re here!',
     url: 'https://github.com/m1dunfee/Portfolio3',
-  },  
+  },
+  {
+    img: [PythonLogo],
+    title: 'Game AI',
+    category: 'Python',
+    details: 'Checkers AI with minimax & alpha-beta pruning; reflections on design trade-offs & future work. Includes inference system and original implementions.',
+    url: 'https://github.com/m1dunfee/Game-AI-Checkers',
+  },   
   {
     img: [CppLogo],
     title: 'Big\'O',
