@@ -3,11 +3,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@700&family=Merriweather:wght@700&display=swap");
 
 /// Theme Variables
-$color-background: #F5F5F5 !default;
-$color-text:       #000000 !default;
-$color-accent:     #000000 !default;
-$color-hover:      #E2E2E2 !default;
-$bg-image:         url('./assets/wallpaper.jpg') !default;
+// $color-background: #F5F5F5 !default;
+// $color-text:       #000000 !default;
+// $color-accent:     #000000 !default;
+// $color-hover:      #E2E2E2 !default;
+
+$color-background: #000000 !default;
+$color-text:       #F5F5F5 !default;
+$color-accent:     #900000 !default;
+$color-hover:      #800000 !default;
+$bg-image:         url('./assets/wallpaper.webp') !default;
 $header-height:    70px !default;
 
 /// Bootstrap Variable Overrides
@@ -249,6 +254,22 @@ img.responsive-img {
   background-color: transparent !important;
   color: $color-accent !important;
 }
+
+.quote {
+  display: flex;
+  justify-content: center;  /* centers children horizontally */
+  align-items: center;
+  gap: 0.5rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.quote cite {
+  font-style: normal;
+  margin-left: 0.5rem;
+  color: #666;
+}
+
 
 /// Keyframes
 @keyframes pulseFade {
