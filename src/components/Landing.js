@@ -15,7 +15,7 @@ class Landing extends Component {
       <div className='card-container pt-3'>
         <Card id='Landing' className='flex-wrap card card-primary'>
           <blockquote className="quote">
-            We stand on the shoulder of giants
+            We stand on the shoulders of giants
             <cite>– Sir Isaac Newton</cite>
           </blockquote>
           <hr/>
