@@ -14,7 +14,10 @@ class Landing extends Component {
     return (
       <div className='card-container pt-3'>
         <Card id='Landing' className='flex-wrap card card-primary'>
-          <h4 className='quote '> Never trust the man who claims to know everything; he’s either deceiving himself or you. </h4>
+          <blockquote className="quote">
+            We stand on the shoulder of giants
+            <cite>– Sir Isaac Newton</cite>
+          </blockquote>
           <hr/>
           <div className='row'>
             <div className='col-lg-6 p-2'>
