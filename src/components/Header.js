@@ -18,10 +18,11 @@ import {
 
 const Header = props => {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <Navbar light fixed="top" expand="md" className="custom-nav">
       <Container >
-        <NavbarBrand tag={RRNavLink} to="/">
+        <NavbarBrand tag={RRNavLink} to="/" onClick={() => setIsOpen(false)}>
           <h3 className="my-0">Portfolio</h3>
         </NavbarBrand>
         <NavbarToggler onClick={() => setIsOpen(!isOpen)} />
@@ -33,6 +34,7 @@ const Header = props => {
                 tag={RRNavLink}
                 to="/"
                 end
+                onClick={() => setIsOpen(false)}
               >
                 Home
               </NavLink>
@@ -42,6 +44,7 @@ const Header = props => {
               <NavLink
                 tag={RRNavLink}
                 to="/projects"
+                onClick={() => setIsOpen(false)}
               >
                 Projects
               </NavLink>
@@ -52,11 +55,11 @@ const Header = props => {
                 <DropdownToggle nav caret color="link">
                   Computer Science
                 </DropdownToggle>
-                <DropdownMenu end>
-                  <DropdownItem tag={RRNavLink} to="/prospects" className="dropdown-item">
+                <DropdownMenu end={true}>
+                  <DropdownItem tag={RRNavLink} to="/prospects" className="dropdown-item" onClick={() => setIsOpen(false)}>
                     Prospects
                   </DropdownItem>
-                  <DropdownItem tag={RRNavLink} to="/topics" className="dropdown-item">
+                  <DropdownItem tag={RRNavLink} to="/topics" className="dropdown-item" onClick={() => setIsOpen(false)}>
                     Topics
                   </DropdownItem>
                 </DropdownMenu>
@@ -70,6 +73,7 @@ const Header = props => {
                 onClick={() => {
                   document.querySelector('#Footer')?.scrollIntoView({ behavior: 'smooth' });
                   props.onFooterClick?.();
+                  setIsOpen(false)
                 }}
                 className="nav-link"
               >

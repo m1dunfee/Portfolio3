@@ -11,7 +11,6 @@ import Rant from './components/Rant';
 import projectData from './components/projectData';
 import prospectData from './components/prospectData'
 import topicData from './components/topicData';
-import ScrollToTop from './components/ScrollToTop';
 
 class App extends Component {
   constructor(props) {
@@ -32,8 +31,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className='cd-flex background-section'>
-        <ScrollToTop/>
+      <div className='cd-flex background-section' id="main-top">
         <Header onFooterClick={this.triggerPulse} />
 
         <div className='App-content p-4'>
