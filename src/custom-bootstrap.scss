@@ -8,7 +8,7 @@
 // $color-accent:     #000000 !default;
 // $color-hover:      #E2E2E2 !default;
 
-$color-background: #000000 !default;
+$color-background: rgba(0, 0, 0, .99) !default; //last digit controler transparency
 $color-text:       #F5F5F5 !default;
 $color-accent:     #900000 !default;
 $color-hover:      #800000 !default;
@@ -257,17 +257,20 @@ img.responsive-img {
 
 .quote {
   display: flex;
-  justify-content: center;  /* centers children horizontally */
+  flex-wrap: wrap;             // 🔑 allows wrapping on small screens
+  justify-content: center;
   align-items: center;
   gap: 0.5rem;
   font-style: italic;
   text-align: center;
+  padding: 0 1rem;             // optional: add side padding for mobile
 }
 
 .quote cite {
   font-style: normal;
+  color: #aaa;
   margin-left: 0.5rem;
-  color: #666;
+  white-space: nowrap;         // optional: keep "– Sir Isaac Newton" together
 }
 
 
