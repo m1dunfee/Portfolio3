@@ -50,21 +50,19 @@ const Header = props => {
               </NavLink>
             </NavItem>
 
-            <NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret color="link">
-                  Computer Science
-                </DropdownToggle>
-                <DropdownMenu end={true}>
-                  <DropdownItem tag={RRNavLink} to="/prospects" className="dropdown-item" onClick={() => setIsOpen(false)}>
-                    Prospects
-                  </DropdownItem>
-                  <DropdownItem tag={RRNavLink} to="/topics" className="dropdown-item" onClick={() => setIsOpen(false)}>
-                    Topics
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-            </NavItem>
+            <UncontrolledDropdown nav inNavbar>
+              <DropdownToggle nav caret color="link">
+                Computer Science
+              </DropdownToggle>
+              <DropdownMenu end>
+                <DropdownItem tag={RRNavLink} to="/prospects" className="dropdown-item" onClick={() => setIsOpen(false)}>
+                  Prospects
+                </DropdownItem>
+                <DropdownItem tag={RRNavLink} to="/topics" className="dropdown-item" onClick={() => setIsOpen(false)}>
+                  Topics
+                </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
 
             <NavItem>
               {/*  */}
