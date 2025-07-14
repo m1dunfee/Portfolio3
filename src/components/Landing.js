@@ -15,8 +15,8 @@ class Landing extends Component {
       <div className='card-container pt-3'>
         <Card id='Landing' className='flex-wrap card card-primary'>
           <blockquote className="quote">
-            We stand on the shoulders of giants
-            <cite>– Sir Isaac Newton</cite>
+            The future isn’t built from isolated breakthroughs—it’s built from integrated visions.
+            {/* <cite>– Sir Isaac Newton</cite> */}
           </blockquote>
           <hr/>
           <div className='row'>
@@ -30,16 +30,19 @@ class Landing extends Component {
                 <div className="row">
                   <h4 className='text-center' >Summary:</h4>
                   <p>
-                    I'm Matthew Dunfee — a computer scientist with a foundation built through hands-on industry experience and a vision aimed toward AI, systems design, and problem-solving at scale.
+                    I'm Matthew Dunfee, a computer scientist with extensive industry experience and a clear vision centered around abstraction, modularity, and functional modeling to build meaningful technology integrating AI, IoT, and scalable systems.
                   </p>
                   <p>
-                    In the past, I’ve worn a lot of hats: game tester, Java developer, MERN consultant, full-stack bootcamp instructor. Each role sharpened a different edge — from catching bugs at Activision to supporting Enterprise software, to mentoring students as they launched their first solo projects. I’ve worked across the stack and across environments — Oracle, Node, React, Pick Basic, Spring Boot — always focused on learning the systems beneath the syntax.
+                    My journey in technology has been diverse, transforming me into an adaptable and strategic problem solver. From tracking down critical bugs at Activision and developing enterprise Java applications to mentoring aspiring developers through full-stack bootcamps, I’ve consistently translated theoretical concepts into practical solutions. Each experience sharpened my skills in designing modular, maintainable systems grounded in robust architecture.
                   </p>
                   <p>
-                    Today, I’m nearing completion of my B.S. in Computer Science with a 3.7 GPA, while continuing to grow as a developer. I value clean architecture, strategic debugging, and the ability to move between abstraction and implementation. I see programming as both an art and a craft — one that requires discipline, curiosity, and clarity of thought.
+                    As I complete my B.S. in Computer Science (3.7 GPA), I remain dedicated to constructing software characterized by clear abstraction, effective modularity, and logical integrity. To me, programming involves defining precise functional models that unambiguously capture and express system behavior.
                   </p>
                   <p>
-                    Looking ahead, I’m working toward building systems that combine IoT and AI — tools that aren’t just responsive, but adaptive. I’m especially interested in the ethical and structural design of software: how we build systems that respect autonomy, privacy, and purpose. My current projects reflect that ambition.
+                    Looking forward, my goal is to engineer intelligent, adaptive systems capable of anticipating and responding effectively to human needs. I’m especially committed to creating solutions that uphold ethical integrity, user privacy, and purposeful design. Current projects, including Prismatica—an AI-integrated IoT hub—illustrate my ambition to develop impactful, secure, and responsive technologies.
+                  </p>
+                  <p>
+                    I don’t merely envision the future; I architect it through precise, modular, and purposeful design.
                   </p>
                 </div>
               </div>
