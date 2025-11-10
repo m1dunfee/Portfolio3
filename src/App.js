@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
-import Landing from './components/Landing';
+import AboutMe from './components/AboutMe';
 import Rant from './components/Rant';
 
 // data
@@ -36,7 +36,7 @@ class App extends Component {
 
         <div className='App-content p-4'>
             <Routes>
-              <Route path="/" element={<Landing />} />
+              <Route path="/" element={<AboutMe />} />
               <Route path="/projects" element={<Projects projectList={projectData} />} />
               <Route path="/prospects" element={<Rant propsObjectList={prospectData} />} />
               <Route path="/topics" element={<Rant propsObjectList={topicData} />} />
