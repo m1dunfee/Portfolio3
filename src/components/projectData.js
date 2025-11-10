@@ -36,6 +36,27 @@ const projectData = [
     details: 'Example of using a testing libraries to anotate and build custom test cases.',
     url: 'https://github.com/m1dunfee/cs320jUnit',
   },  
+    {
+    img: [PythonLogo],
+    title: 'Data Visualization',
+    category: 'Python',
+    details: 'Using mongodb and python to build an interactive system.',
+    url: 'https://github.com/m1dunfee/cs340ClientServer',
+  },
+    {
+    img: [CppLogo],
+    title: 'OpenGL retro game',
+    category: 'Python',
+    details: 'Retro style game with custom controls and graphics.',
+    url: 'https://github.com/m1dunfee/cs330-opengl-game',
+  },
+    {
+    img: [CppLogo],
+    title: '3D graphics and visualization with OpenGL',
+    category: 'C++',
+    details: 'I use openGL to create a 3d scene of a coffeeshop table with custom graphics, navigation and lighting.',
+    url: 'https://github.com/m1dunfee/cs330-graphics-and-visualization',
+  },
   {
     img: [MatLab],
     title: 'Image Compression',
