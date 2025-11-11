@@ -36,10 +36,12 @@ const TopicData = [
   img: '/linearAlgebra.avif',
   title: 'Linear Algebra',
   paragraph: [
-    "Welcome to the matrix—a space where everything is connected, whether through atomic bonds or abstract equations. Humans naturally seek patterns in reality, and Linear Algebra is the mathematical lens we use to find them. It gives us the tools to describe systems of relationships—between vectors, equations, or transformations—and then manipulate those systems to expose their deeper structure.",
+    "Linear algebra was the moment mathematics stopped feeling like a subject and started feeling like a language. When I first began working with matrices, I realized I wasn’t just manipulating numbers—I was transforming relationships. Every vector, every span, felt like a sentence describing how systems connect. It brought together everything I had learned before: algebra, geometry, statistics—all converging into a single, coherent structure. That moment changed how I saw math forever.",
 
-    "At its core, Linear Algebra is about transformation. Row operations, matrix multiplication, and change of basis let us reshape a system without altering its essence. This is more than just solving equations—it’s about discovering hidden symmetries, reducing complexity, and preparing data for analysis. For example, transforming a dataset into orthogonal components through Principal Component Analysis (PCA) allows us to extract its most meaningful features while discarding noise. In this way, Linear Algebra becomes not just a tool for problem solving, but a method for understanding the shape of data and the reality it reflects."
-]
+    "What fascinates me most about linear algebra is how it reveals truth in higher dimensions. It gives form to patterns too complex for intuition alone—turning abstract relationships into geometry and motion. Through matrices, we can model uncertainty, discover latent structure, and quantify meaning. This isn’t just computation; it’s translation—the conversion of chaos into clarity. In this space, numbers stop being static and start becoming alive, encoding the essence of systems both natural and artificial.",
+
+    "I see linear algebra as the foundation of understanding intelligence—human or machine. It is the bridge between data and insight, between perception and reasoning. Every neural network, every optimization, every projection of thought onto structure rests on its principles. For me, working with matrices feels like speaking to the universe in its own dialect—a dialect that connects logic, beauty, and truth. And through that connection, I hope to build models that don’t just solve problems, but deepen our understanding of the world itself."
+  ]
 }
 ];
 
