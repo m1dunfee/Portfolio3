@@ -14,7 +14,7 @@ const AboutMe = () => {
     <div className="card-container pt-3">
       <Card id="AboutMe" className="flex-wrap card card-primary p-3">
         <blockquote className="quote mb-3">
-          The future is built by integrating ideas into coherent systems.
+          We stand on the shoulders of giants.
         </blockquote>
         <hr />
 
