@@ -10,8 +10,8 @@ class Footer extends Component {
         <Row className={`w-100 m-0 py-2 text-center w-100 px-0 mx-0 border-0 rounded-0 ${this.props.pulse ? 'pulse-fade' : ''}`}>
           <Col sm>
             <FontAwesomeIcon icon={faFilePdf} className='fa-2x'/>
-            <h4>Resume?</h4>
-            <Button outline color="primary" href="/Resume.pdf" target="_blank" rel="noopener noreferrer">
+            <h4>Resume/CV</h4>
+            <Button outline color="primary" href="/CV.pdf" target="_blank" rel="noopener noreferrer">
               Download PDF Resume
             </Button>
             <hr />

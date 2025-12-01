@@ -75,7 +75,7 @@ const Header = props => {
                 }}
                 className="nav-link"
               >
-                Contact / Resume
+                Resume/CV
               </NavLink>
             </NavItem>
 
