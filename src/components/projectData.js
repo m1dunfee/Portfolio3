@@ -6,6 +6,7 @@ const CppLogo = '/cpp_logo.png';
 const CisaLogo = '/CISA_Logo.png';
 const PythonLogo = '/pythonLogo.png'
 const MatLab = '/matLab.png'
+const Mean = '/MEAN.png'
 
 const projectData = [
   {
@@ -17,10 +18,24 @@ const projectData = [
   },
   {
     img: [PythonLogo],
+    title: 'Pathfindre AI',
+    category: 'Python',
+    details: 'Using Reinforcement Learning and Neural Networks, I implement the q-learning algorithm to solve a pathfinding problem.',
+    url: 'https://github.com/m1dunfee/cs-370-ml-pathfinder',
+  }, 
+  {
+    img: [PythonLogo],
     title: 'Game AI',
     category: 'Python',
     details: 'Checkers AI with minimax & alpha-beta pruning; reflections on design trade-offs & future work. Includes inference system and original implementions.',
     url: 'https://github.com/m1dunfee/Game-AI-Checkers',
+  }, 
+  {
+    img: [Mean],
+    title: 'Mean fullstack',
+    category: 'MEAN',
+    details: 'This repo includes a Express server, API, and admin app. It host two sites on ports 3000 and 4200, using Mongodb, Express, Angular, and Node.js.',
+    url: 'https://github.com/m1dunfee/cs465-fullstack-MEAN',
   },   
   {
     img: [CppLogo],
