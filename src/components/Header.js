@@ -21,7 +21,6 @@ const Header = props => {
 
   return (
     <Navbar light fixed="top" expand="md" className="custom-nav">
-      <Container >
         <NavbarBrand tag={RRNavLink} to="/" onClick={() => setIsOpen(false)}>
           <h3 className="my-0">Portfolio</h3>
         </NavbarBrand>
@@ -81,7 +80,6 @@ const Header = props => {
 
           </Nav>
         </Collapse>
-      </Container>
     </Navbar>
   );
 };

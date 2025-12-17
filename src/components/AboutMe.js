@@ -13,12 +13,12 @@ const AboutMe = () => {
   return (
     <div className="card-container pt-3">
       <Card id="AboutMe" className="flex-wrap card card-primary p-3">
-        <blockquote className="quote mb-3">
-          We stand on the shoulders of giants.
-        </blockquote>
+        <h1 className="text-center">
+          "We Stand on the Shoulders of Giants."
+        </h1>
         <hr />
 
-        <div className="row align-items-start">
+        <div className="row align-items-center">
           <div className="col-lg-6 p-2">
             <img
               src="/Profile_Pic.jpg"
