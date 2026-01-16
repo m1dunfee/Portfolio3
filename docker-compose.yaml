@@ -1,7 +1,7 @@
 services:
-  frontend:
+  client:
     build: ./client
-    container_name: frontend
+    container_name: client
     # Expose only inside the Docker network in base. Host publishing is done in dev/prod files.
     expose:
       - "3000"
@@ -9,13 +9,13 @@ services:
       # Default; overridden in dev/prod
       NODE_ENV: ${NODE_ENV:-development}
     depends_on:
-      - backend
+      - server
     networks:
       - internal
 
-  backend:
+  server:
     build: ./server
-    container_name: backend
+    container_name: server
     expose:
       - "5000"
     environment:

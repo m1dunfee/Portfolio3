@@ -15,14 +15,14 @@ services:
     security_opt:
       - no-new-privileges:true
 
-  frontend:
+  client:
     restart: unless-stopped
     environment:
       NODE_ENV: production
     ports:
       - "3000:3000"
 
-  backend:
+  server:
     restart: unless-stopped
     environment:
       NODE_ENV: production

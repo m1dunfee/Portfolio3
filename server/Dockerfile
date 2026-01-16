@@ -1,13 +1,31 @@
 # server/Dockerfile
-FROM node:24-alpine AS deps
+
+# -------------------------
+# dev stage
+# -------------------------
+FROM node:18-alpine AS dev
+
 WORKDIR /app
-COPY package*.json ./
+
+COPY package.json package-lock.json ./
 RUN npm ci
 
-FROM node:24-alpine AS runner
-WORKDIR /app
-ENV NODE_ENV=production
-COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-EXPOSE 8080
-CMD ["node", "src/index.js"]
+
+EXPOSE 5000
+CMD ["npm", "run", "dev"]
+
+# -------------------------
+# prod stage
+# -------------------------
+FROM node:18-alpine AS prod
+
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev
+
+COPY . .
+
+EXPOSE 5000
+CMD ["npm", "start"]
