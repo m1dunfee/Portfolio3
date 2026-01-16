@@ -4,9 +4,10 @@
   "version": "0.1.0",
   "type": "module",
   "engines": {
-    "node": "18.x",
-    "npm": "9.x"
+    "node": ">=22",
+    "npm": ">=10"
   },
+  "engineStrict": true,
   "scripts": {
     "dev": "vite",
     "build": "vite build",

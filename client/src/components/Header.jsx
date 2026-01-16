@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { NavLink as RRNavLink } from 'react-router-dom';
 
 import {
@@ -20,8 +20,7 @@ const Header = props => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Navbar light fixed="top" expand="md" className="custom-nav">
-      <Container >
+    <Navbar dark fixed="top" expand="md" className="custom-nav">
         <NavbarBrand tag={RRNavLink} to="/" onClick={() => setIsOpen(false)}>
           <h3 className="my-0">Portfolio</h3>
         </NavbarBrand>
@@ -75,13 +74,12 @@ const Header = props => {
                 }}
                 className="nav-link"
               >
-                Contact / Resume
+                Resume/CV
               </NavLink>
             </NavItem>
 
           </Nav>
         </Collapse>
-      </Container>
     </Navbar>
   );
 };

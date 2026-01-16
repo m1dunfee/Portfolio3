@@ -6,6 +6,7 @@ const CppLogo = '/cpp_logo.png';
 const CisaLogo = '/CISA_Logo.png';
 const PythonLogo = '/pythonLogo.png'
 const MatLab = '/matLab.png'
+const Mean = '/MEAN.png'
 
 const projectData = [
   {
@@ -17,10 +18,24 @@ const projectData = [
   },
   {
     img: [PythonLogo],
+    title: 'Pathfindre AI',
+    category: 'Python',
+    details: 'Using Reinforcement Learning and Neural Networks, I implement the q-learning algorithm to solve a pathfinding problem.',
+    url: 'https://github.com/m1dunfee/cs-370-ml-pathfinder',
+  }, 
+  {
+    img: [PythonLogo],
     title: 'Game AI',
     category: 'Python',
     details: 'Checkers AI with minimax & alpha-beta pruning; reflections on design trade-offs & future work. Includes inference system and original implementions.',
     url: 'https://github.com/m1dunfee/Game-AI-Checkers',
+  }, 
+  {
+    img: [Mean],
+    title: 'Mean fullstack',
+    category: 'MEAN',
+    details: 'This repo includes a Express server, API, and admin app. It host two sites on ports 3000 and 4200, using Mongodb, Express, Angular, and Node.js.',
+    url: 'https://github.com/m1dunfee/cs465-fullstack-MEAN',
   },   
   {
     img: [CppLogo],
@@ -36,6 +51,27 @@ const projectData = [
     details: 'Example of using a testing libraries to anotate and build custom test cases.',
     url: 'https://github.com/m1dunfee/cs320jUnit',
   },  
+    {
+    img: [PythonLogo],
+    title: 'Data Visualization',
+    category: 'Python',
+    details: 'Using mongodb and python to build an interactive system.',
+    url: 'https://github.com/m1dunfee/cs340ClientServer',
+  },
+    {
+    img: [CppLogo],
+    title: 'OpenGL retro game',
+    category: 'Python',
+    details: 'Retro style game with custom controls and graphics.',
+    url: 'https://github.com/m1dunfee/cs330-opengl-game',
+  },
+    {
+    img: [CppLogo],
+    title: '3D graphics and visualization with OpenGL',
+    category: 'C++',
+    details: 'I use openGL to create a 3d scene of a coffeeshop table with custom graphics, navigation and lighting.',
+    url: 'https://github.com/m1dunfee/cs330-graphics-and-visualization',
+  },
   {
     img: [MatLab],
     title: 'Image Compression',

@@ -1,6 +1,9 @@
-/// Import Google Fonts
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@700&family=Merriweather:wght@700&display=swap");
+/// moved Google Fonts to index.html
+// @use url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap");
+// @use url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@700&family=Merriweather:wght@700&display=swap");
+
+// Sass modules (avoid deprecated global color functions like darken())
+@use "sass:color";
 
 /// Theme Variables
 // $color-background: #F5F5F5 !default;
@@ -69,7 +72,7 @@ a {
   text-decoration: none !important;
 
   &:hover {
-    color: darken($color-hover, 10%) !important;
+    color: color.adjust($color-hover, $lightness: -10%) !important;
     text-decoration: underline !important;
   }
 }
@@ -281,5 +284,28 @@ img.responsive-img {
   100% { box-shadow: 0 0 0 rgba(229,57,53,0); }
 }
 
-/// Import Bootstrap
-@import "bootstrap/scss/bootstrap";
+/* Readable body text (paragraphs) */
+p {
+  color: $color-text !important;
+}
+
+/* Dark dropdown menu inside navbar */
+.custom-nav .dropdown-menu {
+  background-color: $color-background !important;
+  border: 1px solid $color-accent !important;
+}
+
+.custom-nav .dropdown-item {
+  color: $color-text !important;
+}
+
+.custom-nav .dropdown-item:hover,
+.custom-nav .dropdown-item:focus {
+  background-color: $color-hover !important;
+  color: $color-text !important;
+}
+
+/* Dropdown caret icon (sometimes looks wrong in dark nav) */
+.custom-nav .dropdown-toggle::after {
+  border-top-color: $color-text !important;
+}

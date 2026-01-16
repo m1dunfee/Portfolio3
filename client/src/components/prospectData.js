@@ -3,14 +3,14 @@
 
 const prospectData = [
   {
-    img: '/ai.png',
+    img: '/data.jpg',
     title: 'Artificial Intelligence',
     paragraph: [
-      "I love Star Trek. Its premise reflects my deepest hopes for humanity—growth through exploration, cooperation, and technology. One of my favorite characters is Commander Data. His journey to understand reality and what it means to be human resonates deeply with me. As a scientist, I take comfort in facts and logic, and I see beauty in systems that model the world through reason.",
+      "My fascination with artificial intelligence began not with algorithms, but with imagination. Star Trek’s vision of humanity—driven by discovery, compassion, and reason—captured my sense of purpose. Commander Data’s pursuit of understanding what it means to be resonated deeply with me. Like him, I find meaning in logic, systems, and the quiet certainty that comes from understanding how things work. That curiosity became my spark.",
 
-      "I believe artificial intelligence has the potential to assist humanity in profound ways—especially when grounded in objectivity and statistical insight. I’m passionate about building AI that supports human goals with increasing autonomy and clarity, guided by ethical principles and practical design. What excites me most is not just the functionality of these systems, but the mathematics that define their behavior—the logic behind neural networks, decision trees, and optimization. They say math is the language of the universe, and I believe it. Even with our biological limits, the numbers don’t lie. They speak to something deeper, something stable.",
-      
-      "To me, building AI isn’t just about automation—it’s about learning to see the world more clearly through an objective lens, and using that insight to create systems that reflect our best potential."
+      "I see AI as the next step in humanity’s exploration—not of space, but of understanding itself. The mathematics behind neural networks and learning systems fascinate me because they reveal structure beneath chaos. To me, the true beauty of intelligence lies not only in function, but in form—the way equations shape behavior, how logic becomes perception. My goal is to build systems that model reality objectively, bridging reason and experience, and advancing knowledge as a shared human endeavor.",
+
+      "Artificial intelligence, when designed ethically and transparently, has the power to strengthen human connection. I want to create systems that don’t just automate, but illuminate—tools that help us see our world, and ourselves, more clearly. To build AI is to engage in a dialogue between mind and machine, to translate human insight into universal structure. Through this, I hope to contribute to a future where technology reflects our highest virtues: understanding, empathy, and truth."
     ]
   },
   {
