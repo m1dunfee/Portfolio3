@@ -1,59 +1,41 @@
 {
-  "name": "portfolio3",
-  "version": "0.1.0",
+  "name": "client",
   "private": true,
-  "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.6.0",
-    "@fortawesome/fontawesome-svg-core": "^1.2.35",
-    "@fortawesome/free-solid-svg-icons": "^5.15.3",
-    "@fortawesome/react-fontawesome": "^0.1.14",
-    "@testing-library/jest-dom": "^5.11.10",
-    "@testing-library/react": "^11.2.6",
-    "@testing-library/user-event": "^12.8.3",
-    "bootstrap": "^5.3.3",
-    "express": "^5.2.1",
-    "latest": "^0.2.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^7.1.1",
-    "react-scripts": "^5.0.1",
-    "reactstrap": "^8.9.0",
-    "sass": "^1.80.6",
-    "scss": "^0.2.4",
-    "serve": "^14.2.4",
-    "web-vitals": "^1.1.1"
-  },
+  "version": "0.1.0",
+  "type": "module",
   "engines": {
     "node": "18.x",
     "npm": "9.x"
   },
   "scripts": {
-    "dev": "react-scripts start",
-    "start": "serve -s build",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint ."
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.6.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "bootstrap": "^5.3.3",
+    "latest": "^0.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.1.1",
+    "reactstrap": "^8.9.0",
+    "sass": "^1.80.6"
   },
   "devDependencies": {
-    "@babel/plugin-transform-class-properties": "^7.25.9",
-    "sass-loader": "^16.0.4"
+    "@eslint/js": "^9.39.1",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^5.1.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "sass-loader": "^16.0.4",
+    "vite": "^7.2.4"
   }
 }
