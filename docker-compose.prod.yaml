@@ -1,14 +1,11 @@
 services:
-  # Cloudflare Tunnel should run only in prod
   cloudflared:
     image: cloudflare/cloudflared:latest
     container_name: cloudflared
     restart: unless-stopped
-    command: tunnel --no-autoupdate run
-    environment:
-      TUNNEL_TOKEN: ${TUNNEL_TOKEN}
-    volumes:
-      - ./cloudflared/config.yml:/etc/cloudflared/config.yml:ro
+    command: tunnel --no-autoupdate run --token ${TUNNEL_TOKEN}
+    env_file:
+      - .env
     networks:
       - internal
     read_only: true
@@ -19,8 +16,7 @@ services:
     restart: unless-stopped
     environment:
       NODE_ENV: production
-    ports:
-      - "3000:3000"
+      PORT: "80"
 
   server:
     restart: unless-stopped
@@ -28,14 +24,9 @@ services:
       NODE_ENV: production
       PORT: "5000"
       MONGO_URL: mongodb://db:27017/appdb
-    ports:
-      - "5000:5000"
 
   db:
     restart: unless-stopped
-    # If you don't need host access in prod, delete this block.
-    # ports:
-    #   - "27017:27017"
 
 networks:
   internal:

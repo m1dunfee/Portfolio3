@@ -1,8 +1,0 @@
-ingress:
-  - hostname: www.coolproject.com
-    service: http://frontend:80
-
-  - hostname: api.coolproject.com
-    service: http://backend:8080
-
-  - service: http_status:404
