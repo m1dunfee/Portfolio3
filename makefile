@@ -1,28 +1,30 @@
-.PHONY: dev prod down logs ps build-dev build-prod
+.PHONY: up down restart logs ps build rebuild pull
 
-## Development (base + dev)
-dev:
-	docker compose -f docker-compose.yaml -f docker-compose.dev.yaml up -d --build
+# Change this to docker-compose.yaml if that is your filename
+COMPOSE_FILE ?= docker-compose.yml
+COMPOSE := docker compose -f $(COMPOSE_FILE)
 
-## Production (base + prod)
-prod:
-	docker compose -f docker-compose.yaml -f docker-compose.prod.yaml up -d --build
+up:
+	$(COMPOSE) up -d --build
 
-## Stop whatever stack is running (dev or prod)
 down:
-	docker compose -f docker-compose.yaml down
+	$(COMPOSE) down
 
-## Logs (works for dev or prod)
+restart:
+	$(COMPOSE) down
+	$(COMPOSE) up -d --build
+
 logs:
-	docker compose -f docker-compose.yaml logs -f --tail=200
+	$(COMPOSE) logs -f --tail=200
 
-## Container status
 ps:
-	docker compose -f docker-compose.yaml ps
+	$(COMPOSE) ps
 
-## Optional explicit rebuilds
-build-dev:
-	docker compose -f docker-compose.yaml -f docker-compose.dev.yaml build --no-cache
+build:
+	$(COMPOSE) build
 
-build-prod:
-	docker compose -f docker-compose.yaml -f docker-compose.prod.yaml build --no-cache
+rebuild:
+	$(COMPOSE) build --no-cache
+
+pull:
+	$(COMPOSE) pull

@@ -1,42 +1,68 @@
 services:
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run --token ${TUNNEL_TOKEN}
+    env_file:
+      - .env
+    volumes:
+      - ./cloudflared:/etc/cloudflared:ro
+    networks:
+      - edge
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+
   client:
-    build: ./client
+    build:
+      context: ./client
+      target: prod
     container_name: client
-    # Expose only inside the Docker network in base. Host publishing is done in dev/prod files.
-    expose:
-      - "3000"
+    restart: unless-stopped
     environment:
-      # Default; overridden in dev/prod
-      NODE_ENV: ${NODE_ENV:-development}
+      NODE_ENV: production
+      PORT: "80"
+    expose:
+      - "80"
+    networks:
+      - edge
     depends_on:
       - server
-    networks:
-      - internal
 
   server:
-    build: ./server
+    build:
+      context: ./server
+      target: prod
     container_name: server
-    expose:
-      - "5000"
+    restart: unless-stopped
     environment:
-      NODE_ENV: ${NODE_ENV:-development}
+      NODE_ENV: production
       PORT: "5000"
       MONGO_URL: mongodb://db:27017/appdb
+    expose:
+      - "5000"
+    networks:
+      - edge
+      - db_net
     depends_on:
       - db
-    networks:
-      - internal
 
   db:
     image: mongo:8.0
     container_name: db
+    restart: unless-stopped
     volumes:
       - mongo_data:/data/db
     networks:
-      - internal
+      - db_net
 
 networks:
-  internal:
+  edge:
+    name: portfolio_edge
+  db_net:
+    name: portfolio_db_net
+    internal: true
 
 volumes:
   mongo_data:
