@@ -1,0 +1,68 @@
+services:
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run --token ${TUNNEL_TOKEN}
+    env_file:
+      - .env
+    volumes:
+      - ./cloudflared:/etc/cloudflared:ro
+    networks:
+      - edge
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+
+  client:
+    build:
+      context: ./client
+      target: prod
+    container_name: client
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: "80"
+    expose:
+      - "80"
+    networks:
+      - edge
+    depends_on:
+      - server
+
+  server:
+    build:
+      context: ./server
+      target: prod
+    container_name: server
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: "5000"
+      MONGO_URL: mongodb://db:27017/appdb
+    expose:
+      - "5000"
+    networks:
+      - edge
+      - db_net
+    depends_on:
+      - db
+
+  db:
+    image: mongo:8.0
+    container_name: db
+    restart: unless-stopped
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - db_net
+
+networks:
+  edge:
+    name: portfolio_edge
+  db_net:
+    name: portfolio_db_net
+    internal: true
+
+volumes:
+  mongo_data:

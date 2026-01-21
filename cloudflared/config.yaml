@@ -1,0 +1,11 @@
+# cloudflared/config.yml
+# f9563275-bb31-499c-b308-df6b5a5ed7f3
+tunnel: f9563275-bb31-499c-b308-df6b5a5ed7f3
+credentials-file: /etc/cloudflared/f9563275-bb31-499c-b308-df6b5a5ed7f3.json
+
+ingress:
+  - hostname: data-tide.net
+    service: http://client:80
+  - hostname: api.data-tide.net
+    service: http://server:5000
+  - service: http_status:404
