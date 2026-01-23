@@ -1,6 +1,6 @@
 // 2) Projects schema (covers ProjectData)
 // collection: projects
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const ProjectImageSchema = new mongoose.Schema(
   {
@@ -39,4 +39,4 @@ const ProjectSchema = new mongoose.Schema(
 ProjectSchema.index({ slug: 1 }, { unique: true });
 ProjectSchema.index({ "metadata.tech": 1 });
 
-export default mongoose.model("Project", ProjectSchema);
+module.exports = mongoose.model("Project", ProjectSchema);

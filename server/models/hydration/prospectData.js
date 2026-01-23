@@ -49,6 +49,6 @@ const prospectData = [
 }
 ];
 
-export default prospectData;
+module.exports = prospectData;
 
 

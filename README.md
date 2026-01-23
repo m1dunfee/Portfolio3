@@ -9,3 +9,8 @@ React 19
 MongoDB 8.0
 Mongoose 9
 cloudflare: latest
+
+.env var needed
+TUNNEL_TOKEN
+MONGO_URI
+PORT

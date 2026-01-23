@@ -1,30 +1,110 @@
-.PHONY: up down restart logs ps build rebuild pull
+# Makefile for Portfolio3 (Docker Compose)
+# Usage examples:
+#   make dev
+#   make dev-logs
+#   make mongo
+#   make down
+#   make clean
 
-# Change this to docker-compose.yaml if that is your filename
-COMPOSE_FILE ?= docker-compose.yml
-COMPOSE := docker compose -f $(COMPOSE_FILE)
+SHELL := /bin/sh
+
+COMPOSE_BASE := docker-compose.yaml
+COMPOSE_DEV  := docker-compose.dev.yaml
+
+DC_BASE := docker compose -f $(COMPOSE_BASE)
+DC_DEV  := docker compose -f $(COMPOSE_BASE) -f $(COMPOSE_DEV)
+
+# Services (adjust if your compose service names differ)
+DB      := db
+SERVER  := server
+CLIENT  := client
+TUNNEL  := cloudflared
+
+.DEFAULT_GOAL := help
+
+help:
+	@echo "Targets:"
+	@echo "  make dev            - Start dev stack (db + server) with dev overrides"
+	@echo "  make dev-all        - Start dev stack (all services) with dev overrides"
+	@echo "  make dev-build      - Build and start dev stack (db + server)"
+	@echo "  make dev-down       - Stop dev stack"
+	@echo "  make dev-reset      - Stop dev stack and remove volumes (DATA LOSS for mongo)"
+	@echo "  make dev-logs       - Follow logs for dev stack"
+	@echo "  make dev-ps         - Show dev stack status"
+	@echo "  make restart        - Restart server container"
+	@echo "  make shell          - Open shell in server container"
+	@echo "  make mongo          - Open mongosh inside db container"
+	@echo "  make mongo-host     - Print host Mongo URI for Compass"
+	@echo "  make seed           - Run a seed script inside server container (if present)"
+	@echo "  make up             - Start base stack (no dev overrides)"
+	@echo "  make down           - Stop base stack"
+	@echo "  make clean          - Stop everything and prune dangling stuff (careful)"
+
+# -------------------------
+# Dev stack
+# -------------------------
+
+dev:
+	$(DC_DEV) up -d $(DB) $(SERVER)
+
+dev-all:
+	$(DC_DEV) up -d
+
+dev-build:
+	$(DC_DEV) up -d --build $(DB) $(SERVER)
+
+dev-down:
+	$(DC_DEV) down
+
+dev-reset:
+	$(DC_DEV) down -v
+
+dev-logs:
+	$(DC_DEV) logs -f --tail=200
+
+dev-ps:
+	$(DC_DEV) ps
+
+# -------------------------
+# Base stack
+# -------------------------
 
 up:
-	$(COMPOSE) up -d --build
+	$(DC_BASE) up -d
 
 down:
-	$(COMPOSE) down
+	$(DC_BASE) down
+
+# -------------------------
+# Convenience
+# -------------------------
 
 restart:
-	$(COMPOSE) down
-	$(COMPOSE) up -d --build
+	$(DC_DEV) restart $(SERVER)
 
-logs:
-	$(COMPOSE) logs -f --tail=200
+shell:
+	$(DC_DEV) exec $(SERVER) sh
 
-ps:
-	$(COMPOSE) ps
+mongo:
+	$(DC_DEV) exec $(DB) mongosh
 
-build:
-	$(COMPOSE) build
+mongo-host:
+	@echo mongodb://localhost:27017/portfolio
 
-rebuild:
-	$(COMPOSE) build --no-cache
+# If you create a seed script later, set SEED to its path (relative to /app)
+# Example: make seed SEED=models/hydration/seed.js
+SEED ?= seed.js
+seed:
+	$(DC_DEV) exec $(SERVER) node $(SEED)
 
-pull:
-	$(COMPOSE) pull
+# -------------------------
+# Cleanup
+# -------------------------
+
+clean:
+	@echo "Stopping dev stack..."
+	-$(DC_DEV) down
+	@echo "Stopping base stack..."
+	-$(DC_BASE) down
+	@echo "Pruning dangling images/containers/networks..."
+	-docker system prune -f

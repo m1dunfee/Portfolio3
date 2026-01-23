@@ -112,6 +112,6 @@ const topicData = [
   },
 ];
 
-export default topicData;
+module.exports = topicData;
 
 

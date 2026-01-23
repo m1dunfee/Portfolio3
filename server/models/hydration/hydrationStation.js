@@ -2,21 +2,15 @@
 //export DB_NAME="portfolio"
 //node seed.mjs
 
-
-
-import mongoose from "mongoose";
-
-import Article from "../schemaArticle.js";
-import Project from "../schemaProject.js";
-
-import prospectData from "../prospectData.js";
-import topicData from "../topicData.js";
-import projectData from "../projectData.js";
+const mongoose = require("mongoose");
+const Article = require( "../schemaArticle.js");
+const Project = require( "../schemaProject.js");
+const prospectData = require( "./prospectData.js");
+const topicData = require( "./topicData.js");
+const projectData = require( "./projectData.js");
 
 // env
-const host = process.env.DB_HOST || "localhost:27017"; // or "mongodb:27017" in docker compose
-const dbName = process.env.DB_NAME || "portfolio";
-const dbURI = process.env.DB_URI || `mongodb://${host}/${dbName}`;
+const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/portfolio";
 
 // helpers
 function slugify(s) {
@@ -80,8 +74,8 @@ async function upsertProject(doc) {
 }
 
 async function main() {
-  await mongoose.connect(dbURI);
-  console.log(`Connected: ${dbURI}`);
+  await mongoose.connect(MONGO_URI);
+  console.log(`Connected: ${MONGO_URI}`);
 
   // Articles: prospects + topics
   const prospectDocs = prospectData.map((item) => toArticle({ kind: "prospect", item }));

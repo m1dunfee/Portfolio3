@@ -1,6 +1,6 @@
 // 1) Articles schema (covers prospectData AND topicData)
 // collection: articles
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const ImageSchema = new mongoose.Schema(
   {
@@ -55,4 +55,4 @@ ArticleSchema.index({ kind: 1, slug: 1 }, { unique: true });
 // fast filtering
 ArticleSchema.index({ kind: 1, "metadata.topics": 1 });
 
-export default mongoose.model("Article", ArticleSchema);
+module.exports = mongoose.model("Article", ArticleSchema);
