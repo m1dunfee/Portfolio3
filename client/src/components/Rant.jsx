@@ -1,5 +1,5 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import React, { Component} from 'react';
+import { Component} from 'react';
 import { Container, Row, Col, Card } from 'reactstrap';
 
 class Rant extends Component {
