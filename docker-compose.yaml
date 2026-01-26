@@ -66,3 +66,4 @@ networks:
 
 volumes:
   mongo_data:
+    name: portfolio_mongo_data

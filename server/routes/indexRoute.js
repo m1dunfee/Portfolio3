@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 // bring in controllers
-const indexController = require('../controllers/index');
+const indexController = require('../controllers/indexController');
 
 // health check
 router
