@@ -5,9 +5,6 @@ const app = express();
 const mongoose = require('mongoose');
 const port = process.env.PORT || 5000;
 
-//runs seeding on import because main()
-//require("./models/hydration/hydrationStation");
-
 async function connectDb() {
     await mongoose. connect(process.env.MONGO_URI);
     console.log('Mongo connected');
@@ -19,10 +16,16 @@ connectDb().catch((e) => {
 });
 
 let indexRouter = require('./routes/indexRoute');
-let projectRouter = require('./routes/projcetRoute');
+let projectsRouter = require('./routes/projcetsRoute');
+let booksRouter = require('./routes/booksRoute');
+let prospectsRouter = require('./routes/prospectsRoute');
+let topicsRouter = require('./routes/topicsRoute');
 
 app.use('/api', indexRouter);
-app.use('/api', projectRouter);
+app.use('/api', projectsRouter);
+app.use('/api', booksRouter);
+app.use('/api', prospectsRouter);
+app.use('/api', topicsRouter);
 
 app.listen(port, "0.0.0.0", () => {
     console.log(`listening on port ${port}`); //backticks for injection
@@ -32,7 +35,7 @@ app.listen(port, "0.0.0.0", () => {
 //proper shutdown
 async function shutdown(signal) {
   console.log(`Received ${signal}, shutting down...`);
-  server.close(async () => {
+  app.close(async () => {
     try {
       await mongoose.disconnect();
       console.log("Mongo disconnected");

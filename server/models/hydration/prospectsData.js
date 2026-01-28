@@ -1,0 +1,317 @@
+// prospectData.js (UPDATED for ArticleSchema)
+// kind: "prospect"
+//
+// Changes:
+// - metadata: [ ... ]  -->  metadata: { title, summary, url, updatedAt, tags: { discipline[], tech[], skill[], status[] } }
+// - Added new prospects: Software Engineer, Ops (DevOps/Operations), Data Science
+// - Cross-tagging: concepts can appear in discipline + tech + skill so filters "hit" at higher technical depth.
+
+const prospectData = [
+  {
+    kind: "prospect",
+    slug: "artificial-intelligence",
+    title: "Artificial Intelligence",
+    heroImage: {
+      src: "/data.jpg",
+      alt: "Abstract data and AI imagery",
+      pos: 0,
+    },
+    blocks: [
+      {
+        pos: 0,
+        text:
+          "My fascination with artificial intelligence began not with algorithms, but with imagination. Star Trek's vision of humanity, driven by discovery, compassion, and reason, captured my sense of purpose. Commander Data's pursuit of understanding what it means to be resonated deeply with me. Like him, I find meaning in logic, systems, and the quiet certainty that comes from understanding how things work. That curiosity became my spark.",
+      },
+      {
+        pos: 1,
+        text:
+          "I see AI as the next step in humanity's exploration, not of space, but of understanding itself. The mathematics behind neural networks and learning systems fascinate me because they reveal structure beneath chaos. To me, the true beauty of intelligence lies not only in function, but in form, the way equations shape behavior, how logic becomes perception. My goal is to build systems that model reality objectively, bridging reason and experience, and advancing knowledge as a shared human endeavor.",
+      },
+      {
+        pos: 2,
+        text:
+          "Artificial intelligence, when designed ethically and transparently, has the power to strengthen human connection. I want to create systems that don't just automate, but illuminate, tools that help us see our world, and ourselves, more clearly. To build AI is to engage in a dialogue between mind and machine, to translate human insight into universal structure. Through this, I hope to contribute to a future where technology reflects our highest virtues: understanding, empathy, and truth.",
+      },
+    ],
+    metadata: {
+      title: "",
+      summary: "Research-driven interest in agents, reasoning, and ethical AI systems.",
+      url: "",
+      updatedAt: null,
+      tags: {
+        discipline: ["ArtificialIntelligence", "Research", "Ethics", "Agents", "Reasoning"],
+        tech: [],
+        skill: ["Modeling", "Experimentation", "CriticalThinking"],
+        status: [],
+      },
+    },
+  },
+
+  {
+    kind: "prospect",
+    slug: "bioinfomatics",
+    title: "Bioinfomatics",
+    heroImage: {
+      src: "/bioinfomatics.jpg",
+      alt: "Bioinformatics and genetics imagery",
+      pos: 0,
+    },
+    blocks: [
+      {
+        pos: 0,
+        text:
+          "Biology was my first love in science. As a Boy Scout, I was introduced to ecology and the responsibility we have to preserve and protect life. That early fascination with ecosystems evolved into a deeper interest in genetics as I got older. Superheroes always seemed too far-fetched, but the idea of rewriting the building blocks of life to solve real problems felt within reach. At the same time, I began noticing how unequally biology plays out, how some people are born into disease, disorder, or disadvantage they never chose.",
+      },
+      {
+        pos: 1,
+        text:
+          "That sense of imbalance is what drives my interest in CRISPR and genetic engineering. I want to work on technologies that level the playing field, whether that means reducing genetic predispositions to disease or using native plants to detoxify environments damaged by industry. From editing a gene to help a child avoid a rare illness to modifying plants that absorb nickel from contaminated mining zones, I'm inspired by the possibility of recoding life for good.",
+      },
+      {
+        pos: 2,
+        text:
+          "My foundation in computer science gives me the tools to model biological systems, while my passion for fairness and sustainability gives me the reason. Bioinformatics and gene editing are where I see those values meet, and where I hope to make my mark.",
+      },
+    ],
+    metadata: {
+      title: "",
+      summary: "Computational biology, genetics, and equity-driven bioengineering goals.",
+      url: "",
+      updatedAt: null,
+      tags: {
+        discipline: ["Bioinformatics", "Genetics", "Sustainability", "Equity"],
+        tech: ["CRISPR"],
+        skill: ["Modeling", "DataAnalysis", "ResearchReading"],
+        status: [],
+      },
+    },
+  },
+
+  {
+    kind: "prospect",
+    slug: "cyber-security",
+    title: "Cyber Security",
+    heroImage: {
+      src: "/cybersecurity.avif",
+      alt: "Cybersecurity themed imagery",
+      pos: 0,
+    },
+    blocks: [
+      {
+        pos: 0,
+        text:
+          "Cybersecurity doesn't call to me in quite the same way as other areas of computer science, but I've come to realize I have a natural knack for it. Concepts like SQL injections, least privilege, and secure communication protocols tend to stick with me without effort. I don't go out of my way to memorize them, they just stay top of mind.",
+      },
+      {
+        pos: 1,
+        text:
+          "Maybe it's because I've always enjoyed daydreaming about how systems can be broken, especially in games. That same mindset naturally extends to questions like: How could I scan ports on a network? Could a buffer overflow in an isolated system reveal something unexpected? I've explored tools like Wireshark out of sheer curiosity, and found myself fascinated by the depth of visibility they offer into network behavior.",
+      },
+      {
+        pos: 2,
+        text:
+          "Organizations like OWASP and CISA spark further interest by documenting known exploits, which give me scenarios to reverse-engineer or mentally model. Even if I didn't plan to go into cybersecurity at first, it's a space where my instincts and habits line up well with real-world needs, and I wouldn't be surprised if I end up there.",
+      },
+    ],
+    metadata: {
+      title: "",
+      summary: "Security mindset focused on threat modeling, network visibility, and hardening.",
+      url: "",
+      updatedAt: null,
+      tags: {
+        discipline: ["SoftwareSecurity", "CyberSecurity", "ThreatModeling"],
+        tech: ["Wireshark"],
+        skill: ["SecureDesign", "VulnerabilityAnalysis", "Networking"],
+        status: [],
+      },
+    },
+  },
+
+  {
+    kind: "prospect",
+    slug: "game-dev",
+    title: "Game Dev",
+    heroImage: {
+      src: "/gameDev.jpg",
+      alt: "Game development imagery",
+      pos: 0,
+    },
+    blocks: [
+      {
+        pos: 0,
+        text:
+          "I've loved games ever since I first picked up Morrowind, I must've been around eight. Over the years, gaming became more than a pastime, it became a way of seeing systems, logic, and interaction unfold in real time. As I began learning web development, I started craving something deeper: full system design, dynamic interactions, and object behaviors that go beyond static interfaces.",
+      },
+      {
+        pos: 1,
+        text:
+          "One of my favorite subjects in college was physics. Even though it was challenging, I found the logic behind motion, collisions, and forces fascinating, and I can't help but imagine how powerful it would be to program that logic into a virtual world. I believe games are reflections of our own reality, just shaped through the lens of rules and imagination. It's one thing to play them, but building them feels like an act of learning, translating real-world thought into simulated systems.",
+      },
+      {
+        pos: 2,
+        text:
+          "I've also worked in game testing, and I never tired of it. I'd spend all day testing, then come home and voluntarily boot up the same game. I guess I'm a creature of habit, but now, I'd like to start designing entirely new creatures of my own.",
+      },
+    ],
+    metadata: {
+      title: "",
+      summary: "Systems-driven interest in simulation, physics, and interactive software design.",
+      url: "",
+      updatedAt: null,
+      tags: {
+        discipline: ["GameDev", "Simulation", "SystemsDesign"],
+        tech: [],
+        skill: ["Debugging", "Testing", "ProblemSolving"],
+        status: [],
+      },
+    },
+  },
+
+  // NEW: Software Engineer
+  {
+    kind: "prospect",
+    slug: "software-engineer",
+    title: "Software Engineer",
+    heroImage: {
+      src: "/softwareEngineering.jpg",
+      alt: "Software engineering imagery",
+      pos: 0,
+    },
+    blocks: [
+      {
+        pos: 0,
+        text:
+          "Software engineering is where ideas turn into reliable systems. I like the discipline of taking a vague goal and converting it into a design that can be implemented, tested, deployed, and maintained. The work is not just writing code, it is managing constraints: correctness, performance, security, and long-term change.",
+      },
+      {
+        pos: 1,
+        text:
+          "What I enjoy most is building structure. Good software feels like a well-designed machine: each part has a purpose, interfaces are clear, and the system still holds together when requirements evolve. That means solid architecture, practical patterns, and a habit of thinking in trade-offs rather than absolutes.",
+      },
+      {
+        pos: 2,
+        text:
+          "I want to be the kind of engineer who can deliver value in the real world: readable code, clean APIs, and systems that are resilient under pressure. If it is worth building, it is worth building in a way that can survive its own future.",
+      },
+    ],
+    metadata: {
+      title: "",
+      summary: "Build reliable, maintainable systems with strong architecture and delivery discipline.",
+      url: "",
+      updatedAt: null,
+      tags: {
+        discipline: ["SoftwareEngineering", "BackendEngineering", "FullStack", "SDLC"],
+        tech: ["JavaScript", "Node", "Express", "MongoDB"],
+        skill: [
+          "APIDesign",
+          "Testing",
+          "Debugging",
+          "Refactoring",
+          "CodeQuality",
+          "Documentation",
+        ],
+        status: [],
+      },
+    },
+  },
+
+  // NEW: Ops (DevOps / Operations)
+  {
+    kind: "prospect",
+    slug: "ops-devops",
+    title: "Ops (DevOps / Operations)",
+    heroImage: {
+      src: "/devops.jpg",
+      alt: "DevOps and operations imagery",
+      pos: 0,
+    },
+    blocks: [
+      {
+        pos: 0,
+        text:
+          "Ops is where software meets reality. A feature only matters if it runs, stays up, and can be repaired when something breaks. I like the mindset of building systems that are observable, controllable, and safe to change, because production environments are adversarial in their own way: latency, failure, and human error all show up eventually.",
+      },
+      {
+        pos: 1,
+        text:
+          "DevOps, to me, is about reducing friction between building and operating. Containers, repeatable deployments, and sane defaults eliminate entire classes of mistakes. The goal is not complexity for its own sake, it is building a pipeline where changes can move fast without turning the system into a fragile mess.",
+      },
+      {
+        pos: 2,
+        text:
+          "I want to develop real operational strength: monitoring, incident response, and security-minded infrastructure. Reliability is not luck, it is engineered.",
+      },
+    ],
+    metadata: {
+      title: "",
+      summary: "Reliability, deployments, and secure infrastructure with a production-first mindset.",
+      url: "",
+      updatedAt: null,
+      tags: {
+        discipline: ["DevOps", "Operations", "SiteReliabilityEngineering", "CloudEngineering"],
+        tech: ["Docker", "Nginx", "Linux", "MongoDB", "Cloudflare"],
+        skill: [
+          "Containerization",
+          "Networking",
+          "Monitoring",
+          "Troubleshooting",
+          "Deployment",
+          "IncidentResponse",
+          "SecurityHardening",
+        ],
+        status: [],
+      },
+    },
+  },
+
+  // NEW: Data Science
+  {
+    kind: "prospect",
+    slug: "data-science",
+    title: "Data Science",
+    heroImage: {
+      src: "/dataScience.jpg",
+      alt: "Data science imagery",
+      pos: 0,
+    },
+    blocks: [
+      {
+        pos: 0,
+        text:
+          "Data science is the bridge between raw information and decision making. I like that it forces you to be honest: assumptions must be stated, measurements must be validated, and uncertainty must be quantified. It is a discipline of turning questions into models and models into evidence.",
+      },
+      {
+        pos: 1,
+        text:
+          "What draws me in is the end-to-end thinking. You do not just train a model, you define the problem, engineer the data pipeline, evaluate results, and communicate what the numbers actually mean. The best work is not flashy, it is correct, reproducible, and useful.",
+      },
+      {
+        pos: 2,
+        text:
+          "I want to build systems that learn from data responsibly: clean analytics, sound statistics, and models that can be inspected and improved. Insight is not a vibe, it is a method.",
+      },
+    ],
+    metadata: {
+      title: "",
+      summary: "Evidence-driven modeling, analytics pipelines, and reproducible decision support.",
+      url: "",
+      updatedAt: null,
+      tags: {
+        discipline: ["DataScience", "AppliedStatistics", "MachineLearning", "DataEngineering"],
+        tech: ["Python", "SQL", "MongoDB"],
+        skill: [
+          "DataAnalysis",
+          "FeatureEngineering",
+          "ExperimentDesign",
+          "Evaluation",
+          "Visualization",
+          "ETL",
+          "Reproducibility",
+        ],
+        status: [],
+      },
+    },
+  },
+];
+
+module.exports = prospectData;
