@@ -45,10 +45,14 @@ help:
 # -------------------------
 
 dev:
-	$(DC_DEV) up -d $(DB) $(SERVER)
+	$(DC_DEV) up -d --build $(DB) $(SERVER)
 
 dev-all:
-	$(DC_DEV) up -d
+	$(DC_DEV) up -d --build
+
+# Optional: force recreate containers (useful when images/volumes got weird)
+dev-recreate:
+	$(DC_DEV) up -d --build --force-recreate
 
 dev-build:
 	$(DC_DEV) up -d --build $(DB) $(SERVER)
@@ -58,12 +62,6 @@ dev-down:
 
 dev-reset:
 	$(DC_DEV) down -v
-
-dev-logs:
-	$(DC_DEV) logs -f --tail=200
-
-dev-ps:
-	$(DC_DEV) ps
 
 # -------------------------
 # Base stack
@@ -93,7 +91,7 @@ mongo-host:
 
 # If you create a seed script later, set SEED to its path (relative to /app)
 # Example: make seed SEED=models/hydration/seed.js
-SEED ?= seed.js
+SEED ?= ./models/hydration/hydrationStation.js
 seed:
 	$(DC_DEV) exec $(SERVER) node $(SEED)
 
