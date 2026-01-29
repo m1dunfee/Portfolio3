@@ -1,5 +1,5 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useState } from "react";
 import {
   Card,
   CardBody,
@@ -12,60 +12,70 @@ import {
   Row,
   Col,
 } from "reactstrap";
+import { useCollection } from "../hooks/useCollection";
 
-// Expect each project to have a stable id.
-// If you do not have one yet, add it in your data (recommended).
-function getProjectId(project, index) {
-  return project.id ?? project.slug ?? project.url ?? project.title ?? String(index);
+function nextIndex(current, dir, count) {
+  if (!count || count <= 1) return 0;
+  return (current + dir + count) % count;
 }
 
-export default function Projects({ projectList = [] }) {
-  // active image index per project id, eg: { "portfolio": 2, "rsa": 0 }
+export default function Projects() {
+  const { data, loading, error } = useCollection("projects");
+
+  // active image index per project id
   const [activeById, setActiveById] = useState({});
 
-  const ids = useMemo(
-    () => projectList.map((p, i) => getProjectId(p, i)),
-    [projectList]
-  );
-
-  const getActiveIndex = useCallback(
-    (id) => activeById[id] ?? 0,
-    [activeById]
-  );
+  const getActiveIndex = useCallback((id) => activeById[id] ?? 0, [activeById]);
 
   const step = useCallback((id, dir, imgCount) => {
-    if (!imgCount || imgCount <= 1) return;
-
     setActiveById((prev) => {
       const current = prev[id] ?? 0;
-      const next = (current + dir + imgCount) % imgCount; // circular
+      const next = nextIndex(current, dir, imgCount);
       return { ...prev, [id]: next };
     });
   }, []);
 
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {String(error.message || error)}</div>;
+
+  const projects = Array.isArray(data) ? data : (data?.projects ?? []);
+
   return (
     <Container fluid id="Projects" className="cards-img-container">
       <Row>
-        {projectList.map((project, index) => {
-          const id = ids[index];
-          const images = Array.isArray(project.img) ? project.img : [project.img].filter(Boolean);
+        {projects.map((project) => {
+          const id = project.slug ?? project._id;
+
+          const images = project.images ?? [];
           const imgCount = images.length;
+
           const active = getActiveIndex(id);
-          const src = images[active];
+          const img = images[active] ?? null;
+
+          const src = img?.src ?? null;
+          const alt =
+            img?.alt ?? project.metadata?.title ?? project.title ?? "Project";
 
           return (
             <Col md="4" className="py-3 d-flex justify-content-center" key={id}>
               <Card className="card-primary w-100">
                 <div className="custom-slider card-img-container">
-                  {/* Key forces remount so Fade "re-appears" when src changes */}
-                  <Fade key={`${id}-${active}`} in={true}>
-                    <img
-                      src={src}
-                      alt={`${project.title ?? "Project"} slide ${active + 1}`}
-                      style={{ width: "100%", maxHeight: "200px", objectFit: "contain" }}
-                      className="img-fluid"
-                    />
-                  </Fade>
+                  {src ? (
+                    <Fade key={`${id}-${active}`} in={true}>
+                      <img
+                        src={src}
+                        alt={alt}
+                        style={{
+                          width: "100%",
+                          maxHeight: "200px",
+                          objectFit: "contain",
+                        }}
+                        className="img-fluid"
+                      />
+                    </Fade>
+                  ) : (
+                    <div style={{ height: "200px" }} />
+                  )}
 
                   <div className="slider-controls">
                     <Button
@@ -89,17 +99,19 @@ export default function Projects({ projectList = [] }) {
                 </div>
 
                 <CardBody>
-                  <CardTitle tag="h5">{project.title}</CardTitle>
-                  <CardSubtitle tag="h6" className="mb-2 text-muted">
-                    {project.category}
-                  </CardSubtitle>
-                  <CardText>{project.details}</CardText>
+                  <CardTitle tag="h4">
+                    {project.metadata?.title ?? project.title}
+                  </CardTitle>
 
-                  {project.url ? (
+                  <CardSubtitle className="mb-2">
+                    <p>{project.summary ?? ""}</p>
+                  </CardSubtitle>
+
+                  {project.metadata?.url ? (
                     <Button
                       outline
                       color="primary"
-                      href={project.url}
+                      href={project.metadata.url}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

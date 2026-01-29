@@ -1,21 +1,14 @@
-// prospectData.js (UPDATED for ArticleSchema)
-// kind: "prospect"
-//
+// prospectData.js (RESHAPED for schemaContent.js)
 // Changes:
-// - metadata: [ ... ]  -->  metadata: { title, summary, url, updatedAt, tags: { discipline[], tech[], skill[], status[] } }
-// - Added new prospects: Software Engineer, Ops (DevOps/Operations), Data Science
-// - Cross-tagging: concepts can appear in discipline + tech + skill so filters "hit" at higher technical depth.
+// - removed kind
+// - heroImage --> images[]
+// - metadata tags --> metadata.index
 
 const prospectData = [
   {
-    kind: "prospect",
     slug: "artificial-intelligence",
     title: "Artificial Intelligence",
-    heroImage: {
-      src: "/data.jpg",
-      alt: "Abstract data and AI imagery",
-      pos: 0,
-    },
+    images: [{ src: "/data.jpg", alt: "Abstract data and AI imagery", pos: 0 }],
     blocks: [
       {
         pos: 0,
@@ -34,28 +27,20 @@ const prospectData = [
       },
     ],
     metadata: {
-      title: "",
-      summary: "Research-driven interest in agents, reasoning, and ethical AI systems.",
       url: "",
-      updatedAt: null,
-      tags: {
+      status: "",
+      index: {
         discipline: ["ArtificialIntelligence", "Research", "Ethics", "Agents", "Reasoning"],
         tech: [],
         skill: ["Modeling", "Experimentation", "CriticalThinking"],
-        status: [],
       },
     },
   },
 
   {
-    kind: "prospect",
     slug: "bioinfomatics",
     title: "Bioinfomatics",
-    heroImage: {
-      src: "/bioinfomatics.jpg",
-      alt: "Bioinformatics and genetics imagery",
-      pos: 0,
-    },
+    images: [{ src: "/bioinfomatics.jpg", alt: "Bioinformatics and genetics imagery", pos: 0 }],
     blocks: [
       {
         pos: 0,
@@ -74,28 +59,20 @@ const prospectData = [
       },
     ],
     metadata: {
-      title: "",
-      summary: "Computational biology, genetics, and equity-driven bioengineering goals.",
       url: "",
-      updatedAt: null,
-      tags: {
+      status: "",
+      index: {
         discipline: ["Bioinformatics", "Genetics", "Sustainability", "Equity"],
         tech: ["CRISPR"],
         skill: ["Modeling", "DataAnalysis", "ResearchReading"],
-        status: [],
       },
     },
   },
 
   {
-    kind: "prospect",
     slug: "cyber-security",
     title: "Cyber Security",
-    heroImage: {
-      src: "/cybersecurity.avif",
-      alt: "Cybersecurity themed imagery",
-      pos: 0,
-    },
+    images: [{ src: "/cybersecurity.avif", alt: "Cybersecurity themed imagery", pos: 0 }],
     blocks: [
       {
         pos: 0,
@@ -114,28 +91,20 @@ const prospectData = [
       },
     ],
     metadata: {
-      title: "",
-      summary: "Security mindset focused on threat modeling, network visibility, and hardening.",
       url: "",
-      updatedAt: null,
-      tags: {
+      status: "",
+      index: {
         discipline: ["SoftwareSecurity", "CyberSecurity", "ThreatModeling"],
         tech: ["Wireshark"],
         skill: ["SecureDesign", "VulnerabilityAnalysis", "Networking"],
-        status: [],
       },
     },
   },
 
   {
-    kind: "prospect",
     slug: "game-dev",
     title: "Game Dev",
-    heroImage: {
-      src: "/gameDev.jpg",
-      alt: "Game development imagery",
-      pos: 0,
-    },
+    images: [{ src: "/gameDev.jpg", alt: "Game development imagery", pos: 0 }],
     blocks: [
       {
         pos: 0,
@@ -154,29 +123,20 @@ const prospectData = [
       },
     ],
     metadata: {
-      title: "",
-      summary: "Systems-driven interest in simulation, physics, and interactive software design.",
       url: "",
-      updatedAt: null,
-      tags: {
+      status: "",
+      index: {
         discipline: ["GameDev", "Simulation", "SystemsDesign"],
         tech: [],
         skill: ["Debugging", "Testing", "ProblemSolving"],
-        status: [],
       },
     },
   },
 
-  // NEW: Software Engineer
   {
-    kind: "prospect",
     slug: "software-engineer",
     title: "Software Engineer",
-    heroImage: {
-      src: "/softwareEngineering.jpg",
-      alt: "Software engineering imagery",
-      pos: 0,
-    },
+    images: [{ src: "/softwareEngineering.jpg", alt: "Software engineering imagery", pos: 0 }],
     blocks: [
       {
         pos: 0,
@@ -195,11 +155,9 @@ const prospectData = [
       },
     ],
     metadata: {
-      title: "",
-      summary: "Build reliable, maintainable systems with strong architecture and delivery discipline.",
       url: "",
-      updatedAt: null,
-      tags: {
+      status: "",
+      index: {
         discipline: ["SoftwareEngineering", "BackendEngineering", "FullStack", "SDLC"],
         tech: ["JavaScript", "Node", "Express", "MongoDB"],
         skill: [
@@ -210,21 +168,14 @@ const prospectData = [
           "CodeQuality",
           "Documentation",
         ],
-        status: [],
       },
     },
   },
 
-  // NEW: Ops (DevOps / Operations)
   {
-    kind: "prospect",
     slug: "ops-devops",
     title: "Ops (DevOps / Operations)",
-    heroImage: {
-      src: "/devops.jpg",
-      alt: "DevOps and operations imagery",
-      pos: 0,
-    },
+    images: [{ src: "/devops.jpg", alt: "DevOps and operations imagery", pos: 0 }],
     blocks: [
       {
         pos: 0,
@@ -243,11 +194,9 @@ const prospectData = [
       },
     ],
     metadata: {
-      title: "",
-      summary: "Reliability, deployments, and secure infrastructure with a production-first mindset.",
       url: "",
-      updatedAt: null,
-      tags: {
+      status: "",
+      index: {
         discipline: ["DevOps", "Operations", "SiteReliabilityEngineering", "CloudEngineering"],
         tech: ["Docker", "Nginx", "Linux", "MongoDB", "Cloudflare"],
         skill: [
@@ -259,21 +208,14 @@ const prospectData = [
           "IncidentResponse",
           "SecurityHardening",
         ],
-        status: [],
       },
     },
   },
 
-  // NEW: Data Science
   {
-    kind: "prospect",
     slug: "data-science",
     title: "Data Science",
-    heroImage: {
-      src: "/dataScience.jpg",
-      alt: "Data science imagery",
-      pos: 0,
-    },
+    images: [{ src: "/dataScience.jpg", alt: "Data science imagery", pos: 0 }],
     blocks: [
       {
         pos: 0,
@@ -292,11 +234,9 @@ const prospectData = [
       },
     ],
     metadata: {
-      title: "",
-      summary: "Evidence-driven modeling, analytics pipelines, and reproducible decision support.",
       url: "",
-      updatedAt: null,
-      tags: {
+      status: "",
+      index: {
         discipline: ["DataScience", "AppliedStatistics", "MachineLearning", "DataEngineering"],
         tech: ["Python", "SQL", "MongoDB"],
         skill: [
@@ -308,7 +248,6 @@ const prospectData = [
           "ETL",
           "Reproducibility",
         ],
-        status: [],
       },
     },
   },

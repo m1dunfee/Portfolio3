@@ -60,6 +60,9 @@ const Header = props => {
                 <DropdownItem tag={RRNavLink} to="/topics" className="dropdown-item" onClick={() => setIsOpen(false)}>
                   Topics
                 </DropdownItem>
+                <DropdownItem tag={RRNavLink} to="/books" className="dropdown-item"  onClick={() => setIsOpen(false)}>
+                  Books
+                </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
 

@@ -7,11 +7,6 @@ import Footer from './components/Footer';
 import AboutMe from './components/AboutMe';
 import Rant from './components/Rant';
 
-// data
-import projectData from './components/projectData';
-import prospectData from './components/prospectData'
-import topicData from './components/topicData';
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -37,9 +32,10 @@ class App extends Component {
         <div className='App-content p-4'>
             <Routes>
               <Route path="/" element={<AboutMe />} />
-              <Route path="/projects" element={<Projects projectList={projectData} />} />
-              <Route path="/prospects" element={<Rant propsObjectList={prospectData} />} />
-              <Route path="/topics" element={<Rant propsObjectList={topicData} />} />
+              <Route path="/projects" element={<Projects/>} />
+              <Route path="/prospects" element={<Rant collection = "prospects" />} />
+              <Route path="/topics" element={<Rant collection ="topics" />} />
+              <Route path="/books" element={<Rant collection="books"/>} />
             </Routes>
         </div>
 

@@ -17,10 +17,10 @@ const mongoose = require("mongoose");
 const { modelFor } = require("../ContentSchema.js");
 
 // Data files reshaped to canonical Content shape
-const projectData = require("./projectData.js");
-const topicData = require("./topicData.js");
-const prospectData = require("./prospectData.js");
-const bookData = require("./bookData.js");
+const projectData = require("./projectsData.js");
+const topicData = require("./topicsData.js");
+const prospectData = require("./prospectsData.js");
+const bookData = require("./booksData.js");
 
 // helpers
 function slugify(s) {

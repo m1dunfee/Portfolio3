@@ -1,17 +1,4 @@
 // topicData.js (RESHAPED for schemaContent.js)
-//
-// Canonical shape:
-// {
-//   slug: String,
-//   title: String,
-//   images: [{ src, alt, pos }],
-//   blocks: [{ pos, text }],
-//   metadata: {
-//     index: { discipline: [String], tech: [String], skill: [String] },
-//     url: String,
-//     status: String
-//   }
-// }
 
 const topicData = [
   {
@@ -31,13 +18,13 @@ const topicData = [
       },
     ],
     metadata: {
+      url: "",
+      status: "",
       index: {
         discipline: ["AI", "Agents", "Reasoning", "Search", "DecisionMaking"],
         tech: [],
         skill: [],
       },
-      url: "",
-      status: "",
     },
   },
 
@@ -58,13 +45,19 @@ const topicData = [
       },
     ],
     metadata: {
+      url: "",
+      status: "",
       index: {
-        discipline: ["MachineLearning", "Optimization", "Generalization", "Data", "Models"],
+        discipline: [
+          "MachineLearning",
+          "Optimization",
+          "Generalization",
+          "Data",
+          "Models",
+        ],
         tech: [],
         skill: [],
       },
-      url: "",
-      status: "",
     },
   },
 
@@ -85,13 +78,19 @@ const topicData = [
       },
     ],
     metadata: {
+      url: "",
+      status: "",
       index: {
-        discipline: ["NeuralNetworks", "Representation", "Nonlinear", "FunctionApproximation", "Perception"],
+        discipline: [
+          "NeuralNetworks",
+          "Representation",
+          "Nonlinear",
+          "FunctionApproximation",
+          "Perception",
+        ],
         tech: [],
         skill: [],
       },
-      url: "",
-      status: "",
     },
   },
 
@@ -112,13 +111,13 @@ const topicData = [
       },
     ],
     metadata: {
+      url: "",
+      status: "",
       index: {
         discipline: ["DeepLearning", "EndToEnd", "Vision", "NLP", "GradientDescent"],
         tech: [],
         skill: [],
       },
-      url: "",
-      status: "",
     },
   },
 
@@ -139,13 +138,19 @@ const topicData = [
       },
     ],
     metadata: {
+      url: "",
+      status: "",
       index: {
-        discipline: ["ReinforcementLearning", "Agents", "Control", "Policy", "ExplorationExploitation"],
+        discipline: [
+          "ReinforcementLearning",
+          "Agents",
+          "Control",
+          "Policy",
+          "ExplorationExploitation",
+        ],
         tech: [],
         skill: [],
       },
-      url: "",
-      status: "",
     },
   },
 
@@ -171,13 +176,19 @@ const topicData = [
       },
     ],
     metadata: {
+      url: "",
+      status: "",
       index: {
-        discipline: ["Supervised", "Unsupervised", "Clustering", "Classification", "RepresentationLearning"],
+        discipline: [
+          "Supervised",
+          "Unsupervised",
+          "Clustering",
+          "Classification",
+          "RepresentationLearning",
+        ],
         tech: [],
         skill: [],
       },
-      url: "",
-      status: "",
     },
   },
 
@@ -203,13 +214,13 @@ const topicData = [
       },
     ],
     metadata: {
+      url: "",
+      status: "",
       index: {
         discipline: ["LinearAlgebra", "Matrices", "Vectors", "Geometry", "MLFoundation"],
         tech: [],
         skill: [],
       },
-      url: "",
-      status: "",
     },
   },
 
@@ -235,13 +246,13 @@ const topicData = [
       },
     ],
     metadata: {
+      url: "",
+      status: "",
       index: {
         discipline: ["OOP", "Abstraction", "Encapsulation", "Inheritance", "Polymorphism"],
         tech: [],
         skill: [],
       },
-      url: "",
-      status: "",
     },
   },
 
@@ -267,13 +278,13 @@ const topicData = [
       },
     ],
     metadata: {
+      url: "",
+      status: "",
       index: {
         discipline: ["SDLC", "Agile", "Waterfall", "Process", "Delivery"],
         tech: [],
         skill: [],
       },
-      url: "",
-      status: "",
     },
   },
 
@@ -294,13 +305,19 @@ const topicData = [
       },
     ],
     metadata: {
+      url: "",
+      status: "",
       index: {
-        discipline: ["DesignPatterns", "Architecture", "Reusability", "SoftwareEngineering", "Communication"],
+        discipline: [
+          "DesignPatterns",
+          "Architecture",
+          "Reusability",
+          "SoftwareEngineering",
+          "Communication",
+        ],
         tech: [],
         skill: [],
       },
-      url: "",
-      status: "",
     },
   },
 ];

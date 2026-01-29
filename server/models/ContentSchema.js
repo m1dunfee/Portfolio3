@@ -1,19 +1,7 @@
 // schemaContent.js
 // Unified schema for all content types (projects, topics, prospects, books).
 // Same structure, different collections.
-//
-// Shape:
-// {
-//   slug: String,
-//   title: String,
-//   images: [{ src, alt, pos }],
-//   blocks: [{ pos, text }],
-//   metadata: {
-//     index: { discipline: [String], tech: [String], skill: [String] },
-//     url: String,
-//     status: String
-//   }
-// }
+
 
 const mongoose = require("mongoose");
 
@@ -45,12 +33,10 @@ const IndexSchema = new mongoose.Schema(
 
 const MetadataSchema = new mongoose.Schema(
   {
-    index: { type: IndexSchema, default: () => ({}) },
     url: { type: String, default: "" },
-
-    // Optional enum; keep it permissive for now.
-    // Recommended values: "", "Read", "ToRead", "Reading"
     status: { type: String, default: "" },
+    index: { type: IndexSchema, default: () => ({}) },
+
   },
   { _id: false }
 );
