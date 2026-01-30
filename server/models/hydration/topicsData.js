@@ -1,5 +1,3 @@
-// topicData.js (RESHAPED for schemaContent.js)
-
 const topicData = [
   {
     slug: "artificial-intelligence",

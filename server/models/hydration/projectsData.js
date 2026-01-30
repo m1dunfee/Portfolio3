@@ -1,18 +1,3 @@
-// projectData.js (RESHAPED for schemaContent.js)
-//
-// Canonical shape:
-// {
-//   slug: String,
-//   title: String,
-//   images: [{ src, alt, pos }],
-//   blocks: [{ pos, text }],
-//   metadata: {
-//     index: { discipline: [String], tech: [String], skill: [String] },
-//     url: String,
-//     status: String
-//   }
-// }
-
 const projectData = [
   {
     slug: "portfolio",

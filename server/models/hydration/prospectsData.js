@@ -1,9 +1,3 @@
-// prospectData.js (RESHAPED for schemaContent.js)
-// Changes:
-// - removed kind
-// - heroImage --> images[]
-// - metadata tags --> metadata.index
-
 const prospectData = [
   {
     slug: "artificial-intelligence",
