@@ -8,6 +8,7 @@ export default defineConfig(({ command }) => ({
     ? {
         host: true,
         port: 5173,
+        allowedHosts: ["data-tide.net"],
         proxy: {
           "/api": {
             target: "http://server:5000",

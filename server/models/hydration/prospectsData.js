@@ -130,7 +130,7 @@ const prospectData = [
   {
     slug: "software-engineer",
     title: "Software Engineer",
-    images: [{ src: "/softwareEngineering.jpg", alt: "Software engineering imagery", pos: 0 }],
+    images: [{ src: "/software-engineering.webp", alt: "Software engineering imagery", pos: 0 }],
     blocks: [
       {
         pos: 0,
@@ -169,7 +169,7 @@ const prospectData = [
   {
     slug: "ops-devops",
     title: "Ops (DevOps / Operations)",
-    images: [{ src: "/devops.jpg", alt: "DevOps and operations imagery", pos: 0 }],
+    images: [{ src: "/devops.webp", alt: "DevOps and operations imagery", pos: 0 }],
     blocks: [
       {
         pos: 0,
@@ -209,7 +209,7 @@ const prospectData = [
   {
     slug: "data-science",
     title: "Data Science",
-    images: [{ src: "/dataScience.jpg", alt: "Data science imagery", pos: 0 }],
+    images: [{ src: "/data-science.webp", alt: "Data science imagery", pos: 0 }],
     blocks: [
       {
         pos: 0,

@@ -3,17 +3,16 @@ services:
     image: cloudflare/cloudflared:latest
     container_name: cloudflared
     restart: unless-stopped
-    command: tunnel --no-autoupdate --config /etc/cloudflared/config.yaml run ${TUNNEL_TOKEN}
-    env_file:
-      - .env
+    # use the token style to avoid file issues. 
+    command: tunnel --no-autoupdate run --token ${TUNNEL_TOKEN}
     volumes:
       - ./cloudflared:/etc/cloudflared:ro
     networks:
       - edge
-    read_only: true
-    security_opt:
-      - no-new-privileges:true
-
+    depends_on:
+      - client
+      - server
+      
   client:
     build:
       context: ./client
@@ -22,9 +21,8 @@ services:
     restart: unless-stopped
     environment:
       NODE_ENV: production
-      PORT: "80"
     expose:
-      - "80"
+      - "5173"
     networks:
       - edge
     depends_on:
@@ -38,7 +36,6 @@ services:
     restart: unless-stopped
     environment:
       NODE_ENV: production
-      PORT: "5000"
       MONGO_URI: ${MONGO_URI}
     expose:
       - "5000"

@@ -20,5 +20,5 @@ WORKDIR /app
 ENV NODE_ENV=production
 RUN npm i -g serve
 COPY --from=build /app/dist ./dist
-EXPOSE 80
-CMD ["serve", "-s", "dist", "-l", "80"]
+EXPOSE 5173
+CMD ["serve", "-s", "dist", "-l", "5173"]
