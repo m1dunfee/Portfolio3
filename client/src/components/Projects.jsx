@@ -1,11 +1,11 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import MetadataDropdown from './MetadataDropdown'
 import { useCallback, useState } from "react";
 import {
   Card,
   CardBody,
   CardTitle,
   CardSubtitle,
-  CardText,
   Button,
   Fade,
   Container,
@@ -42,6 +42,8 @@ export default function Projects() {
 
   return (
     <Container fluid id="Projects" className="cards-img-container">
+      {/* send to the right */}
+      <MetadataDropdown className="" groups = "data"/> 
       <Row>
         {projects.map((project) => {
           const id = project.slug ?? project._id;

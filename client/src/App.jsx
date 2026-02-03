@@ -8,6 +8,8 @@ import AboutMe from './components/AboutMe';
 import Rant from './components/Rant';
 
 class App extends Component {
+
+  // should break out pulse as a react hook
   constructor(props) {
     super(props);
     this.state = {
@@ -33,6 +35,7 @@ class App extends Component {
             <Routes>
               <Route path="/" element={<AboutMe />} />
               <Route path="/projects" element={<Projects/>} />
+              {/* change the following three to dynamic routing and pull collection from params */}
               <Route path="/prospects" element={<Rant collection = "prospects" />} />
               <Route path="/topics" element={<Rant collection ="topics" />} />
               <Route path="/books" element={<Rant collection="books"/>} />

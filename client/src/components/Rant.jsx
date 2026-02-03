@@ -8,7 +8,7 @@ export default function Rant({ collection }) {
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {String(error.message || error)}</div>;
 
-  // your API returns an array
+  // API returns an array
   const items = Array.isArray(data) ? data : [];
 
   const TextCard = (content) => (
@@ -25,7 +25,7 @@ export default function Rant({ collection }) {
   );
 
   const ImageCard = (content) => {
-    // your images are array of objects: [{ src, alt, pos }]
+    // images are array of objects: [{ src, alt, pos }]
     const img = (content.images ?? [])[0] ?? null;
     const src = img?.src ?? null;
     const alt = img?.alt ?? content.metadata?.title ?? content.title ?? "Image";

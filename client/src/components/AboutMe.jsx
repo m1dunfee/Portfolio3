@@ -1,4 +1,4 @@
-import { Card } from "reactstrap";
+import { Card, Container } from "reactstrap";
 
 const imgStyle = {
   width: "100%",
@@ -28,7 +28,7 @@ const AboutMe = () => {
           </div>
 
           <div className="col-lg-6 p-2">
-            <section className="container">
+            <Container>
               <div className="row">
                 <h4 className="text-center">Summary</h4>
                 <p>
@@ -61,14 +61,14 @@ const AboutMe = () => {
                   becuase we are all life long learners.
                 </p>
 
-                <h5 className="mt-3">Lifelong Learning</h5>
+                {/* <h5 className="mt-3">Lifelong Learning</h5>
                 <p>
                   With a 3.8 GPA, I maintain a red-yellow-green loop: ideas
                   to notes, notes to experiments, experiments to artifacts. This
                   discipline keeps practice aligned with research.
-                </p>
+                </p> */}
               </div>
-            </section>
+            </Container>
           </div>
         </div>
 
