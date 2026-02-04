@@ -4,7 +4,6 @@ const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
 const rateLimit = require("express-rate-limit");
-const mongoSanitize = require("express-mongo-sanitize");
 const mongoose = require("mongoose");
 
 const app = express();
@@ -46,14 +45,6 @@ app.use(
 app.use(express.json({ limit: JSON_LIMIT }));
 app.use(express.urlencoded({ extended: false, limit: JSON_LIMIT }));
 
-// ----- NoSQL operator/key sanitization ----- 
-app.use(
-  mongoSanitize({
-    allowDots: false, 
-    replaceWith: "_",
-  }),
-);
-
 app.use(
   "/api",
   rateLimit({
@@ -83,12 +74,15 @@ let projectsRouter = require("./routes/projcetsRoute");
 let booksRouter = require("./routes/booksRoute");
 let prospectsRouter = require("./routes/prospectsRoute");
 let topicsRouter = require("./routes/topicsRoute");
+let collectionRouter = require('./routes/collectionRoute');
 
-app.use("/api", indexRouter);
-app.use("/api", projectsRouter);
-app.use("/api", booksRouter);
-app.use("/api", prospectsRouter);
-app.use("/api", topicsRouter);
+// app.use("/api", indexRouter);
+// app.use("/api", projectsRouter);
+// app.use("/api", booksRouter);
+// app.use("/api", prospectsRouter);
+// app.use("/api", topicsRouter);
+
+app.use('/api', collectionRouter);
 
 // ----- Central error handler (keep last) -----
 app.use((err, req, res, next) => {

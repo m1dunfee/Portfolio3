@@ -15,7 +15,7 @@ export function useCollection(collection) {
 
             try {
                 const res = await axios.get(`/api/${collection}`);
-                if(!cancelled) setData(res.data);
+                if(!cancelled) setData(res.data.items);
             } catch (e) {
                 if(!cancelled) setError(e);
             } finally {
