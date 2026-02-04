@@ -1,18 +1,18 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState } from 'react';
 import {
   Dropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
   Collapse,
-} from "reactstrap";
+} from 'reactstrap';
 
 export default function MetadataDropdown({ meta, onSelect }) {
   // meta shape example:
   // {
-  //   discipline: ["ai", "ml", "security"],
-  //   tech: ["react", "mongodb", "docker"],
-  //   skill: ["api-design", "indexing"]
+  //   discipline: ['ai', 'ml', 'security'],
+  //   tech: ['react', 'mongodb', 'docker'],
+  //   skill: ['api-design', 'indexing']
   // }
 
   const groups = useMemo(() => Object.entries(meta || {}), [meta]);
@@ -42,7 +42,7 @@ export default function MetadataDropdown({ meta, onSelect }) {
                 onClick={() => toggleGroup(groupName)}
                 style={{ fontWeight: 700 }}
               >
-                {expanded ? "[-] " : "[+] "}
+                {expanded ? '[-] ' : '[+] '}
                 {groupName}
               </DropdownItem>
 

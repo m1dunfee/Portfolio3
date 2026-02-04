@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { NavLink as RRNavLink } from "react-router-dom";
+import { useState } from 'react';
+import { NavLink as RRNavLink } from 'react-router-dom';
 
 import {
   Navbar,
@@ -14,24 +14,24 @@ import {
   Collapse,
   NavbarToggler,
   NavbarBrand,
-} from "reactstrap";
+} from 'reactstrap';
 
 const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Navbar dark fixed="top" expand="md" className="custom-nav">
+    <Navbar dark fixed='top' expand='md' className='custom-nav'>
       <Container>
-        <NavbarBrand tag={RRNavLink} to="/" onClick={() => setIsOpen(false)}>
-          <h3 className="my-0">Portfolio</h3>
+        <NavbarBrand tag={RRNavLink} to='/' onClick={() => setIsOpen(false)}>
+          <h3 className='my-0'>Portfolio</h3>
         </NavbarBrand>
         <NavbarToggler onClick={() => setIsOpen(!isOpen)} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="ms-auto" navbar>
+          <Nav className='ms-auto' navbar>
             <NavItem>
               <NavLink
                 tag={RRNavLink}
-                to="/"
+                to='/'
                 end
                 onClick={() => setIsOpen(false)}
               >
@@ -42,7 +42,7 @@ const Header = (props) => {
             <NavItem>
               <NavLink
                 tag={RRNavLink}
-                to="/projects"
+                to='/projects'
                 onClick={() => setIsOpen(false)}
               >
                 Projects
@@ -50,30 +50,30 @@ const Header = (props) => {
             </NavItem>
 
             <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret color="link">
+              <DropdownToggle nav caret color='link'>
                 Computer Science
               </DropdownToggle>
               <DropdownMenu end>
                 <DropdownItem
                   tag={RRNavLink}
-                  to="/prospects"
-                  className="dropdown-item"
+                  to='/prospects'
+                  className='dropdown-item'
                   onClick={() => setIsOpen(false)}
                 >
                   Prospects
                 </DropdownItem>
                 <DropdownItem
                   tag={RRNavLink}
-                  to="/topics"
-                  className="dropdown-item"
+                  to='/topics'
+                  className='dropdown-item'
                   onClick={() => setIsOpen(false)}
                 >
                   Topics
                 </DropdownItem>
                 <DropdownItem
                   tag={RRNavLink}
-                  to="/books"
-                  className="dropdown-item"
+                  to='/books'
+                  className='dropdown-item'
                   onClick={() => setIsOpen(false)}
                 >
                   Books
@@ -84,15 +84,15 @@ const Header = (props) => {
             <NavItem>
               {/*  */}
               <NavLink
-                href="#Footer"
+                href='#Footer'
                 onClick={() => {
                   document
-                    .querySelector("#Footer")
-                    ?.scrollIntoView({ behavior: "smooth" });
+                    .querySelector('#Footer')
+                    ?.scrollIntoView({ behavior: 'smooth' });
                   props.onFooterClick?.();
                   setIsOpen(false);
                 }}
-                className="nav-link"
+                className='nav-link'
               >
                 Resume/CV
               </NavLink>

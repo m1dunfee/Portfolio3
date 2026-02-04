@@ -28,17 +28,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className='cd-flex background-section' id="main-top">
+      <div className='cd-flex background-section' id='main-top'>
         <Header onFooterClick={this.triggerPulse} />
 
         <div className='App-content p-4'>
             <Routes>
-              <Route path="/" element={<AboutMe />} />
-              <Route path="/projects" element={<Projects/>} />
+              <Route path='/' element={<AboutMe />} />
+              <Route path='/projects' element={<Projects/>} />
               {/* change the following three to dynamic routing and pull collection from params */}
-              <Route path="/prospects" element={<Rant collection = "prospects" />} />
-              <Route path="/topics" element={<Rant collection ="topics" />} />
-              <Route path="/books" element={<Rant collection="books"/>} />
+              {/* might not be that simple, not the collection is what defines the route, so I have to see if I can pull from path as param */}
+              <Route path='/prospects' element={<Rant collection = 'prospects' />} />
+              <Route path='/topics' element={<Rant collection ='topics' />} />
+              <Route path='/books' element={<Rant collection='books'/>} />
             </Routes>
         </div>
 

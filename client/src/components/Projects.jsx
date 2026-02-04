@@ -1,6 +1,6 @@
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import MetadataDropdown from './MetadataDropdown'
-import { useCallback, useState } from "react";
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import MetadataDropdown from './MetadataDropdown';
+import { useCallback, useState } from 'react';
 import {
   Card,
   CardBody,
@@ -11,8 +11,9 @@ import {
   Container,
   Row,
   Col,
-} from "reactstrap";
-import { useCollection } from "../hooks/useCollection";
+} from 'reactstrap';
+import { useCollection } from '../hooks/useCollection';
+import { useSearchParams } from 'react-router-dom';
 
 function nextIndex(current, dir, count) {
   if (!count || count <= 1) return 0;
@@ -20,7 +21,15 @@ function nextIndex(current, dir, count) {
 }
 
 export default function Projects() {
-  const { data, loading, error } = useCollection("projects");
+  const [sp] = useSearchParams();
+
+  const tagKey = sp.get('tagKey') || undefined;
+  const tagValue = sp.get('tagValue') || undefined;
+
+  const { items, loading, error } = useCollection('projects', {
+    tagKey,
+    tagValue,
+  });
 
   // active image index per project id
   const [activeById, setActiveById] = useState({});
@@ -38,12 +47,12 @@ export default function Projects() {
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {String(error.message || error)}</div>;
 
-  const projects = Array.isArray(data) ? data : (data?.projects ?? []);
+  const projects = Array.isArray(items) ? items : (items?.projects ?? []);
 
   return (
-    <Container fluid id="Projects" className="cards-img-container">
+    <Container fluid id='Projects' className='cards-img-container'>
       {/* send to the right */}
-      <MetadataDropdown className="" groups = "data"/> 
+      <MetadataDropdown className='' groups='data' />
       <Row>
         {projects.map((project) => {
           const id = project.slug ?? project._id;
@@ -56,66 +65,66 @@ export default function Projects() {
 
           const src = img?.src ?? null;
           const alt =
-            img?.alt ?? project.metadata?.title ?? project.title ?? "Project";
+            img?.alt ?? project.metadata?.title ?? project.title ?? 'Project';
 
           return (
-            <Col md="4" className="py-3 d-flex justify-content-center" key={id}>
-              <Card className="card-primary w-100">
-                <div className="custom-slider card-img-container">
+            <Col md='4' className='py-3 d-flex justify-content-center' key={id}>
+              <Card className='card-primary w-100'>
+                <div className='custom-slider card-img-container'>
                   {src ? (
                     <Fade key={`${id}-${active}`} in={true}>
                       <img
                         src={src}
                         alt={alt}
                         style={{
-                          width: "100%",
-                          maxHeight: "200px",
-                          objectFit: "contain",
+                          width: '100%',
+                          maxHeight: '200px',
+                          objectFit: 'contain',
                         }}
-                        className="img-fluid"
+                        className='img-fluid'
                       />
                     </Fade>
                   ) : (
-                    <div style={{ height: "200px" }} />
+                    <div style={{ height: '200px' }} />
                   )}
 
-                  <div className="slider-controls">
+                  <div className='slider-controls'>
                     <Button
-                      color="link"
-                      className="slider-button p-0"
+                      color='link'
+                      className='slider-button p-0'
                       onClick={() => step(id, -1, imgCount)}
                       disabled={imgCount <= 1}
                     >
-                      <i className="fas fa-chevron-left"></i>
+                      <i className='fas fa-chevron-left'></i>
                     </Button>
 
                     <Button
-                      color="link"
-                      className="slider-button p-0"
+                      color='link'
+                      className='slider-button p-0'
                       onClick={() => step(id, +1, imgCount)}
                       disabled={imgCount <= 1}
                     >
-                      <i className="fas fa-chevron-right"></i>
+                      <i className='fas fa-chevron-right'></i>
                     </Button>
                   </div>
                 </div>
 
                 <CardBody>
-                  <CardTitle tag="h4">
+                  <CardTitle tag='h4'>
                     {project.metadata?.title ?? project.title}
                   </CardTitle>
 
-                  <CardSubtitle className="mb-2">
-                    <p>{project.summary ?? ""}</p>
+                  <CardSubtitle className='mb-2'>
+                    <p>{project.summary ?? ''}</p>
                   </CardSubtitle>
 
                   {project.metadata?.url ? (
                     <Button
                       outline
-                      color="primary"
+                      color='primary'
                       href={project.metadata.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      target='_blank'
+                      rel='noopener noreferrer'
                     >
                       Visit Project
                     </Button>
