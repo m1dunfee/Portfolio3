@@ -69,18 +69,7 @@ connectDb().catch((e) => {
 
 
 // ----- Routers -----
-let indexRouter = require("./routes/indexRoute");
-let projectsRouter = require("./routes/projcetsRoute");
-let booksRouter = require("./routes/booksRoute");
-let prospectsRouter = require("./routes/prospectsRoute");
-let topicsRouter = require("./routes/topicsRoute");
 let collectionRouter = require('./routes/collectionRoute');
-
-// app.use("/api", indexRouter);
-// app.use("/api", projectsRouter);
-// app.use("/api", booksRouter);
-// app.use("/api", prospectsRouter);
-// app.use("/api", topicsRouter);
 
 app.use('/api', collectionRouter);
 
