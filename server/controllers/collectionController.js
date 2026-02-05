@@ -95,3 +95,38 @@ exports.meta = async (req, res, next) => {
     next(err);
   }
 };
+
+exports.facets = async (req, res, next) => {
+  console.log("HIT dynamic facets", req.params.collection);
+  try {
+    const cRes = validateCollectionParam(req.params.collection);
+    if (!cRes.ok) return res.status(400).json({ ok: false, error: cRes.error });
+
+    const collection = cRes.value;
+    const Model = MODELS[collection];
+
+    const FACET_KEYS = ["discipline", "tech", "skill"];
+
+    // Run distinct for each facet key in parallel
+    const pairs = await Promise.all(
+      FACET_KEYS.map(async (k) => {
+        const path = TAG_PATH[k];
+        const values = await Model.distinct(path);
+
+        values.sort((a, b) => String(a).localeCompare(String(b)));
+
+        // normalize: keep non-empty strings
+        const cleaned = values
+          .filter((x) => typeof x === "string" && x.trim())
+          .map((x) => x.trim());
+
+        return [k, cleaned];
+      })
+    );
+
+    // Return the bare object so you can loop over it directly
+    return res.json(Object.fromEntries(pairs));
+  } catch (err) {
+    next(err);
+  }
+};

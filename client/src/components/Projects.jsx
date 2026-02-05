@@ -21,7 +21,7 @@ function nextIndex(current, dir, count) {
 }
 
 export default function Projects() {
-  const [sp] = useSearchParams();
+  const [sp, setSp] = useSearchParams();
 
   const tagKey = sp.get('tagKey') || undefined;
   const tagValue = sp.get('tagValue') || undefined;
@@ -51,8 +51,18 @@ export default function Projects() {
 
   return (
     <Container fluid id='Projects' className='cards-img-container'>
-      {/* send to the right */}
-      <MetadataDropdown className='' groups='data' />
+      {/* style to the right && updates the props */}
+      <MetadataDropdown
+        collection="projects"
+        onSelect={({ group, tag }) => {
+          const next = new URLSearchParams(sp);
+          next.set('tagKey', group);
+          next.set('tagValue', tag);
+          // optional: reset paging if you later add page
+          next.delete('page');
+          setSp(next);
+        }}
+      />
       <Row>
         {projects.map((project) => {
           const id = project.slug ?? project._id;
