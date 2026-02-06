@@ -1,4 +1,3 @@
-import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Container, Row, Col, Card } from 'reactstrap';
 import { useCollection } from '../hooks/useCollection';
 import { useSearchParams } from 'react-router-dom';

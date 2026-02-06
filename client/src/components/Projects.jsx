@@ -1,4 +1,3 @@
-import '@fortawesome/fontawesome-free/css/all.min.css';
 import MetadataDropdown from './MetadataDropdown';
 import { useCallback, useState } from 'react';
 import {

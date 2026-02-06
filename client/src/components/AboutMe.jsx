@@ -29,45 +29,42 @@ const AboutMe = () => {
 
           <div className='col-lg-6 p-2'>
             <Container>
-              <div className='row'>
-                <h4 className='text-center'>Summary</h4>
-                <p>
-                  I am a computer scientist focused on building reliable,
-                  modular systems at the intersection of AI, data, and IoT. I
-                  value clear interfaces, testable components, and reproducible
-                  delivery. My research interests center on knowledge
-                  representation, cognitive systems, and machine learning.
-                </p>
+<div className="row">
+  <h4 className="text-center">Summary</h4>
+  <p>
+    I am a computer scientist drawn to the "language of structure": linear
+    algebra, abstraction, and systems that turn messy reality into something
+    we can reason about. My work bridges AI/ML, knowledge representation, and
+    production software.
+  </p>
 
-                <h5 className='mt-3'>Development</h5>
-                <p>
-                  Modularity emerges from clear abstractions and well-defined
-                  classes. I blueprint intelligent systems, then
-                  containerize and automate them with Docker and CI/CD for
-                  reproducible builds and deployments across local and cloud
-                  environments.
-                </p>
+  <h5 className="mt-3">Research Direction</h5>
+  <p>
+    I care most about interpretable intelligence: knowledge graphs, ontologies,
+    and hybrid reasoning approaches that connect symbolic structure with
+    statistical learning.
+  </p>
 
-                <h5 className='mt-3'>Professionalism</h5>
-                <p>
-                  Ethics, documentation, reproducibility, performance, and security,
-                  guides my decisions. I treat these as product requirements, not add-ons.
-                </p>
+  <h5 className="mt-3">Engineering</h5>
+  <p>
+    I translate ideas into artifacts: schemas, APIs, and interfaces that make
+    complex systems testable and maintainable. I prefer modular designs with
+    explicit contracts.
+  </p>
 
-                <h5 className='mt-3'>Leadership</h5>
-                <p>
-                  As a former supervisor, instructor, colleague, and student, I
-                  know mentorship compounds learning. Thats why I lead with empathy,
-                  becuase we are all life long learners.
-                </p>
+  <h5 className="mt-3">Delivery</h5>
+  <p>
+    I build for reproducibility. Containerized workflows and automation let me
+    iterate quickly while keeping environments consistent across machines.
+  </p>
 
-                {/* <h5 className='mt-3'>Lifelong Learning</h5>
-                <p>
-                  With a 3.8 GPA, I maintain a red-yellow-green loop: ideas
-                  to notes, notes to experiments, experiments to artifacts. This
-                  discipline keeps practice aligned with research.
-                </p> */}
-              </div>
+  <h5 className="mt-3">Values</h5>
+  <p>
+    I prioritize ethics, clarity, and reliability. If a system cannot be
+    explained, monitored, and improved, it is not finished.
+  </p>
+</div>
+
             </Container>
           </div>
         </div>

@@ -1,4 +1,3 @@
-import '@fortawesome/fontawesome-free/css/all.min.css';
 import { useCallback, useMemo, useState } from 'react';
 import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button, Fade } from 'reactstrap';
 
