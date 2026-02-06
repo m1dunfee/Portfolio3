@@ -11,48 +11,28 @@
 // $color-accent:     #000000 !default;
 // $color-hover:      #E2E2E2 !default;
 
-$color-background: rgba(0, 0, 0, .99) !default; //last digit controler transparency
-$color-text:       #F5F5F5 !default;
-$color-accent:     #900000 !default;
-$color-hover:      #800000 !default;
-$bg-image:         url('./assets/wallpaper.webp') !default;
-$header-height:    70px !default;
+$color-background: rgba(0, 0, 0, 0.90) !default; // last digit controller transparency
+$color-text: #E6EDF6 !default;
+$color-accent: #3776AB !default; // Python blue
+$color-hover: #2B5F8CA2 !default;
+
+$bg-image: url("./assets/wallpaper.webp") !default;
+$header-height: 70px !default;
 
 /// Bootstrap Variable Overrides
-$primary:    $color-accent !default;
-$body-bg:    $color-background !default;
-$body-color: $color-text       !default;
+$primary: $color-accent !default;
+$body-bg: $color-background !default;
+$body-color: $color-text !default;
 
 /// Global Layout Reset
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
   min-height: 100vh; // Ensure full height on older browsers
   margin: 0;
   box-sizing: border-box;
   overflow-x: hidden;
-}
-
-/// Fixed Full-Viewport Background Overlay (no background-attachment: fixed)
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-image: $bg-image;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  min-height: 100vh;    // Always cover at least the largest possible viewport
-  height: 100dvh;       // In browsers that support dvh, follow dynamic viewport
-  width: 100vw;
-  pointer-events: none; // Background doesn't block interaction
-}
-
-body {
-  background-color: transparent !important;
-  position: relative;
-  color: $color-text !important;
-  font-family: 'Roboto', sans-serif;
 }
 
 /// Scroll Behavior
@@ -61,10 +41,47 @@ html {
   scroll-padding-top: $header-height;
 }
 
-/// Typography
-h1, h2, h3, h4, h5, h6 {
+/// Fixed Full-Viewport Background Overlay (no background-attachment: fixed)
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background-image: $bg-image;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  min-height: 100vh; // Always cover at least the largest possible viewport
+  height: 100dvh; // In browsers that support dvh, follow dynamic viewport
+  width: 100vw;
+
+  pointer-events: none; // Background doesn't block interaction
+}
+
+body {
+  position: relative;
+  background-color: transparent !important;
+
   color: $color-text !important;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+/// Typography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $color-text !important;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Readable body text (paragraphs) */
+p {
+  color: $color-text !important;
 }
 
 a {
@@ -77,7 +94,7 @@ a {
   }
 }
 
-/// Class Selectors
+/// App Layout Helpers
 .App {
   position: relative;
   z-index: 0;
@@ -87,6 +104,7 @@ a {
   padding-top: $header-height !important;
 }
 
+/// Projects Grid
 .project-cards-container {
   display: flex;
   justify-content: center;
@@ -96,16 +114,7 @@ a {
   padding: 20px;
 }
 
-.text-primary,
-.bg-primary,
-.border-primary,
-.btn-primary,
-.progress-bar {
-  color: $primary !important;
-  background-color: $primary !important;
-  border-color: $primary !important;
-}
-
+/// Buttons
 .btn-outline-primary {
   color: $primary !important;
   border: 1px solid $primary !important;
@@ -117,6 +126,7 @@ a {
   }
 }
 
+/// Navbar
 .custom-nav,
 .navbar,
 .navbar-light,
@@ -152,103 +162,6 @@ a {
   z-index: 1030;
 }
 
-.card-primary {
-  border-color: $primary !important;
-  background-color: $color-background !important;
-}
-
-.card {
-  width: 100%;
-  margin: 0 auto;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 16px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.card-img-container {
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.card-img,
-img.responsive-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.quote {
-  font-family: 'Merriweather', serif;
-  font-weight: 700;
-  font-size: 1.8rem;
-  color: $color-text !important;
-  text-align: center;
-  margin: 20px 0 !important;
-
-  &::before,
-  &::after {
-    content: '"';
-    font-size: 2rem;
-    vertical-align: top;
-  }
-}
-
-.custom-slider {
-  position: relative;
-  text-align: center;
-}
-
-.slider-controls {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
-}
-
-.slider-button {
-  background-color: rgba(0,0,0,0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: rgba(0,0,0,0.7);
-  }
-}
-
-/// Pulse Animation
-.pulse-fade {
-  position: relative;
-  z-index: 1;
-  animation: pulseFade 0.6s ease-in-out;
-}
-
-/// ID Selectors
-#Footer,
-.footer,
-.footer-dark {
-  background-color: $color-background !important;
-  color: $color-text !important;
-  width: 100%;
-  padding: 20px 0;
-  border-top: 1px solid $color-accent;
-  text-align: center;
-}
-
 /// Override Default Active Nav Link
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link:active,
@@ -258,38 +171,7 @@ img.responsive-img {
   color: $color-accent !important;
 }
 
-.quote {
-  display: flex;
-  flex-wrap: wrap;             // 🔑 allows wrapping on small screens
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  font-style: italic;
-  text-align: center;
-  padding: 0 1rem;             // optional: add side padding for mobile
-}
-
-.quote cite {
-  font-style: normal;
-  color: #aaa;
-  margin-left: 0.5rem;
-  white-space: nowrap;         // optional: keep "– Sir Isaac Newton" together
-}
-
-
-/// Keyframes
-@keyframes pulseFade {
-  0% { box-shadow: 0 0 0 rgba(229,57,53,0); }
-  50% { box-shadow: 0 0 20px 10px rgba(229,57,53,0.3); }
-  100% { box-shadow: 0 0 0 rgba(229,57,53,0); }
-}
-
-/* Readable body text (paragraphs) */
-p {
-  color: $color-text !important;
-}
-
-/* Dark dropdown menu inside navbar */
+/// Dark dropdown menu inside navbar
 .custom-nav .dropdown-menu {
   background-color: $color-background !important;
   border: 1px solid $color-accent !important;
@@ -308,4 +190,110 @@ p {
 /* Dropdown caret icon (sometimes looks wrong in dark nav) */
 .custom-nav .dropdown-toggle::after {
   border-top-color: $color-text !important;
+}
+
+/// Cards
+.card-primary {
+  border-color: $primary !important;
+  background-color: $color-background !important;
+}
+
+.card {
+  width: 100%;
+  margin: 0 auto;
+  height: 400px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-img,
+img.responsive-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/// Slider
+.custom-slider {
+  position: relative;
+  text-align: center;
+}
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+
+  transform: translateY(-50%);
+}
+
+.slider-button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+
+  cursor: pointer;
+  font-size: 16px;
+
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+/// Footer
+#Footer,
+.footer,
+.footer-dark {
+  background-color: $color-background !important;
+  color: $color-text !important;
+
+  width: 100%;
+  padding: 20px 0;
+
+  border-top: 1px solid $color-accent;
+  text-align: center;
+}
+
+/// Pulse Animation
+.pulse-fade {
+  position: relative;
+  z-index: 1;
+  animation: pulseFade 0.6s ease-in-out;
+}
+
+/// Keyframes
+@keyframes pulseFade {
+  0% {
+    box-shadow: 0 0 0 rgba(229, 57, 53, 0);
+  }
+  50% {
+    box-shadow: 0 0 20px 10px rgba(0, 229, 255, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(229, 57, 53, 0);
+  }
 }
