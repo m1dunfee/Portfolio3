@@ -1,8 +1,11 @@
 import { Container, Row, Col, Card } from 'reactstrap';
 import { useCollection } from '../hooks/useCollection';
 import { useSearchParams } from 'react-router-dom';
+import { usePathFInder } from '../hooks/usePathFinder'
 
-export default function Rant({ collection }) {
+export default function Rant() {
+  const { collection } = usePathFInder();
+
   const [sp] = useSearchParams();
 
   const tagKey = sp.get('tagKey') || undefined;

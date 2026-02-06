@@ -34,12 +34,10 @@ class App extends Component {
         <div className='App-content p-4'>
             <Routes>
               <Route path='/' element={<AboutMe />} />
-              <Route path='/projects' element={<Projects/>} />
-              {/* change the following three to dynamic routing and pull collection from params */}
-              {/* might not be that simple, not the collection is what defines the route, so I have to see if I can pull from path as param */}
-              <Route path='/prospects' element={<Rant collection = 'prospects' />} />
-              <Route path='/topics' element={<Rant collection ='topics' />} />
-              <Route path='/books' element={<Rant collection='books'/>} />
+              <Route path='/projects' element={<Projects />} />
+              <Route path='/prospects' element={<Rant />} />
+              <Route path='/topics' element={<Rant />} />
+              <Route path='/books' element={<Rant />} />
             </Routes>
         </div>
 
