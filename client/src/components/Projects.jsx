@@ -1,4 +1,4 @@
-import MetadataDropdown from './MetadataDropdown';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import { useCallback, useState } from 'react';
 import {
   Card,
@@ -50,18 +50,6 @@ export default function Projects() {
 
   return (
     <Container fluid id='Projects' className='cards-img-container'>
-      {/* style to the right && updates the props */}
-      <MetadataDropdown
-        collection="projects"
-        onSelect={({ group, tag }) => {
-          const next = new URLSearchParams(sp);
-          next.set('tagKey', group);
-          next.set('tagValue', tag);
-          // optional: reset paging if you later add page
-          next.delete('page');
-          setSp(next);
-        }}
-      />
       <Row>
         {projects.map((project) => {
           const id = project.slug ?? project._id;

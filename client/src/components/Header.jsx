@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { NavLink as RRNavLink } from 'react-router-dom';
-
 import {
   Navbar,
   Nav,
@@ -15,6 +14,7 @@ import {
   NavbarToggler,
   NavbarBrand,
 } from 'reactstrap';
+import MetadataDropdown from './MetadataDropdown';
 
 const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -96,6 +96,20 @@ const Header = (props) => {
               >
                 Resume/CV
               </NavLink>
+            </NavItem>
+
+            <NavItem>
+                    <MetadataDropdown
+        collection="projects"
+        onSelect={({ group, tag }) => {
+          const next = new URLSearchParams(sp);
+          next.set('tagKey', group);
+          next.set('tagValue', tag);
+          // optional: reset paging if you later add page
+          next.delete('page');
+          setSp(next);
+        }}
+      />
             </NavItem>
           </Nav>
         </Collapse>

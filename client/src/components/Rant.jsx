@@ -1,10 +1,10 @@
 import { Container, Row, Col, Card } from 'reactstrap';
 import { useCollection } from '../hooks/useCollection';
 import { useSearchParams } from 'react-router-dom';
-import { usePathFInder } from '../hooks/usePathFinder'
+import { useCollectionFromPath } from '../hooks/useCollectionFromPath'
 
 export default function Rant() {
-  const { collection } = usePathFInder();
+  const { collection } = useCollectionFromPath();
 
   const [sp] = useSearchParams();
 

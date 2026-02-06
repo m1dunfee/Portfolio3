@@ -1,154 +1,115 @@
-// MetadataDropdown.jsx
-import { useEffect, useMemo, useState } from "react";
-import {
-  Dropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  Collapse,
-} from "reactstrap";
+// src/components/MetadataDropdown.jsx
+import React, { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "react-router-dom";
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
+import { useCollectionFromPath } from "../hooks/useCollectionFromPath";
 
-export default function MetadataDropdown({ collection, onSelect }) {
-  const [facets, setFacets] = useState({});
+export default function MetadataDropdown() {
+  const { collection } = useCollectionFromPath();
+  const [sp, setSp] = useSearchParams();
+
+  // Declare variables before use
+  const allowed = useMemo(() => new Set(["projects", "topics", "prospects", "books"]), []);
+  const enabled = collection != null && allowed.has(collection);
+
+  const [open, setOpen] = useState(false);
+  const [facets, setFacets] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [errorMsg, setErrorMsg] = useState("");
-  const [isOpen, setIsOpen] = useState(false);
-  const [openGroup, setOpenGroup] = useState(null);
+  const [error, setError] = useState(null);
+
+  const toggle = () => setOpen((v) => !v);
 
   useEffect(() => {
     let alive = true;
 
     async function run() {
+      if (!enabled) return;
+
       try {
         setLoading(true);
-        setErrorMsg("");
+        setError(null);
 
-        const url = `/api/${collection}/facets`;
-        const res = await fetch(url);
+        const res = await fetch(`/api/${collection}/facets`);
+        const json = await res.json().catch(() => ({}));
 
-        // Safe parse (handles non-JSON / empty bodies)
-        const text = await res.text();
-        let json = null;
-        try {
-          json = text ? JSON.parse(text) : null;
-        } catch {
-          json = null;
-        }
-
-        if (!res.ok) {
-          const msg =
-            (json && (json.error || json.message)) ||
-            (text && text.slice(0, 140)) ||
-            `HTTP ${res.status}`;
-          throw new Error(msg);
-        }
-
-        // Accept either:
-        // 1) bare object: { tech:[], skill:[], discipline:[] }
-        // 2) wrapped: { facets: { ... } }
-        const nextFacets =
-          (json &&
-            typeof json === "object" &&
-            (json.facets && typeof json.facets === "object"
-              ? json.facets
-              : json)) ||
-          {};
+        if (!res.ok) throw new Error(json?.error || `HTTP ${res.status}`);
 
         if (!alive) return;
-        setFacets(nextFacets);
+        setFacets(json && typeof json === "object" ? json : {});
       } catch (e) {
         if (!alive) return;
-        setFacets({});
-        setErrorMsg(e?.message ? String(e.message) : "Failed to load facets");
+        setFacets(null);
+        setError(e instanceof Error ? e.message : String(e));
       } finally {
         if (!alive) return;
         setLoading(false);
       }
     }
 
-    if (collection) run();
-    else {
-      setFacets({});
-      setLoading(false);
-      setErrorMsg("");
-    }
-
+    run();
     return () => {
       alive = false;
     };
-  }, [collection]);
+  }, [enabled, collection]);
 
   const groups = useMemo(() => {
-    const entries = Object.entries(facets || {});
-    // Keep only groups whose value is an array
-    return entries
-      .map(([k, v]) => [k, Array.isArray(v) ? v : []])
-      .filter(([k, arr]) => typeof k === "string" && k.length > 0 && arr.length >= 0);
+    const obj = facets && typeof facets === "object" ? facets : {};
+    return Object.keys(obj);
   }, [facets]);
 
-  function toggleDropdown() {
-    setIsOpen((v) => !v);
-  }
+  const setSelection = (group, tag) => {
+    // Declare variables before use
+    const next = new URLSearchParams(sp);
+    next.set("tagKey", group);
+    next.set("tagValue", tag);
+    next.delete("page"); // optional future paging reset
+    setSp(next);
+    setOpen(false);
+  };
 
-  function toggleGroup(groupName) {
-    setOpenGroup((cur) => (cur === groupName ? null : groupName));
-  }
+  const clearSelection = () => {
+    const next = new URLSearchParams(sp);
+    next.delete("tagKey");
+    next.delete("tagValue");
+    next.delete("page");
+    setSp(next);
+    setOpen(false);
+  };
 
-  function handlePick(group, tag) {
-    if (typeof onSelect === "function") onSelect({ group, tag });
-    setIsOpen(false);
-  }
+  if (!enabled) return null;
 
   return (
-    <Dropdown isOpen={isOpen} toggle={toggleDropdown}>
-      <DropdownToggle caret disabled={!collection || loading}>
+    <Dropdown isOpen={open} toggle={toggle}>
+      <DropdownToggle caret disabled={loading}>
         {loading ? "Loading..." : "Filter"}
       </DropdownToggle>
 
-      <DropdownMenu style={{ minWidth: 280 }}>
-        {errorMsg ? (
-          <DropdownItem toggle={false} disabled>
-            {errorMsg}
-          </DropdownItem>
+      <DropdownMenu>
+        <DropdownItem onClick={clearSelection}>Clear filters</DropdownItem>
+        <DropdownItem divider />
+
+        {error ? <DropdownItem disabled>{String(error)}</DropdownItem> : null}
+
+        {!loading && groups.length === 0 ? (
+          <DropdownItem disabled>No filters</DropdownItem>
         ) : null}
 
-        {!loading && !errorMsg && groups.length === 0 ? (
-          <DropdownItem toggle={false} disabled>
-            (no facets)
-          </DropdownItem>
-        ) : null}
-
-        {groups.map(([groupName, tags]) => {
-          const expanded = openGroup === groupName;
+        {groups.map((group) => {
+          const values = Array.isArray(facets?.[group]) ? facets[group] : [];
+          if (values.length === 0) return null;
 
           return (
-            <div key={groupName}>
-              <DropdownItem toggle={false} onClick={() => toggleGroup(groupName)}>
-                {expanded ? "[-] " : "[+] "}
-                {groupName}
-              </DropdownItem>
-
-              <Collapse isOpen={expanded}>
-                {tags.length === 0 ? (
-                  <DropdownItem toggle={false} disabled style={{ paddingLeft: 24 }}>
-                    (none)
-                  </DropdownItem>
-                ) : (
-                  tags.map((tag) => (
-                    <DropdownItem
-                      key={`${groupName}:${tag}`}
-                      toggle={true}
-                      onClick={() => handlePick(groupName, tag)}
-                      style={{ paddingLeft: 24 }}
-                    >
-                      {tag}
-                    </DropdownItem>
-                  ))
-                )}
-              </Collapse>
-
-              <DropdownItem divider />
-            </div>
+            <React.Fragment key={group}>
+              <DropdownItem header>{group}</DropdownItem>
+              {values.map((tag) => (
+                <DropdownItem
+                  key={`${group}:${tag}`}
+                  onClick={() => setSelection(group, tag)}
+                >
+                  {tag}
+                </DropdownItem>
+              ))}
+            </React.Fragment>
           );
         })}
       </DropdownMenu>
