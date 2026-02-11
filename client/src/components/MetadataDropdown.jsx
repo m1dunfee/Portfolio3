@@ -1,15 +1,13 @@
-// src/components/MetadataDropdown.jsx
-import React, { useEffect, useMemo, useState } from "react";
-import { useSearchParams } from "react-router-dom";
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
-import { useCollectionFromPath } from "../hooks/useCollectionFromPath";
+import React, { useEffect, useMemo, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { useCollectionFromPath } from '../hooks/useCollectionFromPath';
 
 export default function MetadataDropdown() {
   const { collection } = useCollectionFromPath();
   const [sp, setSp] = useSearchParams();
 
-  // Declare variables before use
-  const allowed = useMemo(() => new Set(["projects", "topics", "prospects", "books"]), []);
+  const allowed = useMemo(() => new Set(['projects', 'topics', 'prospects', 'books']), []);
   const enabled = collection != null && allowed.has(collection);
 
   const [open, setOpen] = useState(false);
@@ -35,7 +33,7 @@ export default function MetadataDropdown() {
         if (!res.ok) throw new Error(json?.error || `HTTP ${res.status}`);
 
         if (!alive) return;
-        setFacets(json && typeof json === "object" ? json : {});
+        setFacets(json && typeof json === 'object' ? json : {});
       } catch (e) {
         if (!alive) return;
         setFacets(null);
@@ -53,25 +51,24 @@ export default function MetadataDropdown() {
   }, [enabled, collection]);
 
   const groups = useMemo(() => {
-    const obj = facets && typeof facets === "object" ? facets : {};
+    const obj = facets && typeof facets === 'object' ? facets : {};
     return Object.keys(obj);
   }, [facets]);
 
   const setSelection = (group, tag) => {
-    // Declare variables before use
     const next = new URLSearchParams(sp);
-    next.set("tagKey", group);
-    next.set("tagValue", tag);
-    next.delete("page"); // optional future paging reset
+    next.set('tagKey', group);
+    next.set('tagValue', tag);
+    next.delete('page'); // optional future paging reset
     setSp(next);
     setOpen(false);
   };
 
   const clearSelection = () => {
     const next = new URLSearchParams(sp);
-    next.delete("tagKey");
-    next.delete("tagValue");
-    next.delete("page");
+    next.delete('tagKey');
+    next.delete('tagValue');
+    next.delete('page');
     setSp(next);
     setOpen(false);
   };
@@ -81,7 +78,7 @@ export default function MetadataDropdown() {
   return (
     <Dropdown isOpen={open} toggle={toggle}>
       <DropdownToggle caret disabled={loading}>
-        {loading ? "Loading..." : "Filter"}
+        {loading ? 'Loading...' : 'Filter'}
       </DropdownToggle>
 
       <DropdownMenu>

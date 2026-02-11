@@ -1,4 +1,3 @@
-// hooks/useCollection.js
 import { useEffect, useMemo, useState } from 'react';
 
 const ALLOWED_KEYS = new Set(['tagKey', 'tagValue', 'sort', 'dir', 'page', 'limit']);
