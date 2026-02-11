@@ -15,7 +15,7 @@ services:
     ports:
       - "5173:5173"
     environment:
-      - CHOKIDAR_USEPOLLING=true
+      CHOKIDAR_USEPOLLING: "true"
 
   server:
     build:
@@ -24,6 +24,7 @@ services:
     environment:
       NODE_ENV: development
       PORT: "5000"
+      CHOKIDAR_USEPOLLING: "true"
       # In docker network, use the service name "db"
       MONGO_URI: ${MONGO_URI}
     command: sh -lc "npm ci && npm run dev"
