@@ -21,7 +21,6 @@ const Header = (props) => {
 
   return (
     <Navbar dark fixed='top' expand='md' className='custom-nav'>
-      <Container>
         <NavbarBrand tag={RRNavLink} to='/' onClick={() => setIsOpen(false)}>
           <h3 className='my-0'>Portfolio</h3>
         </NavbarBrand>
@@ -99,21 +98,10 @@ const Header = (props) => {
             </NavItem>
 
             <NavItem>
-                    <MetadataDropdown
-        collection="projects"
-        onSelect={({ group, tag }) => {
-          const next = new URLSearchParams(sp);
-          next.set('tagKey', group);
-          next.set('tagValue', tag);
-          // optional: reset paging if you later add page
-          next.delete('page');
-          setSp(next);
-        }}
-      />
+              <MetadataDropdown/>
             </NavItem>
           </Nav>
         </Collapse>
-      </Container>
     </Navbar>
   );
 };
