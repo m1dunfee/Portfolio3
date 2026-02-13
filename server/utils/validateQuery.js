@@ -91,7 +91,7 @@ function validateListQuery(query) {
       sort: sortRes.value,
       dir: dirRes.value,
       page: pageRes.value ?? 1,
-      limit: limitRes.value ?? 12,
+      limit: limitRes.value ?? 20,
     },
   };
 }

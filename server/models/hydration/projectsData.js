@@ -6,9 +6,9 @@ const projectData = [
     blocks: [{ pos: 0, text: "You're here!" }],
     metadata: {
       index: {
-        discipline: ["SoftwareEngineering", "FullStack", "WebDevelopment", "DevOps"],
-        tech: ["JavaScript", "React", "Node", "Express", "MongoDB", "Docker", "Nginx", "Cloudflare"],
-        skill: ["APIDesign", "UIEngineering", "Deployment", "Containerization", "SecurityHardening"],
+        discipline: ["SoftwareEngineering", "DevOpsAndOperations", "Security"],
+        tech: ["JavaScript", "React", "Node.js", "Express", "MongoDB", "Docker", "Nginx", "Cloudflare"],
+        skill: ["UIAndFrontend", "APIAndBackend", "DevOpsAndDeployment", "SecurityPractices", "SystemDesignAndArchitecture"],
       },
       url: "https://github.com/m1dunfee/Portfolio3",
       status: "",
@@ -28,9 +28,9 @@ const projectData = [
     ],
     metadata: {
       index: {
-        discipline: ["ArtificialIntelligence", "MachineLearning", "ReinforcementLearning"],
+        discipline: ["DataAndAI"],
         tech: ["Python"],
-        skill: ["AlgorithmImplementation", "Experimentation", "Evaluation"],
+        skill: ["MLAndModeling", "AlgorithmsAndProblemSolving"],
       },
       url: "https://github.com/m1dunfee/cs-370-ml-pathfinder",
       status: "",
@@ -50,9 +50,9 @@ const projectData = [
     ],
     metadata: {
       index: {
-        discipline: ["ArtificialIntelligence", "GameDev", "Algorithms"],
+        discipline: ["DataAndAI"],
         tech: ["Python"],
-        skill: ["Search", "Optimization", "AlgorithmDesign", "Evaluation"],
+        skill: ["AlgorithmsAndProblemSolving", "PerformanceAndOptimization", "SystemDesignAndArchitecture", "TestingAndQuality"],
       },
       url: "https://github.com/m1dunfee/Game-AI-Checkers",
       status: "",
@@ -72,9 +72,9 @@ const projectData = [
     ],
     metadata: {
       index: {
-        discipline: ["SoftwareEngineering", "FullStack", "WebDevelopment", "BackendEngineering"],
-        tech: ["MongoDB", "Express", "Angular", "Node", "JavaScript"],
-        skill: ["APIDesign", "CRUD", "AuthBasics", "Deployment"],
+        discipline: ["SoftwareEngineering"],
+        tech: ["MongoDB", "Express", "Angular", "Node.js", "JavaScript"],
+        skill: ["APIAndBackend", "DataAndDatabases", "SecurityPractices", "DevOpsAndDeployment"],
       },
       url: "https://github.com/m1dunfee/cs465-fullstack-MEAN",
       status: "",
@@ -94,9 +94,9 @@ const projectData = [
     ],
     metadata: {
       index: {
-        discipline: ["Algorithms", "DataStructures", "SoftwareEngineering"],
+        discipline: ["SoftwareEngineering"],
         tech: ["C++"],
-        skill: ["ComplexityAnalysis", "ProblemSolving", "Implementation"],
+        skill: ["AlgorithmsAndProblemSolving"],
       },
       url: "https://github.com/m1dunfee/cs300Final",
       status: "",
@@ -115,9 +115,9 @@ const projectData = [
     ],
     metadata: {
       index: {
-        discipline: ["SoftwareEngineering", "QualityEngineering"],
+        discipline: ["SoftwareEngineering"],
         tech: ["Java", "JUnit"],
-        skill: ["Testing", "TestDesign", "Debugging"],
+        skill: ["TestingAndQuality", "DebuggingAndTroubleshooting"],
       },
       url: "https://github.com/m1dunfee/cs320jUnit",
       status: "",
@@ -131,9 +131,9 @@ const projectData = [
     blocks: [{ pos: 0, text: "Using mongodb and python to build an interactive system." }],
     metadata: {
       index: {
-        discipline: ["DataScience", "DataEngineering", "DatabaseAdministration"],
+        discipline: ["DataAndAI"],
         tech: ["Python", "MongoDB"],
-        skill: ["DataAnalysis", "Visualization", "APIDesign", "ETL"],
+        skill: ["DataAndDatabases", "DocumentationAndCommunication", "APIAndBackend"],
       },
       url: "https://github.com/m1dunfee/cs340ClientServer",
       status: "",
@@ -147,9 +147,9 @@ const projectData = [
     blocks: [{ pos: 0, text: "Retro style game with custom controls and graphics." }],
     metadata: {
       index: {
-        discipline: ["GameDev", "Graphics", "SoftwareEngineering"],
+        discipline: ["GraphicsAndVisualization", "SoftwareEngineering"],
         tech: ["C++", "OpenGL"],
-        skill: ["Rendering", "Math", "Debugging"],
+        skill: ["SystemDesignAndArchitecture", "DebuggingAndTroubleshooting", "PerformanceAndOptimization"],
       },
       url: "https://github.com/m1dunfee/cs330-opengl-game",
       status: "",
@@ -169,9 +169,9 @@ const projectData = [
     ],
     metadata: {
       index: {
-        discipline: ["Graphics", "Visualization", "SoftwareEngineering"],
+        discipline: ["GraphicsAndVisualization", "SoftwareEngineering"],
         tech: ["C++", "OpenGL"],
-        skill: ["Rendering", "Lighting", "3DMath", "Debugging"],
+        skill: ["SystemDesignAndArchitecture", "DebuggingAndTroubleshooting", "PerformanceAndOptimization"],
       },
       url: "https://github.com/m1dunfee/cs330-graphics-and-visualization",
       status: "",
@@ -191,9 +191,9 @@ const projectData = [
     ],
     metadata: {
       index: {
-        discipline: ["AppliedLinearAlgebra", "DataScience", "Algorithms"],
-        tech: ["MatLab"],
-        skill: ["LinearAlgebra", "Modeling", "Optimization"],
+        discipline: ["DataAndAI"],
+        tech: ["MATLAB"],
+        skill: ["MLAndModeling", "PerformanceAndOptimization", "AlgorithmsAndProblemSolving"],
       },
       url: "https://github.com/m1dunfee/ImageCompression",
       status: "",
@@ -211,9 +211,9 @@ const projectData = [
     blocks: [{ pos: 0, text: "OWASP Security Audit and CISA analysis" }],
     metadata: {
       index: {
-        discipline: ["SoftwareSecurity", "CyberSecurity", "SoftwareEngineering"],
+        discipline: ["Security", "SoftwareEngineering"],
         tech: ["Java", "OWASP", "CISA"],
-        skill: ["SecurityReview", "ThreatModeling", "RiskAssessment"],
+        skill: ["SecurityPractices", "DocumentationAndCommunication", "SystemDesignAndArchitecture"],
       },
       url: "https://github.com/m1dunfee/JavaSecurityAudit",
       status: "",
@@ -227,9 +227,9 @@ const projectData = [
     blocks: [{ pos: 0, text: "Certificate Authorities and Encryption" }],
     metadata: {
       index: {
-        discipline: ["SoftwareSecurity", "Cryptography", "DevOps"],
+        discipline: ["Security", "DevOpsAndOperations", "SystemsAndNetworking"],
         tech: ["Java", "TLS", "LetsEncrypt"],
-        skill: ["Certificates", "PKI", "Networking"],
+        skill: ["SecurityPractices", "NetworkingFundamentals", "DevOpsAndDeployment"],
       },
       url: "https://github.com/m1dunfee/LetsEncrypt",
       status: "",
@@ -243,9 +243,9 @@ const projectData = [
     blocks: [{ pos: 0, text: "The math behind RSA" }],
     metadata: {
       index: {
-        discipline: ["Cryptography", "AppliedMathematics", "SoftwareSecurity"],
+        discipline: ["Security", "SoftwareEngineering"],
         tech: ["C++"],
-        skill: ["NumberTheory", "Implementation", "Debugging"],
+        skill: ["SecurityPractices", "AlgorithmsAndProblemSolving"],
       },
       url: "https://github.com/m1dunfee/RSA-Encryption",
       status: "",
@@ -259,9 +259,9 @@ const projectData = [
     blocks: [{ pos: 0, text: "LLM / IoT project." }],
     metadata: {
       index: {
-        discipline: ["ArtificialIntelligence", "IoT", "SoftwareEngineering", "DevOps"],
+        discipline: ["SoftwareEngineering", "DataAndAI", "DevOpsAndOperations", "SystemsAndNetworking"],
         tech: ["Python", "RaspberryPi", "Docker"],
-        skill: ["SystemsDesign", "APIDesign", "Integration", "Deployment"],
+        skill: ["SystemDesignAndArchitecture", "APIAndBackend", "DevOpsAndDeployment", "NetworkingFundamentals"],
       },
       url: "https://github.com/m1dunfee/Prismatica",
       status: "",
@@ -278,9 +278,9 @@ const projectData = [
     blocks: [{ pos: 0, text: "Demo site used for teaching React." }],
     metadata: {
       index: {
-        discipline: ["WebDevelopment", "SoftwareEngineering"],
+        discipline: ["SoftwareEngineering"],
         tech: ["React", "JavaScript"],
-        skill: ["UIEngineering", "ComponentDesign"],
+        skill: ["UIAndFrontend", "SystemDesignAndArchitecture", "DocumentationAndCommunication"],
       },
       url: "https://github.com/m1dunfee/Nucamp-react-demo-site",
       status: "",
@@ -294,9 +294,9 @@ const projectData = [
     blocks: [{ pos: 0, text: "Just a fun landing page to a discord server" }],
     metadata: {
       index: {
-        discipline: ["WebDevelopment"],
+        discipline: ["SoftwareEngineering"],
         tech: ["React", "JavaScript"],
-        skill: ["UIEngineering"],
+        skill: ["UIAndFrontend"],
       },
       url: "https://github.com/m1dunfee/Multiversal-space",
       status: "",
@@ -310,9 +310,9 @@ const projectData = [
     blocks: [{ pos: 0, text: "Business Site" }],
     metadata: {
       index: {
-        discipline: ["WebDevelopment", "SoftwareEngineering"],
+        discipline: ["SoftwareEngineering"],
         tech: ["React", "JavaScript"],
-        skill: ["UIEngineering", "ClientDelivery"],
+        skill: ["UIAndFrontend", "DocumentationAndCommunication"],
       },
       url: "https://github.com/m1dunfee/originallyyoursupholstery",
       status: "",

@@ -15,9 +15,9 @@ const resourceData = [
       url: "",
       status: "",
       index: {
-        discipline: ["SoftwareEngineering", "ProgrammingFundamentals"],
+        discipline: ["SoftwareEngineering"],
         tech: ["Python"],
-        skill: ["Scripting", "ProblemSolving", "Debugging"],
+        skill: ["AlgorithmsAndProblemSolving", "DebuggingAndTroubleshooting"],
       },
     },
   },
@@ -26,10 +26,12 @@ const resourceData = [
     slug: "docker-deep-dive-4th-edition",
     title: "Docker Deep Dive (4th Edition)",
     images: [
-      { src: "/resources/docker-deep-dive.webp", 
-        alt: "Cover: Docker Deep Dive (4th Edition)", 
-        pos: 0 }
-      ],
+      {
+        src: "/resources/docker-deep-dive.webp",
+        alt: "Cover: Docker Deep Dive (4th Edition)",
+        pos: 0,
+      },
+    ],
     blocks: [
       { pos: 0, text: "Status: Read" },
       { pos: 1, text: "Focus: Docker concepts, images, containers, networking, best practices" },
@@ -39,9 +41,9 @@ const resourceData = [
       url: "",
       status: "",
       index: {
-        discipline: ["DevOps", "CloudEngineering", "Operations"],
-        tech: ["Docker", "Containers"],
-        skill: ["Containerization", "Networking", "Deployment", "Troubleshooting"],
+        discipline: ["DevOpsAndOperations", "SystemsAndNetworking"],
+        tech: ["Docker"],
+        skill: ["DevOpsAndDeployment", "Containerization", "NetworkingFundamentals", "DebuggingAndTroubleshooting"],
       },
     },
   },
@@ -65,9 +67,9 @@ const resourceData = [
       url: "",
       status: "",
       index: {
-        discipline: ["ArtificialIntelligence", "MachineLearning", "ReinforcementLearning"],
+        discipline: ["DataAndAI"],
         tech: ["Python"],
-        skill: ["Experimentation", "Modeling", "AlgorithmImplementation"],
+        skill: ["MLAndModeling", "AlgorithmsAndProblemSolving", "DocumentationAndCommunication"],
       },
     },
   },
@@ -85,9 +87,9 @@ const resourceData = [
       url: "",
       status: "",
       index: {
-        discipline: ["ArtificialIntelligence", "MachineLearning", "DeepLearning"],
+        discipline: ["DataAndAI"],
         tech: ["Python", "Keras"],
-        skill: ["ModelTraining", "Evaluation", "Regularization"],
+        skill: ["MLAndModeling", "PerformanceAndOptimization", "TestingAndQuality"],
       },
     },
   },
@@ -105,9 +107,9 @@ const resourceData = [
       url: "",
       status: "",
       index: {
-        discipline: ["FullStack", "WebDevelopment", "BackendEngineering"],
-        tech: ["MongoDB", "Node", "Express", "Angular"],
-        skill: ["APIDesign", "CRUD", "AuthBasics"],
+        discipline: ["SoftwareEngineering"],
+        tech: ["MongoDB", "Node.js", "Express", "Angular"],
+        skill: ["APIAndBackend", "DataAndDatabases", "AuthenticationAndAuthorization"],
       },
     },
   },
@@ -125,9 +127,9 @@ const resourceData = [
       url: "",
       status: "",
       index: {
-        discipline: ["DatabaseAdministration", "DataEngineering", "Operations"],
+        discipline: ["DataAndAI", "DevOpsAndOperations"],
         tech: ["MongoDB"],
-        skill: ["Indexing", "PerformanceTuning", "BackupRestore", "Monitoring", "CapacityPlanning"],
+        skill: ["DataAndDatabases", "PerformanceAndOptimization", "DebuggingAndTroubleshooting"],
       },
     },
   },
@@ -151,9 +153,9 @@ const resourceData = [
       url: "",
       status: "",
       index: {
-        discipline: ["SoftwareEngineering", "ProjectManagement", "SDLC"],
+        discipline: ["SoftwareEngineering"],
         tech: [],
-        skill: ["Planning", "ScopeManagement", "Delivery", "StakeholderCommunication"],
+        skill: ["SystemDesignAndArchitecture", "DocumentationAndCommunication"],
       },
     },
   },
@@ -177,9 +179,9 @@ const resourceData = [
       url: "",
       status: "",
       index: {
-        discipline: ["ArtificialIntelligence"],
+        discipline: ["DataAndAI"],
         tech: [],
-        skill: ["ConceptualModeling", "ResearchReading"],
+        skill: ["MLAndModeling", "DocumentationAndCommunication"],
       },
     },
   },
@@ -203,9 +205,9 @@ const resourceData = [
       url: "",
       status: "",
       index: {
-        discipline: ["SoftwareEngineering", "Architecture"],
+        discipline: ["SoftwareEngineering"],
         tech: ["Java"],
-        skill: ["DesignPatterns", "Abstraction", "Refactoring"],
+        skill: ["SystemDesignAndArchitecture", "TestingAndQuality"],
       },
     },
   },
@@ -223,9 +225,74 @@ const resourceData = [
       url: "",
       status: "",
       index: {
-        discipline: ["SoftwareEngineering", "SoftwareSecurity", "QualityEngineering"],
+        discipline: ["SoftwareEngineering", "Security"],
         tech: ["Java"],
-        skill: ["DefensiveCoding", "Validation", "Invariants", "ErrorHandling"],
+        skill: ["SecurityPractices", "TestingAndQuality", "DebuggingAndTroubleshooting"],
+      },
+    },
+  },
+
+  // New (requested additions) - all share the same image as an existing resource
+  {
+    slug: "chatgpt",
+    title: "ChatGPT (AI Assistant)",
+    images: [{ src: "/resources/pro-git.webp", alt: "Cover: Pro Git (2nd Edition)", pos: 0 }],
+    blocks: [
+      { pos: 0, text: "Status: Active Use" },
+      { pos: 1, text: "Focus: Ideation, debugging, and documentation support" },
+      {
+        pos: 2,
+        text:
+          "Key selling point: data privacy policy awareness. Use safe prompting habits, avoid sensitive data, and design workflows that respect confidentiality requirements.",
+      },
+    ],
+    metadata: {
+      url: "",
+      status: "",
+      index: {
+        discipline: ["SoftwareEngineering", "DataAndAI", "Security"],
+        tech: ["ChatGPT"],
+        skill: ["DocumentationAndCommunication", "DebuggingAndTroubleshooting", "SecurityPractices"],
+      },
+    },
+  },
+
+  {
+    slug: "3blue1brown",
+    title: "3Blue1Brown (Visual Math and Intuition)",
+    images: [{ src: "/resources/pro-git.webp", alt: "Cover: Pro Git (2nd Edition)", pos: 0 }],
+    blocks: [
+      { pos: 0, text: "Status: Active Reference" },
+      { pos: 1, text: "Focus: Visual aids and strong conceptualization of abstract topics" },
+      { pos: 2, text: "Notes: Useful for linear algebra, calculus intuition, and ML foundations" },
+    ],
+    metadata: {
+      url: "",
+      status: "",
+      index: {
+        discipline: ["DataAndAI"],
+        tech: [],
+        skill: ["MLAndModeling", "DocumentationAndCommunication"],
+      },
+    },
+  },
+
+  {
+    slug: "w3schools",
+    title: "W3Schools (Web Reference Library)",
+    images: [{ src: "/resources/pro-git.webp", alt: "Cover: Pro Git (2nd Edition)", pos: 0 }],
+    blocks: [
+      { pos: 0, text: "Status: Active Reference" },
+      { pos: 1, text: "Focus: Consistent approach across a wide range of web and database topics" },
+      { pos: 2, text: "Notes: Fast lookup for syntax, examples, and fundamentals across web and SQL topics" },
+    ],
+    metadata: {
+      url: "",
+      status: "",
+      index: {
+        discipline: ["SoftwareEngineering"],
+        tech: ["HTML", "CSS", "JavaScript", "SQL"],
+        skill: ["UIAndFrontend", "APIAndBackend", "DocumentationAndCommunication"],
       },
     },
   },
@@ -250,9 +317,9 @@ const resourceData = [
       url: "",
       status: "",
       index: {
-        discipline: ["DataScience", "MachineLearning"],
+        discipline: ["DataAndAI"],
         tech: ["Python", "Anaconda"],
-        skill: ["EnvironmentManagement", "Reproducibility", "Tooling"],
+        skill: ["DataAndDatabases", "TestingAndQuality", "DocumentationAndCommunication"],
       },
     },
   },
@@ -270,9 +337,9 @@ const resourceData = [
       url: "",
       status: "",
       index: {
-        discipline: ["SoftwareEngineering", "DevOps"],
+        discipline: ["SoftwareEngineering", "DevOpsAndOperations"],
         tech: ["Git"],
-        skill: ["VersionControl", "Branching", "Rebasing", "Collaboration"],
+        skill: ["TestingAndQuality", "DocumentationAndCommunication"],
       },
     },
   },
@@ -296,9 +363,9 @@ const resourceData = [
       url: "",
       status: "",
       index: {
-        discipline: ["CognitiveScience", "HCI", "ArtificialIntelligence"],
+        discipline: ["DataAndAI"],
         tech: [],
-        skill: ["ResearchReading", "ConceptSynthesis"],
+        skill: ["DocumentationAndCommunication"],
       },
     },
   },
@@ -322,9 +389,9 @@ const resourceData = [
       url: "",
       status: "",
       index: {
-        discipline: ["Psychology", "CognitiveScience", "AIEvaluation"],
+        discipline: ["DataAndAI"],
         tech: [],
-        skill: ["ResearchReading", "CriticalThinking"],
+        skill: ["DocumentationAndCommunication"],
       },
     },
   },
