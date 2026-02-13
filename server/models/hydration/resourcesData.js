@@ -300,7 +300,7 @@ const resourceData = [
   {
     slug: "3blue1brown",
     title: "3Blue1Brown (Visual Math and Intuition)",
-    images: [{ src: "/resources/3b1b.jpg", alt: "Cover: Logo for 3Blue1Brown Youtube channel", pos: 0 }],
+    images: [{ src: "/resources/3b1b.webp", alt: "Cover: Logo for 3Blue1Brown Youtube channel", pos: 0 }],
     blocks: [
       { pos: 0, text: "Status: Active Reference" },
       { pos: 1, text: "Focus: Visual aids and strong conceptualization of abstract topics" },
@@ -324,7 +324,7 @@ const resourceData = [
   {
     slug: "w3schools",
     title: "W3Schools (Web Reference Library)",
-    images: [{ src: "/resources/w3school.jpg", alt: "Cover: w3school logo", pos: 0 }],
+    images: [{ src: "/resources/w3school.webp", alt: "Cover: w3school logo", pos: 0 }],
     blocks: [
       { pos: 0, text: "Status: Active Reference" },
       { pos: 1, text: "Focus: Consistent approach across a wide range of web and database topics" },

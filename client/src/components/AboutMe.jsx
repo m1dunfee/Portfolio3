@@ -20,7 +20,7 @@ const AboutMe = () => {
         <div className='row align-items-center'>
           <div className='col-lg-6 p-2'>
             <img
-              src='/Profile_Pic.jpg'
+              src='/Profile_Pic.webp'
               style={imgStyle}
               alt='Portrait of Matthew'
               loading='lazy'

@@ -2,7 +2,7 @@ const topicData = [
   {
     slug: "artificial-intelligence",
     title: "Artificial Intelligence",
-    images: [{ src: "/Isaac.jpg", alt: "Isaac Newton portrait", pos: 0 }],
+    images: [{ src: "/Isaac.webp", alt: "Isaac Newton portrait", pos: 0 }],
     blocks: [
       {
         pos: 0,
@@ -56,7 +56,7 @@ const topicData = [
   {
     slug: "deep-neural-networks",
     title: "Deep Neural Networks",
-    images: [{ src: "/DNN.jpg", alt: "Neural network visualization", pos: 0 }],
+    images: [{ src: "/DNN.webp", alt: "Neural network visualization", pos: 0 }],
     blocks: [
       {
         pos: 0,
@@ -83,7 +83,7 @@ const topicData = [
   {
     slug: "deep-learning",
     title: "Deep Learning",
-    images: [{ src: "/deeplearning.jpg", alt: "Deep learning concept imagery", pos: 0 }],
+    images: [{ src: "/deeplearning.webp", alt: "Deep learning concept imagery", pos: 0 }],
     blocks: [
       {
         pos: 0,
@@ -137,7 +137,7 @@ const topicData = [
   {
     slug: "supervised-and-unsupervised-learning",
     title: "Supervised and Unsupervised Learning",
-    images: [{ src: "/data_intoxicated.jpg", alt: "Data-driven learning imagery", pos: 0 }],
+    images: [{ src: "/data_intoxicated.webp", alt: "Data-driven learning imagery", pos: 0 }],
     blocks: [
       {
         pos: 0,
@@ -169,7 +169,7 @@ const topicData = [
   {
     slug: "linear-algebra",
     title: "Linear Algebra",
-    images: [{ src: "/linearAlgebra.avif", alt: "Linear algebra and matrices imagery", pos: 0 }],
+    images: [{ src: "/linearAlgebra.webp", alt: "Linear algebra and matrices imagery", pos: 0 }],
     blocks: [
       {
         pos: 0,
@@ -201,7 +201,7 @@ const topicData = [
   {
     slug: "object-oriented-programming-oop",
     title: "Object-Oriented Programming (OOP)",
-    images: [{ src: "/OOP.avif", alt: "Object-oriented programming imagery", pos: 0 }],
+    images: [{ src: "/OOP.webp", alt: "Object-oriented programming imagery", pos: 0 }],
     blocks: [
       {
         pos: 0,
@@ -233,7 +233,7 @@ const topicData = [
   {
     slug: "software-development-life-cycle-sdlc",
     title: "Software Development Life Cycle (SDLC)",
-    images: [{ src: "/SDLC.avif", alt: "Software development lifecycle imagery", pos: 0 }],
+    images: [{ src: "/SDLC.webp", alt: "Software development lifecycle imagery", pos: 0 }],
     blocks: [
       {
         pos: 0,
@@ -265,7 +265,7 @@ const topicData = [
   {
     slug: "design-patterns",
     title: "Design Patterns",
-    images: [{ src: "/designPatterns.avif", alt: "Software design patterns imagery", pos: 0 }],
+    images: [{ src: "/designPatterns.webp", alt: "Software design patterns imagery", pos: 0 }],
     blocks: [
       {
         pos: 0,

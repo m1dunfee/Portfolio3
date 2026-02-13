@@ -2,7 +2,7 @@ const prospectData = [
   {
     slug: "artificial-intelligence",
     title: "Artificial Intelligence",
-    images: [{ src: "/data.jpg", alt: "Abstract data and AI imagery", pos: 0 }],
+    images: [{ src: "/data.webp", alt: "Abstract data and AI imagery", pos: 0 }],
     blocks: [
       {
         pos: 0,
@@ -34,7 +34,7 @@ const prospectData = [
   {
     slug: "bioinfomatics",
     title: "Bioinfomatics",
-    images: [{ src: "/bioinfomatics.jpg", alt: "Bioinformatics and genetics imagery", pos: 0 }],
+    images: [{ src: "/bioinfomatics.webp", alt: "Bioinformatics and genetics imagery", pos: 0 }],
     blocks: [
       {
         pos: 0,
@@ -66,7 +66,7 @@ const prospectData = [
   {
     slug: "cyber-security",
     title: "Cyber Security",
-    images: [{ src: "/cybersecurity.avif", alt: "Cybersecurity themed imagery", pos: 0 }],
+    images: [{ src: "/cybersecurity.webp", alt: "Cybersecurity themed imagery", pos: 0 }],
     blocks: [
       {
         pos: 0,
@@ -98,7 +98,7 @@ const prospectData = [
   {
     slug: "game-dev",
     title: "Game Dev",
-    images: [{ src: "/gameDev.jpg", alt: "Game development imagery", pos: 0 }],
+    images: [{ src: "/gameDev.webp", alt: "Game development imagery", pos: 0 }],
     blocks: [
       {
         pos: 0,

@@ -2,7 +2,7 @@ const projectData = [
   {
     slug: "portfolio",
     title: "Portfolio",
-    images: [{ src: "/reactLogo.png", alt: "React logo", pos: 0 }],
+    images: [{ src: "/reactLogo.webp", alt: "React logo", pos: 0 }],
     blocks: [{ pos: 0, text: "You're here!" }],
     metadata: {
       index: {
@@ -18,7 +18,7 @@ const projectData = [
   {
     slug: "pathfindre-ai",
     title: "Pathfindre AI",
-    images: [{ src: "/pythonLogo.png", alt: "Python logo", pos: 0 }],
+    images: [{ src: "/pythonLogo.webp", alt: "Python logo", pos: 0 }],
     blocks: [
       {
         pos: 0,
@@ -40,7 +40,7 @@ const projectData = [
   {
     slug: "game-ai",
     title: "Game AI",
-    images: [{ src: "/pythonLogo.png", alt: "Python logo", pos: 0 }],
+    images: [{ src: "/pythonLogo.webp", alt: "Python logo", pos: 0 }],
     blocks: [
       {
         pos: 0,
@@ -62,7 +62,7 @@ const projectData = [
   {
     slug: "mean-fullstack",
     title: "Mean fullstack",
-    images: [{ src: "/MEAN.png", alt: "MEAN stack logo", pos: 0 }],
+    images: [{ src: "/MEAN.webp", alt: "MEAN stack logo", pos: 0 }],
     blocks: [
       {
         pos: 0,
@@ -84,7 +84,7 @@ const projectData = [
   {
     slug: "big-o",
     title: "Big'O",
-    images: [{ src: "/cpp_logo.png", alt: "C++ logo", pos: 0 }],
+    images: [{ src: "/cpp_logo.webp", alt: "C++ logo", pos: 0 }],
     blocks: [
       {
         pos: 0,
@@ -127,7 +127,7 @@ const projectData = [
   {
     slug: "data-visualization",
     title: "Data Visualization",
-    images: [{ src: "/pythonLogo.png", alt: "Python logo", pos: 0 }],
+    images: [{ src: "/pythonLogo.webp", alt: "Python logo", pos: 0 }],
     blocks: [{ pos: 0, text: "Using mongodb and python to build an interactive system." }],
     metadata: {
       index: {
@@ -143,7 +143,7 @@ const projectData = [
   {
     slug: "opengl-retro-game",
     title: "OpenGL retro game",
-    images: [{ src: "/cpp_logo.png", alt: "C++ / OpenGL", pos: 0 }],
+    images: [{ src: "/cpp_logo.webp", alt: "C++ / OpenGL", pos: 0 }],
     blocks: [{ pos: 0, text: "Retro style game with custom controls and graphics." }],
     metadata: {
       index: {
@@ -159,7 +159,7 @@ const projectData = [
   {
     slug: "3d-graphics-and-visualization-with-opengl",
     title: "3D graphics and visualization with OpenGL",
-    images: [{ src: "/cpp_logo.png", alt: "C++ / OpenGL", pos: 0 }],
+    images: [{ src: "/cpp_logo.webp", alt: "C++ / OpenGL", pos: 0 }],
     blocks: [
       {
         pos: 0,
@@ -181,7 +181,7 @@ const projectData = [
   {
     slug: "image-compression",
     title: "Image Compression",
-    images: [{ src: "/matLab.png", alt: "MatLab logo", pos: 0 }],
+    images: [{ src: "/matLab.webp", alt: "MatLab logo", pos: 0 }],
     blocks: [
       {
         pos: 0,
@@ -205,8 +205,8 @@ const projectData = [
     title: "Security Audit",
     images: [
       { src: "/javaLogo.webp", alt: "Java logo", pos: 0 },
-      { src: "/CISA_Logo.png", alt: "CISA logo", pos: 1 },
-      { src: "/OWASP.png", alt: "OWASP logo", pos: 2 },
+      { src: "/CISA_Logo.webp", alt: "CISA logo", pos: 1 },
+      { src: "/OWASP.webp", alt: "OWASP logo", pos: 2 },
     ],
     blocks: [{ pos: 0, text: "OWASP Security Audit and CISA analysis" }],
     metadata: {
@@ -239,7 +239,7 @@ const projectData = [
   {
     slug: "rsa-encryption",
     title: "RSA Encryption",
-    images: [{ src: "/cpp_logo.png", alt: "C++ logo", pos: 0 }],
+    images: [{ src: "/cpp_logo.webp", alt: "C++ logo", pos: 0 }],
     blocks: [{ pos: 0, text: "The math behind RSA" }],
     metadata: {
       index: {
@@ -255,7 +255,7 @@ const projectData = [
   {
     slug: "prismatica",
     title: "Prismatica",
-    images: [{ src: "/pythonLogo.png", alt: "Python logo", pos: 0 }],
+    images: [{ src: "/pythonLogo.webp", alt: "Python logo", pos: 0 }],
     blocks: [{ pos: 0, text: "LLM / IoT project." }],
     metadata: {
       index: {
@@ -272,8 +272,8 @@ const projectData = [
     slug: "nucamp",
     title: "Nucamp",
     images: [
-      { src: "/reactLogo.png", alt: "React logo", pos: 0 },
-      { src: "/Nucamp.png", alt: "Nucamp logo", pos: 1 },
+      { src: "/reactLogo.webp", alt: "React logo", pos: 0 },
+      { src: "/Nucamp.webp", alt: "Nucamp logo", pos: 1 },
     ],
     blocks: [{ pos: 0, text: "Demo site used for teaching React." }],
     metadata: {
@@ -290,7 +290,7 @@ const projectData = [
   {
     slug: "multiversal",
     title: "Multiversal",
-    images: [{ src: "/reactLogo.png", alt: "React logo", pos: 0 }],
+    images: [{ src: "/reactLogo.webp", alt: "React logo", pos: 0 }],
     blocks: [{ pos: 0, text: "Just a fun landing page to a discord server" }],
     metadata: {
       index: {
@@ -306,7 +306,7 @@ const projectData = [
   {
     slug: "originally-yours-upholstery",
     title: "Originally Yours Upholstery",
-    images: [{ src: "/reactLogo.png", alt: "React logo", pos: 0 }],
+    images: [{ src: "/reactLogo.webp", alt: "React logo", pos: 0 }],
     blocks: [{ pos: 0, text: "Business Site" }],
     metadata: {
       index: {
