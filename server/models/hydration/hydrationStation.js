@@ -1,7 +1,7 @@
 // hydrationStation.js
 //
 // Purpose:
-// - Upsert content into 4 collections: projects, topics, prospects, books
+// - Upsert content into 4 collections: projects, topics, prospects, resources
 // - Can be used as:
 //   A) Side-effect module (old behavior): require() triggers hydrate()
 //   B) Callable module: const { hydrate } = require(...); await hydrate({ reset })
@@ -20,7 +20,7 @@ const { modelFor } = require("../ContentSchema.js");
 const projectData = require("./projectsData.js");
 const topicData = require("./topicsData.js");
 const prospectData = require("./prospectsData.js");
-const bookData = require("./booksData.js");
+const resourceData = require("./resourcesData.js");
 
 // helpers
 function slugify(s) {
@@ -93,7 +93,7 @@ async function hydrate({ reset = false } = {}) {
   const Project = modelFor("Project", "projects");
   const Topic = modelFor("Topic", "topics");
   const Prospect = modelFor("Prospect", "prospects");
-  const Book = modelFor("Book", "books");
+  const Resource = modelFor("Resource", "resources");
 
   const alreadyConnected = mongoose.connection.readyState === 1;
 
@@ -105,20 +105,20 @@ async function hydrate({ reset = false } = {}) {
   }
 
   // Ensure indexes exist
-  await Promise.all([Project.init(), Topic.init(), Prospect.init(), Book.init()]);
+  await Promise.all([Project.init(), Topic.init(), Prospect.init(), Resource.init()]);
 
   if (reset) {
     await safeDropCollection(Project);
     await safeDropCollection(Topic);
     await safeDropCollection(Prospect);
-    await safeDropCollection(Book);
+    await safeDropCollection(Resource);
   }
 
   let total = 0;
   total += await upsertMany(Project, projectData);
   total += await upsertMany(Topic, topicData);
   total += await upsertMany(Prospect, prospectData);
-  total += await upsertMany(Book, bookData);
+  total += await upsertMany(Resource, resourceData);
 
   console.log(`Upserted ${total} documents across 4 collections`);
 

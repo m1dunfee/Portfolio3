@@ -2,7 +2,7 @@ const {
     Project,
     Topic, 
     Prospect,
-    Book 
+    Resource 
 } = require("../models/ContentSchema");
 
 const {
@@ -15,7 +15,7 @@ const MODELS = {
   projects: Project,
   topics: Topic,
   prospects: Prospect,
-  books: Book,
+  resources: Resource,
 };
 
 const TAG_PATH = {

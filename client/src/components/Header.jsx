@@ -71,11 +71,11 @@ const Header = (props) => {
                 </DropdownItem>
                 <DropdownItem
                   tag={RRNavLink}
-                  to='/books'
+                  to='/resources'
                   className='dropdown-item'
                   onClick={() => setIsOpen(false)}
                 >
-                  Books
+                  Resources
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>

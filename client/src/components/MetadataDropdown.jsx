@@ -13,7 +13,7 @@ export default function MetadataDropdown() {
   const { collection } = useCollectionFromPath();
   const [sp, setSp] = useSearchParams();
 
-  const allowed = useMemo( () => new Set(["projects", "topics", "prospects", "books"]), []);
+  const allowed = useMemo( () => new Set(["projects", "topics", "prospects", "resources"]), []);
   const enabled = collection != null && allowed.has(collection);
 
   const [open, setOpen] = useState(false);          // dropdown open/close

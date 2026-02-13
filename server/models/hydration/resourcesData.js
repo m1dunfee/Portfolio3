@@ -1,10 +1,10 @@
-const bookData = [
+const resourceData = [
   // Read
   {
     slug: "python-crash-course-3rd-edition",
     title: "Python Crash Course (3rd Edition)",
     images: [
-      { src: "/books/python-crash-course.webp", alt: "Cover: Python Crash Course (3rd Edition)", pos: 0 },
+      { src: "/resources/python-crash-course.webp", alt: "Cover: Python Crash Course (3rd Edition)", pos: 0 },
     ],
     blocks: [
       { pos: 0, text: "Status: Read" },
@@ -26,7 +26,7 @@ const bookData = [
     slug: "docker-deep-dive-4th-edition",
     title: "Docker Deep Dive (4th Edition)",
     images: [
-      { src: "/books/docker-deep-dive.webp", 
+      { src: "/resources/docker-deep-dive.webp", 
         alt: "Cover: Docker Deep Dive (4th Edition)", 
         pos: 0 }
       ],
@@ -51,7 +51,7 @@ const bookData = [
     title: "Applied Reinforcement Learning with Python",
     images: [
       {
-        src: "/books/applied-reinforcement-learning-with-python.webp",
+        src: "/resources/applied-reinforcement-learning-with-python.webp",
         alt: "Cover: Applied Reinforcement Learning with Python",
         pos: 0,
       },
@@ -75,7 +75,7 @@ const bookData = [
   {
     slug: "deep-learning-with-keras",
     title: "Deep Learning with Keras",
-    images: [{ src: "/books/deep-learning-with-keras.webp", alt: "Cover: Deep Learning with Keras", pos: 0 }],
+    images: [{ src: "/resources/deep-learning-with-keras.webp", alt: "Cover: Deep Learning with Keras", pos: 0 }],
     blocks: [
       { pos: 0, text: "Status: Read" },
       { pos: 1, text: "Focus: Neural nets using Keras; practical deep learning workflows" },
@@ -95,7 +95,7 @@ const bookData = [
   {
     slug: "getting-mean-with-mongo-express-angular-and-node",
     title: "Getting MEAN with Mongo, Express, Angular, and Node",
-    images: [{ src: "/books/getting-mean.webp", alt: "Cover: Getting MEAN", pos: 0 }],
+    images: [{ src: "/resources/getting-mean.webp", alt: "Cover: Getting MEAN", pos: 0 }],
     blocks: [
       { pos: 0, text: "Status: Read" },
       { pos: 1, text: "Focus: Full-stack MEAN patterns; CRUD; app structure" },
@@ -115,7 +115,7 @@ const bookData = [
   {
     slug: "mastering-mongodb-6x-3rd-edition",
     title: "Mastering MongoDB 6.x (3rd Edition)",
-    images: [{ src: "/books/mastering-mongodb-6x.webp", alt: "Cover: Mastering MongoDB 6.x", pos: 0 }],
+    images: [{ src: "/resources/mastering-mongodb-6x.webp", alt: "Cover: Mastering MongoDB 6.x", pos: 0 }],
     blocks: [
       { pos: 0, text: "Status: Read" },
       { pos: 1, text: "Focus: MongoDB internals, indexing, performance, administration" },
@@ -137,7 +137,7 @@ const bookData = [
     title: "The Project Manager's Guide to Mastering Agile",
     images: [
       {
-        src: "/books/agile-project-managers-guide.webp",
+        src: "/resources/agile-project-managers-guide.webp",
         alt: "Cover: The Project Manager's Guide to Mastering Agile",
         pos: 0,
       },
@@ -163,7 +163,7 @@ const bookData = [
     title: "Artificial Intelligence for the 21st Century (2nd Edition)",
     images: [
       {
-        src: "/books/ai-for-the-21st-century.webp",
+        src: "/resources/ai-for-the-21st-century.webp",
         alt: "Cover: AI for the 21st Century",
         pos: 0,
       },
@@ -189,7 +189,7 @@ const bookData = [
     title: "Hands-On Design Patterns with Java",
     images: [
       {
-        src: "/books/hands-on-design-patterns-with-java.webp",
+        src: "/resources/hands-on-design-patterns-with-java.webp",
         alt: "Cover: Hands-On Design Patterns with Java",
         pos: 0,
       },
@@ -213,7 +213,7 @@ const bookData = [
   {
     slug: "iron-clad-java",
     title: "Iron-Clad Java",
-    images: [{ src: "/books/iron-clad-java.webp", alt: "Cover: Iron-Clad Java", pos: 0 }],
+    images: [{ src: "/resources/iron-clad-java.webp", alt: "Cover: Iron-Clad Java", pos: 0 }],
     blocks: [
       { pos: 0, text: "Status: Read" },
       { pos: 1, text: "Focus: Writing robust Java; pitfalls; defensive coding" },
@@ -236,7 +236,7 @@ const bookData = [
     title: "Hands-On Data Science with Anaconda",
     images: [
       {
-        src: "/books/hands-on-data-science-with-anaconda.webp",
+        src: "/resources/hands-on-data-science-with-anaconda.webp",
         alt: "Cover: Hands-On Data Science with Anaconda",
         pos: 0,
       },
@@ -260,7 +260,7 @@ const bookData = [
   {
     slug: "pro-git-2nd-edition",
     title: "Pro Git (2nd Edition)",
-    images: [{ src: "/books/pro-git.webp", alt: "Cover: Pro Git (2nd Edition)", pos: 0 }],
+    images: [{ src: "/resources/pro-git.webp", alt: "Cover: Pro Git (2nd Edition)", pos: 0 }],
     blocks: [
       { pos: 0, text: "Status: To Read" },
       { pos: 1, text: "Focus: Git internals + practical branching workflows" },
@@ -282,7 +282,7 @@ const bookData = [
     title: "The Cambridge Handbook of Situated Cognition (eBook, Edition 1)",
     images: [
       {
-        src: "/books/cambridge-handbook-situated-cognition.webp",
+        src: "/resources/cambridge-handbook-situated-cognition.webp",
         alt: "Cover: The Cambridge Handbook of Situated Cognition",
         pos: 0,
       },
@@ -308,7 +308,7 @@ const bookData = [
     title: "The Cambridge Handbook of Intelligence (eBook, Edition 1)",
     images: [
       {
-        src: "/books/cambridge-handbook-intelligence.webp",
+        src: "/resources/cambridge-handbook-intelligence.webp",
         alt: "Cover: The Cambridge Handbook of Intelligence",
         pos: 0,
       },
@@ -330,4 +330,4 @@ const bookData = [
   },
 ];
 
-module.exports = bookData;
+module.exports = resourceData;

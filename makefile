@@ -1,7 +1,7 @@
 SHELL := /bin/sh
 
-COMPOSE_BASE := docker-compose.yaml
-COMPOSE_DEV  := docker-compose.dev.yaml
+COMPOSE_BASE := compose.yaml
+COMPOSE_DEV  := compose.dev.yaml
 
 DC_DEV  := docker compose -f $(COMPOSE_BASE) -f $(COMPOSE_DEV)
 DC_PROD := docker compose -f $(COMPOSE_BASE)

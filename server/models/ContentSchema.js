@@ -1,5 +1,5 @@
 // schemaContent.js
-// Unified schema for all content types (projects, topics, prospects, books).
+// Unified schema for all content types (projects, topics, prospects, resources).
 // Same structure, different collections.
 
 
@@ -79,5 +79,5 @@ module.exports = {
   Project: modelFor("Project", "projects"),
   Topic: modelFor("Topic", "topics"),
   Prospect: modelFor("Prospect", "prospects"),
-  Book: modelFor("Book", "books"),
+  Resource: modelFor("Resource", "resources"),
 };

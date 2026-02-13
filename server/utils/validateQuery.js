@@ -1,6 +1,6 @@
 // utils/validateQuery.js
 
-const ALLOWED_COLLECTIONS = ["projects", "topics", "prospects", "books"];
+const ALLOWED_COLLECTIONS = ["projects", "topics", "prospects", "resources"];
 const ALLOWED_TAG_KEYS = ["skill", "tech", "discipline", "status"];
 const ALLOWED_SORT = ["updatedAt", "title"];
 const ALLOWED_DIR = ["asc", "desc"];
