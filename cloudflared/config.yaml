@@ -1,14 +1,15 @@
 # cloudflared/config.yaml
-# f9563275-bb31-499c-b308-df6b5a5ed7f3
-tunnel: f9563275-bb31-499c-b308-df6b5a5ed7f3
-credentials-file: /etc/cloudflared/f9563275-bb31-499c-b308-df6b5a5ed7f3.json
+# p-connector f9563275-bb31-499c-b308-df6b5a5ed7f3
+# m-tunnel = 0b69accf-2b6a-4424-bb9f-acb249560eb4
+tunnel: 0b69accf-2b6a-4424-bb9f-acb249560eb4
+credentials-file: /etc/cloudflared/0b69accf-2b6a-4424-bb9f-acb249560eb4.json
 
 ingress:
-  - hostname: data-tide.net
+  - hostname: multiversal.space
     path: ^/api(/|$)
     service: http://server:5000
 
-  - hostname: data-tide.net
+  - hostname: multiversal.space
     service: http://client:5173
 
   - service: http_status:404

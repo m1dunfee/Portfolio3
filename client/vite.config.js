@@ -8,7 +8,7 @@ export default defineConfig(({ command }) => ({
     ? {
         host: true,
         port: 5173,
-        allowedHosts: ["data-tide.net"],
+        allowedHosts: ["multiversal.space"], //data-tide.net  //multiversal.space
         proxy: {
           "/api": {
             target: "http://server:5000",
