@@ -3,7 +3,7 @@ const projectData = [
     slug: "portfolio",
     title: "Portfolio",
     images: [{ src: "/reactLogo.webp", alt: "React logo", pos: 0 }],
-    blocks: [{ pos: 0, text: "You're here!" }],
+    blocks: [{ pos: 0, text: "ePortfolio - built as a full-stack site that demonstrates end-to-end engineering (React UI, API-backed content, deployment, and security hardening). Start here to see how I design, ship, and maintain a production-ready system rather than a static demo." }],
     metadata: {
       index: {
         discipline: ["SoftwareEngineering", "DevOpsAndOperations", "Security"],

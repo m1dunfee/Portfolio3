@@ -111,8 +111,12 @@ export default function Projects() {
                     {project.metadata?.title ?? project.title}
                   </CardTitle>
 
-                  <CardSubtitle className='mb-2'>
-                    <p>{project.summary ?? ''}</p>
+                  <CardSubtitle className="mb-2">
+                    {project.blocks?.length
+                      ? project.blocks.map((block, i) => (
+                        <span key={block.id ?? i}>{block.text}</span>
+                      ))
+                      : ""}
                   </CardSubtitle>
 
                   {project.metadata?.url ? (
