@@ -114,7 +114,7 @@ export default function Projects() {
                   <CardSubtitle className="mb-2">
                     {project.blocks?.length
                       ? project.blocks.map((block, i) => (
-                        <span key={block.id ?? i}>{block.text}</span>
+                        <p key={block.id ?? i}>{block.text}</p>
                       ))
                       : ""}
                   </CardSubtitle>
