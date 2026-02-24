@@ -1,0 +1,11 @@
+If you would like to see the workflow that took this from a react app to a mern project please 
+visit my cs499 cornerstone project at https://m1dunfee.github.io/portfolio3-enhanced/
+
+todo list:
+- might be a duplicate hook, or just very simular, check it out 
+- should Decouple app and pulse, make pulse hook
+- rename project to porfiolio instead of portfolio3 
+- css for footer to keep at the bottom of page when minimal content exists (recreate - use filter to find one item)
+- fix background fetch speed (flash white on mobile when first loaded)
+- add more pictures to projects (condider second db for pictures)
+- add more comments / normalize approach (object vs functional programing, env useage for ports, etc)
