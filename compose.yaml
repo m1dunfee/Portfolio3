@@ -21,8 +21,6 @@ services:
     restart: unless-stopped
     environment:
       NODE_ENV: production
-    expose:
-      - "5173"
     networks:
       - edge
     depends_on:
@@ -37,8 +35,6 @@ services:
     environment:
       NODE_ENV: production
       MONGO_URI: ${MONGO_URI}
-    expose:
-      - "5000"
     networks:
       - edge
       - db_net
