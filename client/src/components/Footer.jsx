@@ -11,7 +11,7 @@ class Footer extends Component {
           <Col sm>
             <FontAwesomeIcon icon={faFilePdf} className='fa-2x'/>
             <h4>Resume/CV</h4>
-            <Button outline color='primary' href='/CV.pdf' target='_blank' rel='noopener noreferrer'>
+            <Button outline color='primary' href='/Resume.pdf' target='_blank' rel='noopener noreferrer'>
               Download PDF Resume
             </Button>
             <hr />
