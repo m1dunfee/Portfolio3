@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useCollectionFromPath } from "../hooks/useCollectionFromPath";
+import { toReadable } from "../utils/formatTag";
 import {
   Dropdown,
   DropdownToggle,
@@ -24,7 +25,6 @@ export default function MetadataDropdown() {
   const [error, setError] = useState(null);
 
   const toggleDropdown = () => setOpen((v) => !v);
-
   const toggleGroup = (groupName) => {
     setOpenGroup((cur) => (cur === groupName ? null : groupName));
   };
@@ -129,7 +129,7 @@ export default function MetadataDropdown() {
                     className="ps-4"
                     onClick={() => setSelection(groupName, tag)}
                   >
-                    {tag}
+                    {toReadable(tag)}
                   </DropdownItem>
                 ))}
               </Collapse>
